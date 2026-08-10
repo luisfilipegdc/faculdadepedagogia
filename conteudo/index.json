@@ -1,5 +1,5 @@
 {
-  "gerado": "2026-08-10T23:12:33.354Z",
+  "gerado": "2026-08-10T23:27:46.206Z",
   "totalAulas": 3,
   "totalFlashcards": 31,
   "disciplinas": [
@@ -25,9 +25,10 @@
       "flashcards": 10,
       "questoes": 6,
       "conceitos": 10,
-      "pendencias": 4,
-      "minutosLeitura": 6,
-      "atualizado": "2026-08-10T23:02:43.799Z"
+      "marcos": 10,
+      "pendencias": 5,
+      "minutosLeitura": 8,
+      "atualizado": "2026-08-10T23:24:52.986Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
@@ -48,9 +49,10 @@
       "flashcards": 10,
       "questoes": 6,
       "conceitos": 8,
+      "marcos": 0,
       "pendencias": 5,
       "minutosLeitura": 5,
-      "atualizado": "2026-08-10T23:01:59.731Z"
+      "atualizado": "2026-08-10T23:18:43.222Z"
     },
     {
       "arquivo": "conteudo/espacos-nao-escolares/2026-08-05-pedagogia-alem-da-sala-de-aula.md",
@@ -71,9 +73,10 @@
       "flashcards": 11,
       "questoes": 6,
       "conceitos": 10,
+      "marcos": 0,
       "pendencias": 7,
       "minutosLeitura": 7,
-      "atualizado": "2026-08-10T23:12:27.983Z"
+      "atualizado": "2026-08-10T23:18:43.222Z"
     }
   ]
 }

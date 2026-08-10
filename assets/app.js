@@ -143,6 +143,40 @@ function renderMapa(nos) {
     .join("")}</ul>`;
 }
 
+// primeiro " — " que está fora de um par **negrito** (o título pode conter travessão)
+function corteTravessao(txt) {
+  let forte = false;
+  for (let i = 0; i < txt.length; i++) {
+    if (txt[i] === "*" && txt[i + 1] === "*") {
+      forte = !forte;
+      i++;
+    } else if (!forte && txt.startsWith(" — ", i)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// "1988 :: **Constituição Federal** — texto" -> marco com ano, título e detalhe
+function renderLinhaTempo(marcos) {
+  if (!marcos.length) return "";
+  const itensHtml = marcos
+    .map((m) => {
+      const corte = corteTravessao(m.verso);
+      const titulo = corte === -1 ? m.verso : m.verso.slice(0, corte);
+      const detalhe = corte === -1 ? "" : m.verso.slice(corte + 3);
+      return `<li class="lt-marco">
+        <span class="lt-ano">${inline(m.frente)}</span>
+        <div class="lt-corpo">
+          <span class="lt-titulo">${inline(titulo)}</span>
+          ${detalhe ? `<span class="lt-detalhe">${inline(detalhe)}</span>` : ""}
+        </div>
+      </li>`;
+    })
+    .join("");
+  return `<ol class="linha-tempo">${itensHtml}</ol>`;
+}
+
 function renderAula(aula, texto) {
   const { meta, corpo } = parseFrontmatter(texto);
   const sec = fatiarSecoes(corpo);
@@ -193,6 +227,16 @@ function renderAula(aula, texto) {
     partes.push(
       `<section class="secao"><h2>Mapa conceitual</h2>${renderMapa(arvore(mapa.corpo))}</section>`,
     );
+  }
+
+  const linha = pegar("Linha do tempo");
+  if (linha) {
+    const marcos = pares(linha.corpo).filter((m) => m.verso);
+    if (marcos.length) {
+      partes.push(
+        `<section class="secao"><h2>Linha do tempo <span class="selo">${marcos.length} marcos</span></h2>${renderLinhaTempo(marcos)}</section>`,
+      );
+    }
   }
 
   const flash = pegar("Flashcards");
@@ -286,6 +330,7 @@ function renderInicio(filtro = "") {
             <div class="cartao-meta">
               ${a.data ? `<span>${dataBonita(a.data)}</span>` : ""}
               ${a.professor ? `<span>Prof.ª ${escapar(a.professor)}</span>` : ""}
+              ${a.marcos ? `<span>${a.marcos} marcos</span>` : ""}
               ${a.flashcards ? `<span>${a.flashcards} flashcards</span>` : ""}
               ${a.questoes ? `<span>${a.questoes} questões</span>` : ""}
               ${a.confianca !== "alta" ? `<span class="selo selo-alerta">revisar</span>` : ""}

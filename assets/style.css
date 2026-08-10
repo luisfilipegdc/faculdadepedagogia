@@ -350,6 +350,86 @@ a {
   opacity: 1;
 }
 
+/* ---------- linha do tempo ---------- */
+
+.linha-tempo {
+  list-style: none;
+  margin: 0;
+  padding: 0.2rem 0 0.2rem 0.1rem;
+  display: grid;
+  gap: 0.1rem;
+}
+.lt-marco {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.4rem 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.55rem 0;
+}
+/* trilho: sai do centro do ano e vai até o próximo marco */
+.lt-marco::before {
+  content: "";
+  position: absolute;
+  left: 2.2rem;
+  top: 1.95rem;
+  bottom: -0.4rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--acento) 0%,
+    var(--borda) 100%
+  );
+  opacity: 0.45;
+  transform: translateX(-1px);
+}
+.lt-marco:last-child::before {
+  display: none;
+}
+.lt-ano {
+  position: relative;
+  z-index: 1;
+  justify-self: stretch;
+  text-align: center;
+  padding: 0.2rem 0.35rem;
+  border-radius: 999px;
+  background: var(--acento-suave);
+  color: var(--acento);
+  border: 1px solid color-mix(in srgb, var(--acento) 30%, transparent);
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+.lt-corpo {
+  display: grid;
+  gap: 0.18rem;
+  padding-bottom: 0.35rem;
+}
+.lt-titulo {
+  font-weight: 650;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+.lt-detalhe {
+  color: var(--texto-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 30rem) {
+  .lt-marco {
+    grid-template-columns: 3.6rem 1fr;
+    gap: 0.7rem;
+  }
+  .lt-marco::before {
+    left: 1.8rem;
+  }
+  .lt-ano {
+    font-size: 0.78rem;
+  }
+}
+
 .lista-questoes {
   padding-left: 1.3rem;
   margin: 0;

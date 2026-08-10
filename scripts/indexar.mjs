@@ -86,6 +86,7 @@ for (const caminho of arquivos) {
     flashcards: contarItens(sec, "Flashcards"),
     questoes: contarItens(sec, "Questões"),
     conceitos: contarItens(sec, "Conceitos"),
+    marcos: contarItens(sec, "Linha do tempo"),
     pendencias: contarItens(sec, "Pendências"),
     minutosLeitura: Math.max(1, Math.round(palavras / 200)),
     atualizado: info.mtime.toISOString(),

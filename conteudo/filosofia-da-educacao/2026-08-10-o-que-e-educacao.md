@@ -63,6 +63,19 @@ O fecho é uma crítica ao imediatismo. Educação dá resultado em prazo longo;
     - Manifesto dos Pioneiros (1932)
     - Positivismo e a República brasileira
 
+## Linha do tempo
+
+- 1932 :: **Manifesto dos Pioneiros da Educação Nova** — educadores defendem escola pública, laica, gratuita e obrigatória. É a primeira vez que o país discute um sistema nacional de educação.
+- 1961 :: **Primeira LDB (Lei nº 4.024)** — depois de 13 anos de tramitação, sai a primeira Lei de Diretrizes e Bases; nasce com forte concessão à rede privada.
+- 1971 :: **Lei nº 5.692** — reforma de 1º e 2º graus na ditadura, com profissionalização compulsória no 2º grau. Educação a serviço do projeto econômico do regime.
+- 1988 :: **Constituição Federal — a "Carta Magna"** — o art. 205 fixa a educação como direito de todos e dever do Estado e da família; o art. 206 traz gratuidade, gestão democrática e liberdade de aprender e ensinar.
+- 1990 :: **ECA (Lei nº 8.069)** — criança e adolescente deixam de ser objeto de tutela e passam a sujeitos de direitos. Muda o que a escola pode e não pode fazer.
+- 1996 :: **LDB atual (Lei nº 9.394)** — a lei que ainda organiza a educação brasileira em educação básica e superior. Regulamenta o que a Carta Magna prometeu em 1988.
+- 2009 :: **Emenda Constitucional nº 59** — a obrigatoriedade escolar passa a ir dos 4 aos 17 anos, não mais só o ensino fundamental.
+- 2014 :: **PNE (Lei nº 13.005)** — Plano Nacional de Educação com 20 metas para dez anos. Bom exemplo de política de prazo longo.
+- 2017 :: **BNCC e Novo Ensino Médio (Lei nº 13.415)** — currículo nacional comum homologado e reforma do ensino médio; a BNCC do próprio ensino médio só sai em 2018.
+- 2020 :: **Emenda Constitucional nº 108** — o FUNDEB, que era temporário e renovado de tempos em tempos, vira permanente.
+
 ## Flashcards
 
 - Qual palavra a professora proíbe na definição de educação, e por quê? :: *Transmitir* — supõe depósito de conteúdo de quem sabe em quem não sabe, negando o aluno como sujeito.
@@ -94,7 +107,8 @@ O fecho é uma crítica ao imediatismo. Educação dá resultado em prazo longo;
 
 ## Pendências
 
-- Confirmar o nome oficial da disciplina e o nome da professora.
+- **A linha do tempo precisa ser conferida contra o slide.** Do projetor só ficou registrado que ela partia da Carta Magna e passava pela LDB. Os dez marcos listados aqui são a sequência padrão da legislação educacional brasileira, montada para dar o encadeamento — não é cópia do slide. Confira quais marcos ele usou de fato, o recorte inicial (1932? 1988?) e se havia algum que não está aqui.
+- Confirmar o nome oficial da disciplina e o nome do professor. **Nas anotações a aula está atribuída a uma professora, mas Luis se referiu a "ele" ao descrever a aula do projetor** — resolver isso antes de citar em trabalho. Se for "ele", os flashcards que dizem "a professora" precisam ser corrigidos.
 - Verificar se "produto imediatista: **Pé-de-Meia**" foi crítica da professora ou exemplo neutro. O programa é federal, paga incentivo a estudante de ensino médio da rede pública para reduzir evasão — dá para defender como política de acesso *e* criticar como medida de efeito curto. Vale saber de que lado ela argumentou.
 - "Ser questionante nos espaços que as pessoas estavam" — confirmar se é referência ao método de alfabetização de Freire em círculos de cultura, dentro da comunidade.
 - Confirmar se o positivismo foi apresentado como herança a superar ou apenas como contexto histórico.

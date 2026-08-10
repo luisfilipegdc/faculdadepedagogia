@@ -42,6 +42,10 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
   - Ramo
     - Detalhe
 
+## Linha do tempo
+
+- 1988 :: **Nome do marco** — o que mudou, em uma frase.
+
 ## Flashcards
 
 - Pergunta? :: Resposta curta.
@@ -62,7 +66,8 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 Regras de conteúdo:
 
 - **Blocos curtos.** Luis lê melhor em pedaços pequenos. Nada de parágrafo com 8 linhas.
-- **`::` é o separador** de conceito/definição e de pergunta/resposta. Não use outro.
+- **`::` é o separador** de conceito/definição, pergunta/resposta e ano/marco. Não use outro.
+- **`## Linha do tempo`** é `ano :: **Marco** — detalhe`. O ` — ` (travessão com espaços) separa o título do marco do texto explicativo; sem ele, tudo vira título. Use quando o professor mostrar cronologia — o site desenha o trilho.
 - **Seções são opcionais**, mas a ordem acima é fixa quando existirem.
 - **`confianca`** = `alta` | `media` | `baixa`. Use `baixa` quando a transcrição estava ruim; o site mostra um aviso.
 - **Nunca invente** nome de autor, obra ou conceito que não apareceu no material. Se o áudio embaralhou, escreva o palpite em `## Pendências` com um `?`.

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Caderno de Pedagogia</title>
+    <meta name="description" content="Caderno de estudos do curso de Pedagogia — resumos, mapas conceituais, flashcards e questões." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>"
+    />
+  </head>
+  <body>
+    <a class="pular" href="#principal">Pular para o conteúdo</a>
+
+    <header class="topo">
+      <a class="marca" href="#/" aria-label="Início">
+        <span class="marca-icone" aria-hidden="true">📚</span>
+        <span class="marca-texto">Caderno de <b>Pedagogia</b></span>
+      </a>
+      <div class="topo-acoes">
+        <input
+          id="busca"
+          class="busca"
+          type="search"
+          placeholder="Buscar aula, tema, autor…  ( / )"
+          autocomplete="off"
+          aria-label="Buscar"
+        />
+        <button id="tema" class="btn-icone" title="Alternar tema" aria-label="Alternar tema">◐</button>
+      </div>
+    </header>
+
+    <main id="principal"></main>
+
+    <div id="flashmodo" class="flash-overlay" hidden>
+      <div class="flash-caixa" role="dialog" aria-modal="true" aria-label="Modo flashcard">
+        <div class="flash-topo">
+          <span id="flash-contador" class="flash-contador"></span>
+          <button id="flash-sair" class="btn-icone" aria-label="Sair do modo flashcard">✕</button>
+        </div>
+        <button id="flash-card" class="flash-card">
+          <span class="flash-rotulo">pergunta</span>
+          <span id="flash-texto" class="flash-texto"></span>
+          <span class="flash-dica">clique ou <kbd>espaço</kbd> para virar</span>
+        </button>
+        <div class="flash-navegacao">
+          <button id="flash-errei" class="btn btn-errei">Ainda não sei</button>
+          <button id="flash-acertei" class="btn btn-acertei">Sei essa</button>
+        </div>
+        <div class="flash-barra"><div id="flash-progresso"></div></div>
+      </div>
+    </div>
+
+    <footer class="rodape">
+      <span id="rodape-info"></span>
+      <a href="https://github.com/luisfilipegdc/faculdadepedagogia">repositório</a>
+    </footer>
+
+    <script src="/assets/app.js" type="module"></script>
+  </body>
+</html>

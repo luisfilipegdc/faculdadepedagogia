@@ -1,0 +1,14 @@
+{
+  "name": "faculdadepedagogia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Caderno de estudos do curso de Pedagogia",
+  "type": "module",
+  "scripts": {
+    "indexar": "node scripts/indexar.mjs",
+    "dev": "npm run indexar && node scripts/servidor.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

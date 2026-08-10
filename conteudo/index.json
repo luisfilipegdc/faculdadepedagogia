@@ -1,0 +1,79 @@
+{
+  "gerado": "2026-08-10T23:12:33.354Z",
+  "totalAulas": 3,
+  "totalFlashcards": 31,
+  "disciplinas": [
+    "Filosofia da Educação",
+    "Trabalho Pedagógico em Espaços Não Escolares"
+  ],
+  "aulas": [
+    {
+      "arquivo": "conteudo/filosofia-da-educacao/2026-08-10-o-que-e-educacao.md",
+      "disciplina": "Filosofia da Educação",
+      "professor": "",
+      "data": "2026-08-10",
+      "tema": "O que é educação? Leitura de mundo e educação como ato político",
+      "tags": [
+        "Paulo Freire",
+        "leitura de mundo",
+        "educação emancipadora",
+        "Manifesto dos Pioneiros",
+        "positivismo"
+      ],
+      "fonte": "anotação em aula",
+      "confianca": "media",
+      "flashcards": 10,
+      "questoes": 6,
+      "conceitos": 10,
+      "pendencias": 4,
+      "minutosLeitura": 6,
+      "atualizado": "2026-08-10T23:02:43.799Z"
+    },
+    {
+      "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
+      "disciplina": "Filosofia da Educação",
+      "professor": "",
+      "data": "2026-08-08",
+      "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
+      "tags": [
+        "pós-modernidade",
+        "globalização",
+        "Lyotard",
+        "Bauman",
+        "VUCA",
+        "valores"
+      ],
+      "fonte": "anotação em aula",
+      "confianca": "media",
+      "flashcards": 10,
+      "questoes": 6,
+      "conceitos": 8,
+      "pendencias": 5,
+      "minutosLeitura": 5,
+      "atualizado": "2026-08-10T23:01:59.731Z"
+    },
+    {
+      "arquivo": "conteudo/espacos-nao-escolares/2026-08-05-pedagogia-alem-da-sala-de-aula.md",
+      "disciplina": "Trabalho Pedagógico em Espaços Não Escolares",
+      "professor": "Rosa Maria",
+      "data": "2026-08-05",
+      "tema": "A pedagogia para além da sala de aula",
+      "tags": [
+        "espaços não escolares",
+        "pedagogia hospitalar",
+        "EJA",
+        "educação especial",
+        "estágio",
+        "ética profissional"
+      ],
+      "fonte": "áudio da aula (28 min)",
+      "confianca": "baixa",
+      "flashcards": 11,
+      "questoes": 6,
+      "conceitos": 10,
+      "pendencias": 7,
+      "minutosLeitura": 7,
+      "atualizado": "2026-08-10T23:12:27.983Z"
+    }
+  ]
+}

@@ -1,0 +1,585 @@
+/* Caderno de Pedagogia — folha de estilo única, sem dependências. */
+
+:root {
+  --bg: #fbfaf7;
+  --bg-2: #ffffff;
+  --bg-3: #f2efe9;
+  --texto: #1e1b16;
+  --texto-2: #5f574a;
+  --texto-3: #8b8172;
+  --borda: #e2ddd2;
+  --acento: #a2542a;
+  --acento-suave: #f4e7dd;
+  --ok: #2f6b46;
+  --ok-suave: #e2f0e7;
+  --alerta: #8a5a06;
+  --alerta-suave: #fbeed3;
+  --sombra: 0 1px 2px rgba(30, 27, 22, 0.06), 0 8px 24px rgba(30, 27, 22, 0.06);
+  --raio: 14px;
+  --largura: 46rem;
+}
+
+html[data-tema="escuro"] {
+  --bg: #16150f;
+  --bg-2: #1e1c15;
+  --bg-3: #262319;
+  --texto: #f0ece2;
+  --texto-2: #b9b1a1;
+  --texto-3: #8b8272;
+  --borda: #322e23;
+  --acento: #e39a68;
+  --acento-suave: #33251b;
+  --ok: #7fc79b;
+  --ok-suave: #1c2b21;
+  --alerta: #e0b45e;
+  --alerta-suave: #2e2617;
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pular {
+  position: absolute;
+  left: -9999px;
+}
+.pular:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  background: var(--bg-2);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+}
+
+/* ---------- topo ---------- */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem clamp(1rem, 4vw, 2rem);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.marca b {
+  font-weight: 700;
+}
+.marca-icone {
+  font-size: 1.25rem;
+}
+
+.topo-acoes {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.busca {
+  width: min(24rem, 100%);
+  padding: 0.5rem 0.85rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+}
+.busca:focus {
+  outline: 2px solid var(--acento);
+  outline-offset: 1px;
+}
+
+.btn-icone {
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  color: var(--texto-2);
+  border-radius: 999px;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  flex: none;
+}
+.btn-icone:hover {
+  color: var(--acento);
+  border-color: var(--acento);
+}
+
+/* ---------- layout ---------- */
+
+main {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) 5rem;
+}
+
+.migalha {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  margin-bottom: 0.75rem;
+}
+.migalha a {
+  color: inherit;
+}
+
+h1 {
+  font-size: clamp(1.85rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 3rem 0 1rem;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+h2::before {
+  content: "";
+  width: 1.6rem;
+  height: 2px;
+  background: var(--acento);
+  flex: none;
+}
+
+a {
+  color: var(--acento);
+  text-underline-offset: 3px;
+}
+
+/* ---------- meta / selos ---------- */
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--texto-2);
+  margin-bottom: 1.5rem;
+}
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-3);
+  color: var(--texto-2);
+}
+.selo-acento {
+  background: var(--acento-suave);
+  color: var(--acento);
+}
+.selo-alerta {
+  background: var(--alerta-suave);
+  color: var(--alerta);
+}
+.selo-ok {
+  background: var(--ok-suave);
+  color: var(--ok);
+}
+
+.aviso {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--alerta-suave);
+  color: var(--alerta);
+  border-radius: var(--raio);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* ---------- lista de aulas ---------- */
+
+.disciplina-bloco {
+  margin-bottom: 2.5rem;
+}
+.disciplina-titulo {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--borda);
+  margin-bottom: 0.85rem;
+}
+
+.cartao {
+  display: block;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0.7rem;
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.cartao:hover {
+  transform: translateY(-1px);
+  border-color: var(--acento);
+}
+.cartao-tema {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+.cartao-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: var(--texto-3);
+}
+
+/* ---------- conteúdo da aula ---------- */
+
+.secao p {
+  margin: 0 0 1.1rem;
+  max-width: 38rem;
+}
+
+.lista-conceitos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.lista-conceitos li {
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--acento);
+  border-radius: 0 var(--raio) var(--raio) 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.lista-conceitos b {
+  display: block;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 0.2rem;
+}
+
+.mapa,
+.mapa ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.mapa ul {
+  padding-left: 1.1rem;
+  border-left: 1px dashed var(--borda);
+  margin-left: 0.4rem;
+}
+.mapa li {
+  position: relative;
+  padding: 0.28rem 0 0.28rem 1.1rem;
+  font-size: 1rem;
+}
+.mapa li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 1.05em;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--acento);
+  opacity: 0.55;
+}
+.mapa > li {
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+.mapa > li::before {
+  opacity: 1;
+}
+
+.lista-questoes {
+  padding-left: 1.3rem;
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+.lista-questoes li {
+  padding-left: 0.3rem;
+}
+
+.lista-simples {
+  padding-left: 1.3rem;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* ---------- flashcards na página ---------- */
+
+.flash-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--acento);
+  background: var(--acento);
+  color: #fff;
+  cursor: pointer;
+}
+html[data-tema="escuro"] .btn {
+  color: #16150f;
+}
+.btn-secundario {
+  background: transparent;
+  color: var(--acento);
+}
+.btn-acertei {
+  background: var(--ok);
+  border-color: var(--ok);
+}
+.btn-errei {
+  background: transparent;
+  border-color: var(--borda);
+  color: var(--texto-2);
+}
+
+.cartoes {
+  display: grid;
+  gap: 0.6rem;
+}
+.cartao-flash {
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 0;
+  overflow: hidden;
+}
+.cartao-flash summary {
+  cursor: pointer;
+  padding: 0.9rem 1.15rem;
+  font-weight: 600;
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+.cartao-flash summary::-webkit-details-marker {
+  display: none;
+}
+.cartao-flash summary::before {
+  content: "?";
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--acento);
+  background: var(--acento-suave);
+  border-radius: 50%;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: grid;
+  place-items: center;
+  flex: none;
+  margin-top: 0.15rem;
+}
+.cartao-flash[open] summary::before {
+  content: "✓";
+  color: var(--ok);
+  background: var(--ok-suave);
+}
+.cartao-flash .resposta {
+  padding: 0 1.15rem 1.05rem 3.25rem;
+  color: var(--texto-2);
+  font-size: 0.98rem;
+}
+
+/* ---------- modo flashcard em tela cheia ---------- */
+
+.flash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(6px);
+}
+.flash-overlay[hidden] {
+  display: none;
+}
+.flash-caixa {
+  width: min(36rem, 100%);
+  display: grid;
+  gap: 1rem;
+}
+.flash-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--texto-3);
+}
+.flash-card {
+  min-height: 15rem;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: var(--sombra);
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.flash-rotulo {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+.flash-texto {
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+.flash-dica {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: var(--texto-3);
+}
+kbd {
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  background: var(--bg-3);
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  padding: 0.05rem 0.35rem;
+}
+.flash-navegacao {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.flash-navegacao .btn {
+  flex: 1;
+  max-width: 12rem;
+}
+.flash-barra {
+  height: 4px;
+  background: var(--bg-3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+#flash-progresso {
+  height: 100%;
+  width: 0;
+  background: var(--acento);
+  transition: width 0.2s ease;
+}
+
+/* ---------- rodapé ---------- */
+
+.rodape {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 4vw, 2rem) 3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: var(--texto-3);
+  border-top: 1px solid var(--borda);
+}
+
+.vazio {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--texto-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media print {
+  .topo,
+  .rodape,
+  .flash-overlay,
+  .btn {
+    display: none !important;
+  }
+  .cartao-flash .resposta {
+    display: block !important;
+  }
+}

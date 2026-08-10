@@ -1,6 +1,7 @@
 ---
-disciplina: Filosofia da Educação
-professor:
+disciplina: Fundamentos da Docência
+professor: Cláudio Amorim
+tratamento: Prof.
 data: 2026-08-10
 tema: O que é educação? Leitura de mundo e educação como ato político
 tags: [Paulo Freire, leitura de mundo, educação emancipadora, Manifesto dos Pioneiros, positivismo]
@@ -78,7 +79,7 @@ O fecho é uma crítica ao imediatismo. Educação dá resultado em prazo longo;
 
 ## Flashcards
 
-- Qual palavra a professora proíbe na definição de educação, e por quê? :: *Transmitir* — supõe depósito de conteúdo de quem sabe em quem não sabe, negando o aluno como sujeito.
+- Qual palavra o professor proíbe na definição de educação, e por quê? :: *Transmitir* — supõe depósito de conteúdo de quem sabe em quem não sabe, negando o aluno como sujeito.
 - Qual a definição de educação dada na aula? :: Aquilo que eu absorvo e entrego ao outro — processo de mão dupla que transforma os dois lados.
 - O que significa "a leitura do mundo precede a leitura da palavra"? :: A pessoa já interpreta sua realidade antes de decifrar letras; alfabetizar é partir dessa leitura, não substituí-la.
 - Por que a educação é política em sua essência? :: Porque decidir o que ensinar, para quem e como já é decidir que sociedade se quer — não existe ato pedagógico neutro.
@@ -91,7 +92,7 @@ O fecho é uma crítica ao imediatismo. Educação dá resultado em prazo longo;
 
 ## Questões
 
-1. Reescreva "educação é transmissão de conhecimento" numa definição que a professora aceitaria, e explique o que mudou.
+1. Reescreva "educação é transmissão de conhecimento" numa definição que o professor aceitaria, e explique o que mudou.
 2. A afirmação "a educação é política" é diferente de "o professor deve ser partidário". Sustente essa diferença.
 3. Como a biografia de Paulo Freire funciona como argumento a favor da tese de que educar é um ato político?
 4. Dê um exemplo de política educacional atual que seja "imediatista" e um exemplo que seja de prazo longo. Justifique a classificação.
@@ -108,7 +109,6 @@ O fecho é uma crítica ao imediatismo. Educação dá resultado em prazo longo;
 ## Pendências
 
 - **A linha do tempo precisa ser conferida contra o slide.** Do projetor só ficou registrado que ela partia da Carta Magna e passava pela LDB. Os dez marcos listados aqui são a sequência padrão da legislação educacional brasileira, montada para dar o encadeamento — não é cópia do slide. Confira quais marcos ele usou de fato, o recorte inicial (1932? 1988?) e se havia algum que não está aqui.
-- Confirmar o nome oficial da disciplina e o nome do professor. **Nas anotações a aula está atribuída a uma professora, mas Luis se referiu a "ele" ao descrever a aula do projetor** — resolver isso antes de citar em trabalho. Se for "ele", os flashcards que dizem "a professora" precisam ser corrigidos.
-- Verificar se "produto imediatista: **Pé-de-Meia**" foi crítica da professora ou exemplo neutro. O programa é federal, paga incentivo a estudante de ensino médio da rede pública para reduzir evasão — dá para defender como política de acesso *e* criticar como medida de efeito curto. Vale saber de que lado ela argumentou.
+- Verificar se "produto imediatista: **Pé-de-Meia**" foi crítica do professor ou exemplo neutro. O programa é federal, paga incentivo a estudante de ensino médio da rede pública para reduzir evasão — dá para defender como política de acesso *e* criticar como medida de efeito curto. Vale saber de que lado ele argumentou.
 - "Ser questionante nos espaços que as pessoas estavam" — confirmar se é referência ao método de alfabetização de Freire em círculos de cultura, dentro da comunidade.
 - Confirmar se o positivismo foi apresentado como herança a superar ou apenas como contexto histórico.

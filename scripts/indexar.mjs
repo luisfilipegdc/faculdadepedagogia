@@ -98,6 +98,7 @@ for (const caminho of arquivos) {
     arquivo: rel,
     disciplina: meta.disciplina || "Sem disciplina",
     professor: meta.professor || "",
+    tratamento: meta.tratamento || "",
     data: meta.data || "",
     tema: meta.tema || rel.split("/").pop().replace(/\.md$/, ""),
     tags: Array.isArray(meta.tags) ? meta.tags : meta.tags ? [meta.tags] : [],

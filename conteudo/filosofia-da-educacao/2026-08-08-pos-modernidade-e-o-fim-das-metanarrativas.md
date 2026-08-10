@@ -90,7 +90,7 @@ Para o pedagogo isso não é filosofia solta: é a descrição do aluno que vai 
 
 ## Pendências
 
-- Confirmar o nome oficial da disciplina e da professora — entrei com "Filosofia da Educação" como palpite.
+- **Disciplina ainda por confirmar** — "Filosofia da Educação" continua sendo palpite meu. A aula de 10/08, que eu tinha chutado como a mesma disciplina, na verdade é **Fundamentos da Docência, com o Prof. Cláudio Amorim**. Esta aqui é a mesma matéria e o mesmo professor, ou é outra? Enquanto não confirmar, ela aparece separada no caderno.
 - **Leonardo Boff** apareceu com "??" na anotação. Confirmar em que ponto ele entrou: teologia da libertação, ética do cuidado ou crítica à globalização? São três encaixes diferentes na aula.
 - A frase de Toffler sobre "aprender, desaprender e reaprender" é atribuída a ele em *O Choque do Futuro*, mas no livro Toffler está citando o psicólogo **Herbert Gerjuoy**. Se for usar em trabalho escrito, cite assim — é o tipo de detalhe que banca cobra.
 - Confirmar se a professora usou VUCA e BANI como sinônimos ou como etapas (VUCA → BANI). Muda a leitura.

@@ -21,6 +21,7 @@ Frontmatter YAML simples (chave: valor, uma por linha; listas em `[a, b]`):
 ---
 disciplina: Pedagogia em Espaços Não Escolares
 professor: Rosa Maria
+tratamento: Prof.ª
 data: 2026-08-05
 tema: Pedagogia para além da sala de aula
 tags: [espaços não escolares, EJA, educação especial]
@@ -70,6 +71,7 @@ Regras de conteúdo:
 - **`## Linha do tempo`** é `ano :: **Marco** — detalhe`. O ` — ` (travessão com espaços) separa o título do marco do texto explicativo; sem ele, tudo vira título. Use quando o professor mostrar cronologia — o site desenha o trilho.
 - **Seções são opcionais**, mas a ordem acima é fixa quando existirem.
 - **`confianca`** = `alta` | `media` | `baixa`. Use `baixa` quando a transcrição estava ruim; o site mostra um aviso.
+- **`tratamento`** é o `Prof.` / `Prof.ª` que aparece antes do nome. O site não deduz — sem esse campo, mostra só o nome. Nunca infira a partir do nome; se não souber, deixe vazio e pergunte.
 - **Nunca invente** nome de autor, obra ou conceito que não apareceu no material. Se o áudio embaralhou, escreva o palpite em `## Pendências` com um `?`.
 
 ## Lembretes

@@ -1,6 +1,7 @@
 ---
 disciplina: Trabalho Pedagógico em Espaços Não Escolares
 professor: Rosa Maria
+tratamento: Prof.ª
 data: 2026-08-05
 tema: A pedagogia para além da sala de aula
 tags: [espaços não escolares, pedagogia hospitalar, EJA, educação especial, estágio, ética profissional]

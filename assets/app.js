@@ -222,7 +222,7 @@ function renderAula(aula, texto) {
     <p class="migalha"><a href="#/">Caderno</a> › ${escapar(aula.disciplina)}</p>
     <h1>${escapar(meta.tema || aula.tema)}</h1>
     <div class="meta">
-      ${meta.professor ? `<span>Prof.ª ${escapar(meta.professor)}</span>` : ""}
+      ${meta.professor ? `<span>${escapar([meta.tratamento, meta.professor].filter(Boolean).join(" "))}</span>` : ""}
       ${meta.data ? `<span>${dataBonita(meta.data)}</span>` : ""}
       <span>${aula.minutosLeitura} min de leitura</span>
       ${meta.fonte ? `<span class="selo">${escapar(meta.fonte)}</span>` : ""}
@@ -406,7 +406,7 @@ function renderInicio(filtro = "") {
         <div class="cartao-tema">${est.estudada ? `<span class="tique" aria-label="estudada">✓</span>` : ""}${escapar(a.tema)}</div>
         <div class="cartao-meta">
           ${a.data ? `<span>${dataBonita(a.data)}</span>` : ""}
-          ${a.professor ? `<span>Prof.ª ${escapar(a.professor)}</span>` : ""}
+          ${a.professor ? `<span>${escapar([a.tratamento, a.professor].filter(Boolean).join(" "))}</span>` : ""}
           ${a.marcos ? `<span>${a.marcos} marcos</span>` : ""}
           ${a.flashcards ? `<span>${a.flashcards} flashcards</span>` : ""}
           ${a.questoes ? `<span>${a.questoes} questões</span>` : ""}

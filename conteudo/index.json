@@ -1,9 +1,10 @@
 {
-  "gerado": "2026-08-10T23:39:08.906Z",
+  "gerado": "2026-08-10T23:44:28.221Z",
   "totalAulas": 3,
   "totalFlashcards": 31,
   "disciplinas": [
     "Filosofia da Educação",
+    "Fundamentos da Docência",
     "Trabalho Pedagógico em Espaços Não Escolares"
   ],
   "lembretes": [
@@ -14,9 +15,10 @@
   ],
   "aulas": [
     {
-      "arquivo": "conteudo/filosofia-da-educacao/2026-08-10-o-que-e-educacao.md",
-      "disciplina": "Filosofia da Educação",
-      "professor": "",
+      "arquivo": "conteudo/fundamentos-da-docencia/2026-08-10-o-que-e-educacao.md",
+      "disciplina": "Fundamentos da Docência",
+      "professor": "Cláudio Amorim",
+      "tratamento": "Prof.",
       "data": "2026-08-10",
       "tema": "O que é educação? Leitura de mundo e educação como ato político",
       "tags": [
@@ -32,14 +34,15 @@
       "questoes": 6,
       "conceitos": 10,
       "marcos": 10,
-      "pendencias": 5,
+      "pendencias": 4,
       "minutosLeitura": 8,
-      "atualizado": "2026-08-10T23:24:52.986Z"
+      "atualizado": "2026-08-10T23:43:45.138Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
       "disciplina": "Filosofia da Educação",
       "professor": "",
+      "tratamento": "",
       "data": "2026-08-08",
       "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
       "tags": [
@@ -57,13 +60,14 @@
       "conceitos": 8,
       "marcos": 0,
       "pendencias": 5,
-      "minutosLeitura": 5,
-      "atualizado": "2026-08-10T23:18:43.222Z"
+      "minutosLeitura": 6,
+      "atualizado": "2026-08-10T23:43:53.866Z"
     },
     {
       "arquivo": "conteudo/espacos-nao-escolares/2026-08-05-pedagogia-alem-da-sala-de-aula.md",
       "disciplina": "Trabalho Pedagógico em Espaços Não Escolares",
       "professor": "Rosa Maria",
+      "tratamento": "Prof.ª",
       "data": "2026-08-05",
       "tema": "A pedagogia para além da sala de aula",
       "tags": [
@@ -82,7 +86,7 @@
       "marcos": 0,
       "pendencias": 7,
       "minutosLeitura": 7,
-      "atualizado": "2026-08-10T23:18:43.222Z"
+      "atualizado": "2026-08-10T23:43:58.678Z"
     }
   ]
 }

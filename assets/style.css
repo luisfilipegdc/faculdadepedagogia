@@ -648,12 +648,14 @@ kbd {
 
 /* ---------- cor por disciplina ---------- */
 
+/* L=30% e suave a 95% mantêm as 6 matizes acima de 5.5:1 sobre o próprio
+   fundo tingido — a 34% a verde caía para 4.49 e reprovava em AA. */
 .disciplina-bloco,
 .cartao,
 .retomar,
 main#principal {
-  --disc: hsl(var(--disc-h, 25) 46% 34%);
-  --disc-suave: hsl(var(--disc-h, 25) 62% 94%);
+  --disc: hsl(var(--disc-h, 25) 46% 30%);
+  --disc-suave: hsl(var(--disc-h, 25) 62% 95%);
 }
 html[data-tema="escuro"] :is(.disciplina-bloco, .cartao, .retomar, main#principal) {
   --disc: hsl(var(--disc-h, 25) 55% 74%);

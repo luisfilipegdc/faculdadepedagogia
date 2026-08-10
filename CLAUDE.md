@@ -72,6 +72,22 @@ Regras de conteúdo:
 - **`confianca`** = `alta` | `media` | `baixa`. Use `baixa` quando a transcrição estava ruim; o site mostra um aviso.
 - **Nunca invente** nome de autor, obra ou conceito que não apareceu no material. Se o áudio embaralhou, escreva o palpite em `## Pendências` com um `?`.
 
+## Lembretes
+
+`conteudo/lembretes.md` — uma linha por lembrete, `AAAA-MM-DD :: texto`. Não é aula: o indexador ignora esse arquivo na contagem e joga a lista em `index.json`.
+
+O site mostra só os que ainda não passaram, com "hoje" / "amanhã" / "em N dias" no lugar da data seca, e destaca em laranja quando é hoje ou amanhã. Lembrete vencido some sozinho — não precisa apagar à mão.
+
+Quando o Luis disser "me lembra de X", acrescente a linha aqui **e** ofereça agendar o aviso de verdade; o arquivo sozinho só avisa quem abre o site.
+
+## Estudo (estado no navegador)
+
+Fica em `localStorage`, chave `estudo`: `{ "<arquivo>": { visto, estudada } }`. Nada disso vai para o repositório — é por dispositivo.
+
+- **Continuar de onde parou** na home: a aula vista mais recentemente que ainda não foi marcada como estudada.
+- **Cor por disciplina**: matiz fixa por posição em `disciplinas` no `index.json`. Disciplina nova entra com cor nova sozinha.
+- **Flashcards em blocos de 8.** Errou, a carta volta num bloco adiante — não no atual. O fim de bloco é uma parada legítima, com "Mais 8" e "Parar por hoje" lado a lado.
+
 ## Comandos
 
 ```bash

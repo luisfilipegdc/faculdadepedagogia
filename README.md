@@ -8,10 +8,18 @@ Caderno de estudos do curso de Pedagogia — transcrições de aula viram resumo
 
 ```
 conteudo/<disciplina>/<aula>.md   ← o conteúdo mora aqui
+conteudo/lembretes.md             ← "AAAA-MM-DD :: texto", aparece na home
 conteudo/index.json               ← gerado por `npm run indexar`
 transcricoes/                     ← texto cru dos áudios, nunca publicado como aula
 index.html + assets/              ← o leitor (site estático, zero dependência)
 ```
+
+## Para estudar
+
+- A home abre com os lembretes que ainda não passaram e com **continuar de onde parou**.
+- Cada disciplina tem a sua cor, na borda do cartão e no traço dos títulos.
+- Aula lida ganha ✓ no botão **marcar como estudada** — o estado fica no navegador, por dispositivo.
+- Flashcards vêm em **blocos de 8**. Carta errada volta num bloco adiante, e no fim de cada bloco dá para parar sem perder o lugar.
 
 ## Rodar local
 

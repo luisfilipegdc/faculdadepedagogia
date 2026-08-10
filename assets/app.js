@@ -52,6 +52,41 @@ function dataBonita(iso) {
   return `${d}/${m}/${a}`;
 }
 
+const hojeISO = () => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+};
+
+// "hoje" / "amanhã" / "em 3 dias" — data seca não diz nada a quem está com pressa
+function quandoRelativo(iso) {
+  const dias = Math.round(
+    (Date.parse(iso + "T00:00:00") - Date.parse(hojeISO() + "T00:00:00")) / 86400000,
+  );
+  if (dias === 0) return "hoje";
+  if (dias === 1) return "amanhã";
+  if (dias < 0) return dataBonita(iso);
+  if (dias < 7) return `em ${dias} dias`;
+  return dataBonita(iso);
+}
+
+/* ---------------- estado de estudo (fica no navegador) ---------------- */
+
+let ESTUDO = ler("estudo", {});
+
+const doArquivo = (arquivo) => ESTUDO[arquivo] || {};
+
+function salvarEstudo(arquivo, dados) {
+  ESTUDO[arquivo] = { ...doArquivo(arquivo), ...dados };
+  guardar("estudo", ESTUDO);
+}
+
+// cor própria por disciplina: triagem no olho, não na leitura
+const MATIZES = [25, 152, 212, 282, 48, 334];
+const matizDisciplina = (nome) => {
+  const i = INDICE ? INDICE.disciplinas.indexOf(nome) : -1;
+  return MATIZES[(i < 0 ? 0 : i) % MATIZES.length];
+};
+
 /* ---------------- parsing do markdown de aula ---------------- */
 
 function parseFrontmatter(texto) {
@@ -285,17 +320,64 @@ function renderAula(aula, texto) {
     </section>`);
   }
 
+  const est = doArquivo(aula.arquivo);
+  partes.push(`<div class="fim-aula">
+    <button id="marcar" class="btn btn-marcar" aria-pressed="${est.estudada ? "true" : "false"}">
+      ${est.estudada ? "✓ Estudada" : "Marcar como estudada"}
+    </button>
+    <a class="btn-voltar" href="#/">Voltar ao caderno</a>
+  </div>`);
+
   principal.innerHTML = partes.join("");
   document.title = `${meta.tema || aula.tema} — Caderno de Pedagogia`;
+  principal.style.setProperty("--disc-h", matizDisciplina(aula.disciplina));
+
+  // sumário: saber quantas seções faltam evita a sensação de página sem fim
+  const titulos = [...principal.querySelectorAll(".secao h2")];
+  if (titulos.length > 2) {
+    const chips = titulos.map((h, i) => {
+      const id = `sec-${i}`;
+      h.closest(".secao").id = id;
+      // o selo ("11", "conferir") conta para a seção, não para o rótulo do chip
+      const rotulo = h.cloneNode(true);
+      rotulo.querySelectorAll(".selo").forEach((s) => s.remove());
+      return `<a class="chip" href="#${id}">${escapar(rotulo.textContent.trim().replace(/\s+/g, " "))}</a>`;
+    });
+    const nav = document.createElement("nav");
+    nav.className = "sumario";
+    nav.setAttribute("aria-label", "Seções da aula");
+    nav.innerHTML = chips.join("");
+    principal.querySelector(".meta").after(nav);
+    // âncora de seção não deve trocar a rota da aula
+    nav.addEventListener("click", (e) => {
+      const a = e.target.closest("a");
+      if (!a) return;
+      e.preventDefault();
+      document
+        .getElementById(a.getAttribute("href").slice(1))
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   const botao = document.getElementById("abrir-flash");
   if (botao) botao.addEventListener("click", () => abrirFlash(cards));
+
+  const marcar = document.getElementById("marcar");
+  marcar.addEventListener("click", () => {
+    const agora = !doArquivo(aula.arquivo).estudada;
+    salvarEstudo(aula.arquivo, { estudada: agora });
+    marcar.textContent = agora ? "✓ Estudada" : "Marcar como estudada";
+    marcar.setAttribute("aria-pressed", agora ? "true" : "false");
+  });
+
+  salvarEstudo(aula.arquivo, { visto: new Date().toISOString() });
   window.__cards = cards;
 }
 
 function renderInicio(filtro = "") {
   window.__cards = null;
   document.title = "Caderno de Pedagogia";
+  principal.style.removeProperty("--disc-h");
   const termo = semAcento(filtro.trim());
   const aulas = INDICE.aulas.filter((a) => {
     if (!termo) return true;
@@ -316,32 +398,36 @@ function renderInicio(filtro = "") {
     porDisciplina.get(a.disciplina).push(a);
   }
 
+  const cartao = (a) => {
+    const est = doArquivo(a.arquivo);
+    return `
+      <a class="cartao${est.estudada ? " cartao-feito" : ""}" href="#/aula/${encodeURIComponent(a.arquivo)}"
+         style="--disc-h:${matizDisciplina(a.disciplina)}">
+        <div class="cartao-tema">${est.estudada ? `<span class="tique" aria-label="estudada">✓</span>` : ""}${escapar(a.tema)}</div>
+        <div class="cartao-meta">
+          ${a.data ? `<span>${dataBonita(a.data)}</span>` : ""}
+          ${a.professor ? `<span>Prof.ª ${escapar(a.professor)}</span>` : ""}
+          ${a.marcos ? `<span>${a.marcos} marcos</span>` : ""}
+          ${a.flashcards ? `<span>${a.flashcards} flashcards</span>` : ""}
+          ${a.questoes ? `<span>${a.questoes} questões</span>` : ""}
+          ${a.confianca !== "alta" ? `<span class="selo selo-alerta">revisar</span>` : ""}
+          ${a.pendencias ? `<span class="selo selo-alerta">${a.pendencias} pendência${a.pendencias > 1 ? "s" : ""}</span>` : ""}
+        </div>
+      </a>`;
+  };
+
   const blocos = [...porDisciplina.entries()]
     .sort((x, y) => x[0].localeCompare(y[0], "pt-BR"))
     .map(
       ([disc, lista]) => `
-      <section class="disciplina-bloco">
+      <section class="disciplina-bloco" style="--disc-h:${matizDisciplina(disc)}">
         <h2 class="disciplina-titulo" style="margin-top:0">${escapar(disc)} · ${lista.length} aula${lista.length > 1 ? "s" : ""}</h2>
-        ${lista
-          .map(
-            (a) => `
-          <a class="cartao" href="#/aula/${encodeURIComponent(a.arquivo)}">
-            <div class="cartao-tema">${escapar(a.tema)}</div>
-            <div class="cartao-meta">
-              ${a.data ? `<span>${dataBonita(a.data)}</span>` : ""}
-              ${a.professor ? `<span>Prof.ª ${escapar(a.professor)}</span>` : ""}
-              ${a.marcos ? `<span>${a.marcos} marcos</span>` : ""}
-              ${a.flashcards ? `<span>${a.flashcards} flashcards</span>` : ""}
-              ${a.questoes ? `<span>${a.questoes} questões</span>` : ""}
-              ${a.confianca !== "alta" ? `<span class="selo selo-alerta">revisar</span>` : ""}
-              ${a.pendencias ? `<span class="selo selo-alerta">${a.pendencias} pendência${a.pendencias > 1 ? "s" : ""}</span>` : ""}
-            </div>
-          </a>`,
-          )
-          .join("")}
+        ${lista.map(cartao).join("")}
       </section>`,
     )
     .join("");
+
+  const feitas = INDICE.aulas.filter((a) => doArquivo(a.arquivo).estudada).length;
 
   principal.innerHTML = `
     <p class="migalha">Curso de Pedagogia</p>
@@ -350,8 +436,44 @@ function renderInicio(filtro = "") {
       <span>${INDICE.totalAulas} aula${INDICE.totalAulas > 1 ? "s" : ""}</span>
       <span>${INDICE.disciplinas.length} disciplina${INDICE.disciplinas.length > 1 ? "s" : ""}</span>
       <span>${INDICE.totalFlashcards} flashcards</span>
+      ${feitas ? `<span class="selo selo-ok">${feitas} estudada${feitas > 1 ? "s" : ""}</span>` : ""}
     </div>
+    ${termo ? "" : renderLembretes() + renderRetomar()}
     ${blocos}`;
+}
+
+function renderLembretes() {
+  const hoje = hojeISO();
+  const proximos = (INDICE.lembretes || []).filter((l) => l.data >= hoje);
+  if (!proximos.length) return "";
+  return `<section class="lembretes" aria-label="Lembretes">
+    ${proximos
+      .slice(0, 3)
+      .map((l) => {
+        const quando = quandoRelativo(l.data);
+        const urgente = quando === "hoje" || quando === "amanhã";
+        return `<div class="lembrete${urgente ? " lembrete-urgente" : ""}">
+          <span class="lembrete-quando">${quando}</span>
+          <span class="lembrete-texto">${inline(l.texto)}</span>
+        </div>`;
+      })
+      .join("")}
+  </section>`;
+}
+
+// retomar custa menos que reescolher: uma sessão nova não deveria começar pela lista inteira
+function renderRetomar() {
+  const candidatas = INDICE.aulas
+    .map((a) => ({ a, est: doArquivo(a.arquivo) }))
+    .filter((x) => x.est.visto && !x.est.estudada)
+    .sort((x, y) => y.est.visto.localeCompare(x.est.visto));
+  if (!candidatas.length) return "";
+  const { a } = candidatas[0];
+  return `<a class="retomar" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
+    <span class="retomar-rotulo">Continuar de onde parou</span>
+    <span class="retomar-tema">${escapar(a.tema)}</span>
+    <span class="retomar-disc">${escapar(a.disciplina)}</span>
+  </a>`;
 }
 
 /* ---------------- modo flashcard ---------------- */
@@ -363,16 +485,36 @@ const elRotulo = elCard.querySelector(".flash-rotulo");
 const elContador = document.getElementById("flash-contador");
 const elProgresso = document.getElementById("flash-progresso");
 
-let baralho = [];
+// blocos curtos: o baralho inteiro de uma vez é grande demais para começar
+const BLOCO = 8;
+
+const btnAcertei = document.getElementById("flash-acertei");
+const btnErrei = document.getElementById("flash-errei");
+
+let fila = []; // o que ainda não foi dominado
+let baralho = []; // o bloco em curso
 let posicao = 0;
 let virado = false;
+let emPausa = false;
+let blocoNum = 0;
 
 function abrirFlash(cards) {
   if (!cards || !cards.length) return;
-  baralho = cards.slice();
+  fila = cards.slice();
+  blocoNum = 0;
+  overlay.hidden = false;
+  proximoBloco();
+}
+
+function proximoBloco() {
+  baralho = fila.splice(0, BLOCO);
   posicao = 0;
   virado = false;
-  overlay.hidden = false;
+  emPausa = false;
+  blocoNum++;
+  elCard.disabled = false;
+  btnAcertei.textContent = "Sei essa";
+  btnErrei.textContent = "Ainda não sei";
   mostrarCard();
 }
 
@@ -381,28 +523,46 @@ function fecharFlash() {
 }
 
 function mostrarCard() {
-  if (posicao >= baralho.length) {
-    elRotulo.textContent = "fim";
-    elTexto.textContent = "Baralho concluído. Boa!";
-    elContador.textContent = `${baralho.length}/${baralho.length}`;
-    elProgresso.style.width = "100%";
-    return;
-  }
+  if (posicao >= baralho.length) return pausar();
   const c = baralho[posicao];
   elRotulo.textContent = virado ? "resposta" : "pergunta";
   elTexto.innerHTML = inline(virado ? c.verso || "—" : c.frente);
-  elContador.textContent = `${posicao + 1}/${baralho.length}`;
+  elContador.textContent = `bloco ${blocoNum} · ${posicao + 1}/${baralho.length}`;
   elProgresso.style.width = `${(posicao / baralho.length) * 100}%`;
 }
 
+// fim de bloco é o momento de parar sem culpa — e o único convite a continuar
+function pausar() {
+  emPausa = true;
+  virado = false;
+  elCard.disabled = true;
+  elProgresso.style.width = "100%";
+  elRotulo.textContent = fila.length ? "pausa" : "fim";
+  elContador.textContent = `bloco ${blocoNum} concluído`;
+  if (fila.length) {
+    elTexto.textContent = `Bloco ${blocoNum} fechado. Faltam ${fila.length} carta${fila.length > 1 ? "s" : ""}.`;
+    btnAcertei.textContent = `Mais ${Math.min(BLOCO, fila.length)}`;
+    btnErrei.textContent = "Parar por hoje";
+  } else {
+    elTexto.textContent = "Baralho concluído. Boa!";
+    btnAcertei.textContent = "Fechar";
+    btnErrei.textContent = "Fechar";
+  }
+}
+
 function virar() {
+  if (emPausa) return;
   virado = !virado;
   mostrarCard();
 }
 
 function avancar(acertou) {
+  if (emPausa) {
+    if (acertou && fila.length) return proximoBloco();
+    return fecharFlash();
+  }
   const c = baralho[posicao];
-  if (!acertou && c) baralho.push(c);
+  if (!acertou && c) fila.push(c); // erra agora, volta num bloco adiante
   posicao++;
   virado = false;
   mostrarCard();
@@ -410,8 +570,8 @@ function avancar(acertou) {
 
 elCard.addEventListener("click", virar);
 document.getElementById("flash-sair").addEventListener("click", fecharFlash);
-document.getElementById("flash-acertei").addEventListener("click", () => avancar(true));
-document.getElementById("flash-errei").addEventListener("click", () => avancar(false));
+btnAcertei.addEventListener("click", () => avancar(true));
+btnErrei.addEventListener("click", () => avancar(false));
 
 /* ---------------- teclado ---------------- */
 

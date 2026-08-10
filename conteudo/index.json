@@ -1,10 +1,16 @@
 {
-  "gerado": "2026-08-10T23:27:46.206Z",
+  "gerado": "2026-08-10T23:39:08.906Z",
   "totalAulas": 3,
   "totalFlashcards": 31,
   "disciplinas": [
     "Filosofia da Educação",
     "Trabalho Pedagógico em Espaços Não Escolares"
+  ],
+  "lembretes": [
+    {
+      "data": "2026-08-13",
+      "texto": "Levar **pincel** para a aula prática da Prof.ª Rosa Maria. A tinta ela leva; o avental é opcional."
+    }
   ],
   "aulas": [
     {

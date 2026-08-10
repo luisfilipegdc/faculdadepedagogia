@@ -646,6 +646,155 @@ kbd {
   color: var(--texto-3);
 }
 
+/* ---------- cor por disciplina ---------- */
+
+.disciplina-bloco,
+.cartao,
+.retomar,
+main#principal {
+  --disc: hsl(var(--disc-h, 25) 46% 34%);
+  --disc-suave: hsl(var(--disc-h, 25) 62% 94%);
+}
+html[data-tema="escuro"] :is(.disciplina-bloco, .cartao, .retomar, main#principal) {
+  --disc: hsl(var(--disc-h, 25) 55% 74%);
+  --disc-suave: hsl(var(--disc-h, 25) 30% 16%);
+}
+
+h2::before {
+  background: var(--disc, var(--acento));
+}
+.disciplina-titulo {
+  color: var(--disc);
+}
+.cartao {
+  border-left: 3px solid var(--disc);
+}
+.cartao-feito {
+  background: linear-gradient(to right, var(--disc-suave), var(--bg-2) 55%);
+}
+.tique {
+  color: var(--ok);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+/* ---------- lembretes ---------- */
+
+.lembretes {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 0 1.4rem;
+}
+.lembrete {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--bg-3);
+  font-size: 0.96rem;
+}
+.lembrete-urgente {
+  border-color: color-mix(in srgb, var(--alerta) 45%, transparent);
+  background: var(--alerta-suave);
+}
+.lembrete-quando {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  flex: none;
+}
+.lembrete-urgente .lembrete-quando {
+  color: var(--alerta);
+}
+
+/* ---------- retomar ---------- */
+
+.retomar {
+  display: grid;
+  gap: 0.15rem;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.8rem;
+  border: 1px solid var(--disc);
+  border-left: 3px solid var(--disc);
+  border-radius: var(--raio);
+  background: var(--disc-suave);
+  text-decoration: none;
+  color: inherit;
+}
+.retomar:hover {
+  border-color: var(--disc);
+  filter: brightness(0.98);
+}
+.retomar-rotulo {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--disc);
+}
+.retomar-tema {
+  font-weight: 650;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.retomar-disc {
+  font-size: 0.88rem;
+  color: var(--texto-2);
+}
+
+/* ---------- sumário da aula ---------- */
+
+.sumario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.5rem;
+}
+.chip {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--borda);
+  background: var(--bg-2);
+  color: var(--texto-2);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.chip:hover {
+  border-color: var(--disc);
+  color: var(--disc);
+}
+
+/* ---------- fim da aula ---------- */
+
+.fim-aula {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 3rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borda);
+}
+.btn-marcar[aria-pressed="true"] {
+  background: var(--ok-suave);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+.btn-voltar {
+  font-size: 0.92rem;
+  color: var(--texto-2);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;

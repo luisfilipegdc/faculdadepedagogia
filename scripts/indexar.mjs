@@ -47,7 +47,10 @@ function contarItens(mapa, titulo) {
   return bloco.split(/\r?\n/).filter((l) => /^\s*(-|\d+\.)\s+\S/.test(l)).length;
 }
 
-async function listarMd(dir) {
+// lembretes.md fica na raiz de conteudo/ e não é aula
+const NAO_E_AULA = new Set(["lembretes.md"]);
+
+async function listarMd(dir, raiz = true) {
   const saida = [];
   let entradas;
   try {
@@ -57,10 +60,27 @@ async function listarMd(dir) {
   }
   for (const e of entradas) {
     const caminho = join(dir, e.name);
-    if (e.isDirectory()) saida.push(...(await listarMd(caminho)));
-    else if (e.name.endsWith(".md")) saida.push(caminho);
+    if (e.isDirectory()) saida.push(...(await listarMd(caminho, false)));
+    else if (e.name.endsWith(".md") && !(raiz && NAO_E_AULA.has(e.name)))
+      saida.push(caminho);
   }
   return saida;
+}
+
+// "- 2026-08-13 :: texto" -> { data, texto }
+async function lerLembretes() {
+  let texto;
+  try {
+    texto = await readFile(join(CONTEUDO, "lembretes.md"), "utf8");
+  } catch {
+    return [];
+  }
+  return texto
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*-\s+(\d{4}-\d{2}-\d{2})\s*::\s*(.+)$/))
+    .filter(Boolean)
+    .map((m) => ({ data: m[1], texto: m[2].trim() }))
+    .sort((a, b) => a.data.localeCompare(b.data));
 }
 
 const arquivos = await listarMd(CONTEUDO);
@@ -99,11 +119,14 @@ const disciplinas = [...new Set(aulas.map((a) => a.disciplina))].sort((a, b) =>
   a.localeCompare(b, "pt-BR"),
 );
 
+const lembretes = await lerLembretes();
+
 const indice = {
   gerado: new Date().toISOString(),
   totalAulas: aulas.length,
   totalFlashcards: aulas.reduce((s, a) => s + a.flashcards, 0),
   disciplinas,
+  lembretes,
   aulas,
 };
 
@@ -114,5 +137,5 @@ await writeFile(
 );
 
 console.log(
-  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s)`,
+  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s), ${lembretes.length} lembrete(s)`,
 );

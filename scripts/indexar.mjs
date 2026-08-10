@@ -50,6 +50,58 @@ function contarItens(mapa, titulo) {
 // lembretes.md fica na raiz de conteudo/ e não é aula
 const NAO_E_AULA = new Set(["lembretes.md"]);
 
+function itensDe(mapa, titulo) {
+  const bloco = mapa[titulo.toLowerCase()];
+  if (!bloco) return [];
+  return bloco
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*(?:-|\d+\.)\s+(.*)$/))
+    .filter(Boolean)
+    .map((m) => m[1].trim())
+    .filter(Boolean);
+}
+
+// "Autor, *Obra* (1979) — nota" e as três variações que aparecem de fato:
+// sem autor, sem obra, e a tarefa de leitura que não é obra nenhuma.
+function parseLeitura(linha) {
+  // link legítimo no fim da linha: [rótulo](url) — sai da nota e vira botão
+  let resto = linha;
+  let link = null;
+  const mLink = resto.match(/\s*\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)\s*$/);
+  if (mLink) {
+    link = { rotulo: mLink[1].trim(), url: mLink[2] };
+    resto = resto.slice(0, mLink.index);
+  }
+
+  const corte = resto.indexOf(" — ");
+  const texto = (corte === -1 ? resto : resto.slice(0, corte)).trim();
+  const nota = corte === -1 ? "" : resto.slice(corte + 3).trim();
+
+  const mObra = texto.match(/\*([^*]+)\*/);
+  const mAno = texto.match(/\((\d{4})\)/);
+  let autor = texto;
+  if (mObra) autor = autor.replace(mObra[0], "");
+  if (mAno) autor = autor.replace(mAno[0], "");
+  autor = autor.replace(/^[\s,;]+|[\s,;]+$/g, "");
+
+  return {
+    texto,
+    nota,
+    link,
+    obra: mObra ? mObra[1].trim() : "",
+    autor: mObra ? autor : "",
+    ano: mAno ? mAno[1] : "",
+  };
+}
+
+const chaveObra = (s) =>
+  s
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
 async function listarMd(dir, raiz = true) {
   const saida = [];
   let entradas;
@@ -85,6 +137,7 @@ async function lerLembretes() {
 
 const arquivos = await listarMd(CONTEUDO);
 const aulas = [];
+const todasLeituras = [];
 
 for (const caminho of arquivos) {
   const texto = await readFile(caminho, "utf8");
@@ -93,6 +146,16 @@ for (const caminho of arquivos) {
   const rel = relative(RAIZ, caminho).split("\\").join("/");
   const palavras = corpo.split(/\s+/).filter(Boolean).length;
   const sec = secoes(corpo);
+
+  const daAula = {
+    arquivo: rel,
+    tema: meta.tema || rel.split("/").pop().replace(/\.md$/, ""),
+    disciplina: meta.disciplina || "Sem disciplina",
+    data: meta.data || "",
+  };
+  for (const linha of itensDe(sec, "Para ler")) {
+    todasLeituras.push({ ...parseLeitura(linha), aula: daAula });
+  }
 
   aulas.push({
     arquivo: rel,
@@ -122,12 +185,67 @@ const disciplinas = [...new Set(aulas.map((a) => a.disciplina))].sort((a, b) =>
 
 const lembretes = await lerLembretes();
 
+// mesma obra citada em duas aulas vira uma entrada com as duas citações
+const porObra = new Map();
+const outras = [];
+for (const l of todasLeituras) {
+  if (!l.obra) {
+    outras.push({ texto: l.texto, nota: l.nota, link: l.link, aula: l.aula });
+    continue;
+  }
+  const chave = chaveObra(`${l.autor} ${l.obra}`);
+  if (!porObra.has(chave)) {
+    porObra.set(chave, {
+      obra: l.obra,
+      autor: l.autor,
+      ano: l.ano,
+      link: l.link,
+      citacoes: [],
+    });
+  }
+  const alvo = porObra.get(chave);
+  if (!alvo.ano && l.ano) alvo.ano = l.ano;
+  if (!alvo.link && l.link) alvo.link = l.link;
+  alvo.citacoes.push({ nota: l.nota, aula: l.aula });
+}
+
+// agrupa por autor; "" vira o grupo das obras sem autor citado, sempre por último
+const porAutor = new Map();
+for (const o of [...porObra.values()].sort((a, b) =>
+  a.obra.localeCompare(b.obra, "pt-BR"),
+)) {
+  const chave = chaveObra(o.autor);
+  if (!porAutor.has(chave))
+    porAutor.set(chave, { autor: o.autor, obras: [], mencoes: [] });
+  porAutor.get(chave).obras.push({
+    obra: o.obra,
+    ano: o.ano,
+    link: o.link,
+    citacoes: o.citacoes,
+  });
+}
+
+// "Paulo Freire — retomar junto com..." não é obra, mas é do Freire:
+// só encaixa quando bate exatamente com um autor que já tem obra na lista.
+const tarefas = [];
+for (const o of outras) {
+  const grupo = porAutor.get(chaveObra(o.texto));
+  if (grupo) grupo.mencoes.push({ nota: o.nota, link: o.link, aula: o.aula });
+  else tarefas.push(o);
+}
+
+const autores = [...porAutor.values()].sort((a, b) =>
+  (a.autor || "￿").localeCompare(b.autor || "￿", "pt-BR"),
+);
+const totalObras = autores.reduce((s, a) => s + a.obras.length, 0);
+
 const indice = {
   gerado: new Date().toISOString(),
   totalAulas: aulas.length,
   totalFlashcards: aulas.reduce((s, a) => s + a.flashcards, 0),
   disciplinas,
   lembretes,
+  biblioteca: { autores, tarefas },
   aulas,
 };
 
@@ -138,5 +256,5 @@ await writeFile(
 );
 
 console.log(
-  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s), ${lembretes.length} lembrete(s)`,
+  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s), ${lembretes.length} lembrete(s), ${totalObras} obra(s) de ${autores.length} autor(es) + ${tarefas.length} indicação(ões)`,
 );

@@ -653,11 +653,13 @@ kbd {
 .disciplina-bloco,
 .cartao,
 .retomar,
+.obra-aula,
 main#principal {
   --disc: hsl(var(--disc-h, 25) 46% 30%);
   --disc-suave: hsl(var(--disc-h, 25) 62% 95%);
 }
-html[data-tema="escuro"] :is(.disciplina-bloco, .cartao, .retomar, main#principal) {
+html[data-tema="escuro"]
+  :is(.disciplina-bloco, .cartao, .retomar, .obra-aula, main#principal) {
   --disc: hsl(var(--disc-h, 25) 55% 74%);
   --disc-suave: hsl(var(--disc-h, 25) 30% 16%);
 }
@@ -795,6 +797,100 @@ h2::before {
 .btn-voltar {
   font-size: 0.92rem;
   color: var(--texto-2);
+}
+
+/* ---------- biblioteca ---------- */
+
+.btn-biblioteca {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.obra-aviso {
+  color: var(--texto-3);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+  max-width: 38rem;
+}
+
+.autor-bloco {
+  margin-bottom: 2.2rem;
+}
+.autor-nome {
+  font-size: 1.15rem;
+  margin: 0 0 0.9rem;
+}
+
+.lista-obras {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+.obra {
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+.obra-sem-titulo {
+  background: none;
+  border-style: dashed;
+}
+.obra-titulo {
+  font-weight: 650;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+.obra-ano {
+  font-weight: 500;
+  color: var(--texto-3);
+  font-size: 0.9rem;
+}
+.obra-citacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  font-size: 0.93rem;
+  color: var(--texto-2);
+}
+.obra-nota {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+.obra-aula {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--disc-suave);
+  color: var(--disc);
+  text-decoration: none;
+  white-space: nowrap;
+  flex: none;
+}
+.obra-link {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--acento);
+  color: var(--acento);
+  text-decoration: none;
+}
+.obra-link:hover {
+  background: var(--acento-suave);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -14,6 +14,12 @@ transcricoes/                     ← texto cru dos áudios, nunca publicado com
 index.html + assets/              ← o leitor (site estático, zero dependência)
 ```
 
+## Biblioteca
+
+O ícone 📖 no topo abre `#/biblioteca`: todas as obras citadas no `## Para ler` das aulas, agrupadas por autor, com a aula que citou cada uma. Nada é acrescentado por fora — é agregação do que já está nas aulas.
+
+Cada leitura aceita um link opcional em `[rótulo](url)`, que vira botão. Use fonte legítima: repositório institucional, portal público ou a assinatura de e-books da faculdade.
+
 ## Para estudar
 
 - A home abre com os lembretes que ainda não passaram e com **continuar de onde parou**.

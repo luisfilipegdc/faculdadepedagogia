@@ -476,6 +476,105 @@ function renderRetomar() {
   </a>`;
 }
 
+/* ---------------- biblioteca ---------------- */
+
+const botaoLink = (link) =>
+  link
+    ? `<a class="obra-link" href="${escapar(link.url)}" target="_blank" rel="noopener noreferrer">${escapar(link.rotulo)} ↗</a>`
+    : "";
+
+function renderBiblioteca() {
+  window.__cards = null;
+  principal.style.removeProperty("--disc-h");
+  document.title = "Biblioteca — Caderno de Pedagogia";
+
+  const bib = INDICE.biblioteca || { autores: [], tarefas: [] };
+  const totalObras = bib.autores.reduce((s, a) => s + a.obras.length, 0);
+
+  if (!totalObras && !bib.tarefas.length) {
+    principal.innerHTML = `<p class="migalha"><a href="#/">Caderno</a></p><h1>Biblioteca</h1>
+      <p class="vazio">Nenhuma leitura citada nas aulas ainda.</p>`;
+    return;
+  }
+
+  const linkAula = (aula) =>
+    `<a class="obra-aula" href="#/aula/${encodeURIComponent(aula.arquivo)}" style="--disc-h:${matizDisciplina(aula.disciplina)}">${escapar(aula.disciplina)} · ${dataBonita(aula.data)}</a>`;
+
+  const blocos = bib.autores
+    .map(
+      (grupo) => `
+      <section class="autor-bloco">
+        <h2 class="autor-nome">${grupo.autor ? escapar(grupo.autor) : "Obras sem autor citado"}</h2>
+        <ul class="lista-obras">
+          ${grupo.obras
+            .map(
+              (o) => `
+            <li class="obra">
+              <div class="obra-titulo">${escapar(o.obra)}${o.ano ? ` <span class="obra-ano">${escapar(o.ano)}</span>` : ""}</div>
+              ${botaoLink(o.link)}
+              ${o.citacoes
+                .map(
+                  (c) => `<div class="obra-citacao">
+                    ${c.nota ? `<span class="obra-nota">${inline(c.nota)}</span>` : ""}
+                    ${linkAula(c.aula)}
+                  </div>`,
+                )
+                .join("")}
+            </li>`,
+            )
+            .join("")}
+          ${grupo.mencoes
+            .map(
+              (m) => `
+            <li class="obra obra-sem-titulo">
+              <div class="obra-titulo">Sem obra específica indicada</div>
+              ${botaoLink(m.link)}
+              <div class="obra-citacao">
+                ${m.nota ? `<span class="obra-nota">${inline(m.nota)}</span>` : ""}
+                ${linkAula(m.aula)}
+              </div>
+            </li>`,
+            )
+            .join("")}
+        </ul>
+      </section>`,
+    )
+    .join("");
+
+  const tarefas = bib.tarefas.length
+    ? `<section class="autor-bloco">
+        <h2 class="autor-nome">Indicações sem obra definida</h2>
+        <p class="obra-aviso">O professor pediu o assunto, não um título. Confirmar a referência exata antes de citar em trabalho.</p>
+        <ul class="lista-obras">
+          ${bib.tarefas
+            .map(
+              (t) => `
+            <li class="obra obra-sem-titulo">
+              <div class="obra-titulo">${inline(t.texto)}</div>
+              ${botaoLink(t.link)}
+              <div class="obra-citacao">
+                ${t.nota ? `<span class="obra-nota">${inline(t.nota)}</span>` : ""}
+                ${linkAula(t.aula)}
+              </div>
+            </li>`,
+            )
+            .join("")}
+        </ul>
+      </section>`
+    : "";
+
+  principal.innerHTML = `
+    <p class="migalha"><a href="#/">Caderno</a></p>
+    <h1>Biblioteca</h1>
+    <div class="meta">
+      <span>${totalObras} obra${totalObras > 1 ? "s" : ""}</span>
+      <span>${bib.autores.filter((a) => a.autor).length} autores</span>
+      ${bib.tarefas.length ? `<span class="selo selo-alerta">${bib.tarefas.length} a confirmar</span>` : ""}
+    </div>
+    <p class="obra-aviso">Montada a partir do <b>Para ler</b> de cada aula — nada aqui foi acrescentado por fora.</p>
+    ${blocos}${tarefas}`;
+}
+
 /* ---------------- modo flashcard ---------------- */
 
 const overlay = document.getElementById("flashmodo");
@@ -624,6 +723,11 @@ btnTema.addEventListener("click", () =>
 
 async function rotear() {
   const hash = location.hash.replace(/^#/, "") || "/";
+  if (hash === "/biblioteca") {
+    renderBiblioteca();
+    window.scrollTo(0, 0);
+    return;
+  }
   if (hash.startsWith("/aula/")) {
     const arquivo = decodeURIComponent(hash.slice("/aula/".length));
     const aula = INDICE.aulas.find((a) => a.arquivo === arquivo);

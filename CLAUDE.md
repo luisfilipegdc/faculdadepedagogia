@@ -57,7 +57,7 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 
 ## Para ler
 
-- Autor, *Obra* — por que importa.
+- Autor, *Obra* (1979) — por que importa. [PDF na biblioteca da facul](https://...)
 
 ## Pendências
 
@@ -73,6 +73,16 @@ Regras de conteúdo:
 - **`confianca`** = `alta` | `media` | `baixa`. Use `baixa` quando a transcrição estava ruim; o site mostra um aviso.
 - **`tratamento`** é o `Prof.` / `Prof.ª` que aparece antes do nome. O site não deduz — sem esse campo, mostra só o nome. Nunca infira a partir do nome; se não souber, deixe vazio e pergunte.
 - **Nunca invente** nome de autor, obra ou conceito que não apareceu no material. Se o áudio embaralhou, escreva o palpite em `## Pendências` com um `?`.
+
+## Biblioteca
+
+A página `#/biblioteca` é montada só a partir do `## Para ler` das aulas. O indexador separa `Autor`, `*Obra*` e `(ano)`, junta a mesma obra citada em aulas diferentes e agrupa por autor.
+
+- Item **sem `*obra*`** não vira livro. Vai para "Indicações sem obra definida" — é o caso de "Fundamentos do EJA", que é assunto, não título.
+- Item que é **só um nome de autor** encaixa junto das obras daquele autor, se ele já tiver alguma na lista. É correspondência exata, sem adivinhação.
+- **Link é opcional**, no fim da linha, em `[rótulo](url)`. Vira botão na biblioteca.
+
+Sobre o link: aponte para fonte legítima — repositório institucional, portal público, ou a assinatura de e-books da faculdade. **Nunca** cole link de cópia pirata, e nunca baixe o arquivo para dentro do repositório. Se não houver fonte legítima conhecida, deixe sem link.
 
 ## Lembretes
 

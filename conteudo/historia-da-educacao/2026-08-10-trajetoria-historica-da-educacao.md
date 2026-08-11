@@ -105,6 +105,17 @@ O pilar do domínio teórico ganha conteúdo. As correntes a estudar:
 
 Repare no movimento das três primeiras: o centro do ensino muda de lugar a cada uma — professor, aluno, método.
 
+### Unidade I — Fundamentos globais e a constituição da escola
+
+A primeira unidade do programa tem nome e recorte: **Fundamentos globais e a constituição da escola**. O arco "da Antiguidade à Contemporaneidade" ganha aqui os períodos concretos:
+
+- **Sociedades antigas**
+- **Era medieval**
+- **A modernidade**
+- **Revolução industrial**
+
+Repare que a unidade se chama *a constituição da escola*: não é história geral com educação de pano de fundo, é a pergunta de como a escola, como instituição, veio a existir. A Revolução Industrial fechando a unidade sugere que é ali que a escola que conhecemos se forma.
+
 ### Desigualdade estrutural na educação
 
 Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "realidade brasileira" deixa de ser eixo abstrato e vira caso concreto — e onde a corrente crítico-reprodutivista encontra o material de que fala.
@@ -135,6 +146,7 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - **Crítico-reprodutivista** :: lê a escola como reprodutora das desigualdades da sociedade que a cerca; explica bem o mecanismo, mas é criticada por não apontar saída pedagógica.
 - **Decorar x entender** :: decorar é reter o enunciado sem alcançar o que o sustenta; entender é poder reconstruir a ideia com outras palavras e aplicá-la a um caso novo.
 - **Prova Nacional Docente** :: avaliação nacional de docentes citada na aula como o lugar onde a diferença entre decorar e entender aparece na prática profissional.
+- **Unidade I — Fundamentos globais e a constituição da escola** :: a primeira unidade do programa; percorre sociedades antigas, era medieval, modernidade e Revolução Industrial, perguntando como a escola veio a existir como instituição.
 - **Desigualdade estrutural na educação** :: a desigualdade que não vem de caso isolado nem de falha individual, mas da forma como o próprio sistema está montado — é o que a professora ilustra com exemplos e o que a corrente crítico-reprodutivista descreve.
 
 ## Mapa
@@ -149,6 +161,11 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
   - Da Antiguidade à Contemporaneidade
   - Eixo 1: concepções e correntes pedagógicas
   - Eixo 2: a realidade brasileira
+  - Unidade I: fundamentos globais e a constituição da escola
+    - Sociedades antigas
+    - Era medieval
+    - A modernidade
+    - Revolução industrial
 - O pedagogo pesquisador
   - Visão e tino de pesquisador, questionador
   - Pilar 1: visão sócio-histórica
@@ -199,6 +216,8 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - Como ela sustenta a frase "o conhecimento liberta"? :: Com uma história de vida, um caso concreto em vez de argumento abstrato.
 - Qual autor é o foco da disciplina? :: Dermeval Saviani.
 - Quais correntes pedagógicas a disciplina vai estudar? :: Tradicional, nova, tecnicista e crítico-reprodutivista.
+- Como se chama a Unidade I e o que ela cobre? :: "Fundamentos globais e a constituição da escola" — sociedades antigas, era medieval, modernidade e Revolução Industrial.
+- O que o nome "constituição da escola" indica sobre o recorte da Unidade I? :: Que a pergunta é como a escola veio a existir como instituição, e não história geral com educação de pano de fundo.
 - Onde está o centro na pedagogia tradicional? :: No professor e no conteúdo acumulado a ser transmitido.
 - O que muda da pedagogia tradicional para a nova? :: O centro sai do professor e do conteúdo e vai para o aluno, seus interesses e sua atividade.
 - O que caracteriza a pedagogia tecnicista? :: O método e a eficiência do processo no centro — professor e aluno ficam secundários diante da organização técnica.
@@ -236,7 +255,8 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 ## Pendências
 
 - **A aula abriu por "processos formativos", mas a definição não ficou registrada.** Pedir à professora o que ela entende por processo formativo — é o termo que amarra o resto e está entrando aqui sem definição própria.
-- **Ainda não há marcos datados.** A disciplina anunciou o arco da Antiguidade à Contemporaneidade, mas nenhuma data ou período específico foi dado nesta aula. Quando ela apresentar a cronologia, isto aqui vira uma seção `## Linha do tempo` — o site desenha o trilho.
+- **Os períodos já existem, as datas ainda não.** A Unidade I nomeia sociedades antigas, era medieval, modernidade e Revolução Industrial, mas sem recorte de datas e sem o que acontece com a educação em cada um. Por isso ainda está no mapa, e não numa `## Linha do tempo`: um trilho com quatro etiquetas vazias não ajudaria. Quando ela der conteúdo a cada período, viram marcos e o site desenha o trilho.
+- Confirmar se há Unidade II e III, e quais são.
 - **Os cinco pilares foram apresentados por nome, sem definição.** As definições de uma linha em `## Conceitos` são minhas, para você conseguir estudar agora — confirmar com ela, principalmente "práxis docente" e "análise brasileira", que podem ter recorte específico da disciplina.
 - **"Em algumas realidades falam que ele é péssimo" — quais realidades?** Ela não especificou se falava de contextos políticos, de redes de ensino, de outros países ou de correntes teóricas rivais. Muda bastante o exemplo. Perguntar.
 - Confirmar se ela vai cobrir as críticas a Paulo Freire como conteúdo da disciplina, ou se ele entrou só como exemplo de teórico com recepção dividida.

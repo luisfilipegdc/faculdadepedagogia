@@ -15,6 +15,8 @@
   --alerta: #8a5a06;
   --alerta-suave: #fbeed3;
   --sombra: 0 1px 2px rgba(30, 27, 22, 0.06), 0 8px 24px rgba(30, 27, 22, 0.06);
+  --fonte: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   --raio: 14px;
   --largura: 46rem;
 }
@@ -44,10 +46,12 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--texto);
-  font-family: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.65;
+  font-family: var(--fonte);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: -0.006em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .pular {
@@ -108,7 +112,7 @@ body {
   padding: 0.5rem 0.85rem;
   font: inherit;
   font-size: 0.95rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   color: var(--texto);
   background: var(--bg-2);
   border: 1px solid var(--borda);
@@ -144,7 +148,7 @@ main {
 }
 
 .migalha {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -156,14 +160,16 @@ main {
 }
 
 h1 {
-  font-size: clamp(1.85rem, 5vw, 2.6rem);
-  line-height: 1.15;
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.2;
   margin: 0 0 0.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
 }
 
 h2 {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
+  font-weight: 650;
   margin: 3rem 0 1rem;
   letter-spacing: -0.01em;
   display: flex;
@@ -189,7 +195,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem 0.75rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.85rem;
   color: var(--texto-2);
   margin-bottom: 1.5rem;
@@ -199,7 +205,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -229,7 +235,7 @@ a {
   background: var(--alerta-suave);
   color: var(--alerta);
   border-radius: var(--raio);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 2rem;
@@ -241,7 +247,7 @@ a {
   margin-bottom: 2.5rem;
 }
 .disciplina-titulo {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -277,7 +283,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.7rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   color: var(--texto-3);
 }
@@ -307,7 +313,7 @@ a {
 }
 .lista-conceitos b {
   display: block;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -458,7 +464,7 @@ a {
 }
 
 .btn {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.9rem;
   font-weight: 600;
   padding: 0.55rem 1.1rem;
@@ -511,7 +517,7 @@ html[data-tema="escuro"] .btn {
 }
 .cartao-flash summary::before {
   content: "?";
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--acento);
@@ -559,7 +565,7 @@ html[data-tema="escuro"] .btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.85rem;
   color: var(--texto-3);
 }
@@ -579,7 +585,7 @@ html[data-tema="escuro"] .btn {
   color: inherit;
 }
 .flash-rotulo {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -591,7 +597,7 @@ html[data-tema="escuro"] .btn {
   line-height: 1.45;
 }
 .flash-dica {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.78rem;
   color: var(--texto-3);
 }
@@ -634,7 +640,7 @@ kbd {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   color: var(--texto-3);
   border-top: 1px solid var(--borda);
@@ -644,6 +650,158 @@ kbd {
   padding: 3rem 1rem;
   text-align: center;
   color: var(--texto-3);
+}
+
+/* ---------- layout com navegação lateral ---------- */
+
+.corpo {
+  display: grid;
+  grid-template-columns: 15.5rem minmax(0, 1fr);
+  gap: 2rem;
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  align-items: start;
+}
+.corpo > #principal {
+  max-width: 52rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
+.lateral {
+  position: sticky;
+  top: 4.6rem;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.6rem 0 2rem;
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--texto-2);
+  font-size: 0.93rem;
+  font-weight: 550;
+}
+.nav-item:hover {
+  background: var(--bg-3);
+  color: var(--texto);
+}
+
+.nav-titulo {
+  font-family: var(--fonte);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  margin: 1.4rem 0 0.4rem 0.6rem;
+}
+
+.nav-grupo {
+  margin-bottom: 0.9rem;
+}
+.nav-disciplina {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--disc);
+  line-height: 1.3;
+}
+.nav-ponto {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--disc);
+  flex: none;
+}
+
+.nav-aula {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  margin-left: 0.55rem;
+  border-left: 2px solid var(--borda);
+  text-decoration: none;
+  color: var(--texto-2);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+.nav-aula:hover {
+  background: var(--bg-3);
+  color: var(--texto);
+}
+.nav-atual {
+  background: var(--disc-suave, var(--bg-3));
+  color: var(--texto);
+  font-weight: 600;
+  border-left-color: var(--disc);
+}
+.nav-data {
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+}
+.nav-tema {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.nav-feita .nav-tema::after {
+  content: " ✓";
+  color: var(--ok);
+}
+
+.btn-menu {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  .corpo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .btn-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+  }
+  /* espremida entre os ícones, a busca virava um círculo vazio */
+  .topo-acoes {
+    flex-wrap: wrap;
+  }
+  .busca {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .lateral {
+    display: none;
+    position: static;
+    max-height: none;
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--borda);
+    margin-bottom: 1rem;
+  }
+  body.com-lateral .lateral {
+    display: grid;
+  }
 }
 
 /* ---------- desenvolvimento (a aula inteira) ---------- */
@@ -672,12 +830,13 @@ kbd {
 .cartao,
 .retomar,
 .obra-aula,
+.nav-grupo,
 main#principal {
   --disc: hsl(var(--disc-h, 25) 46% 30%);
   --disc-suave: hsl(var(--disc-h, 25) 62% 95%);
 }
 html[data-tema="escuro"]
-  :is(.disciplina-bloco, .cartao, .retomar, .obra-aula, main#principal) {
+  :is(.disciplina-bloco, .cartao, .retomar, .obra-aula, .nav-grupo, main#principal) {
   --disc: hsl(var(--disc-h, 25) 55% 74%);
   --disc-suave: hsl(var(--disc-h, 25) 30% 16%);
 }
@@ -723,7 +882,7 @@ h2::before {
   background: var(--alerta-suave);
 }
 .lembrete-quando {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -754,7 +913,7 @@ h2::before {
   filter: brightness(0.98);
 }
 .retomar-rotulo {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -780,7 +939,7 @@ h2::before {
   margin: 0 0 0.5rem;
 }
 .chip {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.78rem;
   font-weight: 600;
   padding: 0.3rem 0.7rem;
@@ -882,7 +1041,7 @@ h2::before {
   min-width: 0;
 }
 .obra-aula {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -898,7 +1057,7 @@ h2::before {
 .obra-link {
   display: inline-block;
   margin-top: 0.45rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   font-weight: 600;
   padding: 0.25rem 0.7rem;

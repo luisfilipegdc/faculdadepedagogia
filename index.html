@@ -20,6 +20,7 @@
         <span class="marca-icone" aria-hidden="true">📚</span>
         <span class="marca-texto">Caderno de <b>Pedagogia</b></span>
       </a>
+      <button id="menu" class="btn-icone btn-menu" aria-label="Mostrar navegação" aria-expanded="false">☰</button>
       <div class="topo-acoes">
         <input
           id="busca"
@@ -34,7 +35,10 @@
       </div>
     </header>
 
-    <main id="principal"></main>
+    <div class="corpo">
+      <aside id="lateral" class="lateral" aria-label="Navegação do caderno"></aside>
+      <main id="principal"></main>
+    </div>
 
     <div id="flashmodo" class="flash-overlay" hidden>
       <div class="flash-caixa" role="dialog" aria-modal="true" aria-label="Modo flashcard">

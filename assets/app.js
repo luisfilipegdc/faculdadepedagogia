@@ -532,6 +532,61 @@ function renderRetomar() {
   </a>`;
 }
 
+/* ---------------- navegação lateral ---------------- */
+
+const lateral = document.getElementById("lateral");
+
+function renderLateral(ativo = "") {
+  const porDisciplina = new Map();
+  for (const a of INDICE.aulas) {
+    if (!porDisciplina.has(a.disciplina)) porDisciplina.set(a.disciplina, []);
+    porDisciplina.get(a.disciplina).push(a);
+  }
+
+  const secoes = [...porDisciplina.entries()]
+    .sort((x, y) => x[0].localeCompare(y[0], "pt-BR"))
+    .map(
+      ([disc, lista]) => `
+      <div class="nav-grupo" style="--disc-h:${matizDisciplina(disc)}">
+        <div class="nav-disciplina"><span class="nav-ponto" aria-hidden="true"></span>${escapar(disc)}</div>
+        ${lista
+          .map((a) => {
+            const est = doArquivo(a.arquivo);
+            const atual = a.arquivo === ativo;
+            return `<a class="nav-aula${atual ? " nav-atual" : ""}${est.estudada ? " nav-feita" : ""}"
+                       href="#/aula/${encodeURIComponent(a.arquivo)}"${atual ? ' aria-current="page"' : ""}>
+              <span class="nav-data">${a.data ? a.data.slice(8, 10) + "/" + a.data.slice(5, 7) : ""}</span>
+              <span class="nav-tema">${escapar(a.tema)}</span>
+            </a>`;
+          })
+          .join("")}
+      </div>`,
+    )
+    .join("");
+
+  lateral.innerHTML = `
+    <a class="nav-item${ativo === "" && location.hash !== "#/biblioteca" ? " nav-atual" : ""}" href="#/">
+      <span aria-hidden="true">🏠</span> Caderno
+    </a>
+    <a class="nav-item${location.hash === "#/biblioteca" ? " nav-atual" : ""}" href="#/biblioteca">
+      <span aria-hidden="true">📖</span> Biblioteca
+    </a>
+    <div class="nav-titulo">Disciplinas</div>
+    ${secoes}`;
+}
+
+const btnMenu = document.getElementById("menu");
+btnMenu.addEventListener("click", () => {
+  const aberto = document.body.classList.toggle("com-lateral");
+  btnMenu.setAttribute("aria-expanded", aberto ? "true" : "false");
+});
+lateral.addEventListener("click", (e) => {
+  if (e.target.closest("a")) {
+    document.body.classList.remove("com-lateral");
+    btnMenu.setAttribute("aria-expanded", "false");
+  }
+});
+
 /* ---------------- biblioteca ---------------- */
 
 const botaoLink = (link) =>
@@ -781,6 +836,7 @@ async function rotear() {
   const hash = location.hash.replace(/^#/, "") || "/";
   if (hash === "/biblioteca") {
     renderBiblioteca();
+    renderLateral("");
     window.scrollTo(0, 0);
     return;
   }
@@ -798,10 +854,12 @@ async function rotear() {
       cacheAulas.set(arquivo, texto);
     }
     renderAula(aula, texto);
+    renderLateral(arquivo);
     window.scrollTo(0, 0);
     return;
   }
   renderInicio(busca.value);
+  renderLateral("");
 }
 
 busca.addEventListener("input", () => {

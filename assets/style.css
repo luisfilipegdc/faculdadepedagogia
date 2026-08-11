@@ -1,20 +1,20 @@
 /* Caderno de Pedagogia — folha de estilo única, sem dependências. */
 
 :root {
-  --bg: #fbfaf7;
+  --bg: #f6f7f9;
   --bg-2: #ffffff;
-  --bg-3: #f2efe9;
-  --texto: #1e1b16;
-  --texto-2: #5f574a;
-  --texto-3: #8b8172;
-  --borda: #e2ddd2;
-  --acento: #a2542a;
-  --acento-suave: #f4e7dd;
-  --ok: #2f6b46;
-  --ok-suave: #e2f0e7;
-  --alerta: #8a5a06;
+  --bg-3: #eceef1;
+  --texto: #14171a;
+  --texto-2: #545c65;
+  --texto-3: #616a75;
+  --borda: #e1e4e8;
+  --acento: #245bb5;
+  --acento-suave: #e8eefb;
+  --ok: #17683f;
+  --ok-suave: #e3f2e9;
+  --alerta: #8a5100;
   --alerta-suave: #fbeed3;
-  --sombra: 0 1px 2px rgba(30, 27, 22, 0.06), 0 8px 24px rgba(30, 27, 22, 0.06);
+  --sombra: 0 1px 2px rgba(16, 20, 26, 0.05), 0 6px 20px rgba(16, 20, 26, 0.06);
   --fonte: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --raio: 14px;
@@ -22,19 +22,19 @@
 }
 
 html[data-tema="escuro"] {
-  --bg: #16150f;
-  --bg-2: #1e1c15;
-  --bg-3: #262319;
-  --texto: #f0ece2;
-  --texto-2: #b9b1a1;
-  --texto-3: #8b8272;
-  --borda: #322e23;
-  --acento: #e39a68;
-  --acento-suave: #33251b;
-  --ok: #7fc79b;
-  --ok-suave: #1c2b21;
-  --alerta: #e0b45e;
-  --alerta-suave: #2e2617;
+  --bg: #15171b;
+  --bg-2: #1c1f24;
+  --bg-3: #262a30;
+  --texto: #e9ebee;
+  --texto-2: #a5adb7;
+  --texto-3: #8b939d;
+  --borda: #2b3038;
+  --acento: #7fa9f0;
+  --acento-suave: #1b2434;
+  --ok: #6fc394;
+  --ok-suave: #17251d;
+  --alerta: #dfb264;
+  --alerta-suave: #2b2417;
   --sombra: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -223,6 +223,15 @@ a {
   background: var(--alerta-suave);
   color: var(--alerta);
 }
+/* dentro do cartão o selo é metadado, não alarme: dez etiquetas laranjas
+   competindo com cinco títulos fazem o título perder. Cinza, mas legível —
+   --texto-3 sobre --bg-3 dava 2.97:1 e reprovava. */
+.cartao-meta .selo,
+.cartao-meta .selo-alerta {
+  background: var(--bg-3);
+  color: var(--texto-2);
+  font-weight: 600;
+}
 .selo-ok {
   background: var(--ok-suave);
   color: var(--ok);
@@ -260,24 +269,24 @@ a {
 
 .cartao {
   display: block;
-  padding: 1.1rem 1.25rem;
-  margin-bottom: 0.7rem;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.35rem;
   background: var(--bg-2);
   border: 1px solid var(--borda);
-  border-radius: var(--raio);
+  border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.12s ease, border-color 0.12s ease;
+  transition: background 0.12s ease, border-color 0.12s ease;
 }
 .cartao:hover {
-  transform: translateY(-1px);
-  border-color: var(--acento);
+  background: var(--bg-3);
+  border-color: color-mix(in srgb, var(--disc) 40%, var(--borda));
 }
 .cartao-tema {
-  font-size: 1.12rem;
+  font-size: 1.02rem;
   font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 0.35rem;
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
 }
 .cartao-meta {
   display: flex;
@@ -673,6 +682,8 @@ kbd {
 .lateral {
   position: sticky;
   top: 4.6rem;
+  border-right: 1px solid var(--borda);
+  padding-right: 0.9rem;
   max-height: calc(100vh - 6rem);
   overflow-y: auto;
   overscroll-behavior: contain;

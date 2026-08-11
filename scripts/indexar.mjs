@@ -183,6 +183,22 @@ const disciplinas = [...new Set(aulas.map((a) => a.disciplina))].sort((a, b) =>
   a.localeCompare(b, "pt-BR"),
 );
 
+// A cor sai da posição nesta lista, então ela é ordenada pela data da primeira
+// aula da disciplina: quem chega depois entra no fim e não recolore ninguém.
+// Por posição alfabética, uma disciplina nova no meio trocaria a cor das outras.
+const estreia = new Map();
+for (const a of aulas) {
+  const atual = estreia.get(a.disciplina);
+  if (!atual || (a.data && a.data < atual)) estreia.set(a.disciplina, a.data);
+}
+const ordemCor = [...estreia.entries()]
+  .sort(
+    (x, y) =>
+      (x[1] || "9999").localeCompare(y[1] || "9999") ||
+      x[0].localeCompare(y[0], "pt-BR"),
+  )
+  .map(([nome]) => nome);
+
 const lembretes = await lerLembretes();
 
 // mesma obra citada em duas aulas vira uma entrada com as duas citações
@@ -244,6 +260,7 @@ const indice = {
   totalAulas: aulas.length,
   totalFlashcards: aulas.reduce((s, a) => s + a.flashcards, 0),
   disciplinas,
+  ordemCor,
   lembretes,
   biblioteca: { autores, tarefas },
   aulas,

@@ -1,11 +1,18 @@
 {
-  "gerado": "2026-08-10T23:55:51.965Z",
-  "totalAulas": 3,
+  "gerado": "2026-08-11T22:15:35.150Z",
+  "totalAulas": 4,
   "totalFlashcards": 31,
   "disciplinas": [
     "Filosofia da Educação",
     "Fundamentos da Docência",
+    "História da Educação",
     "Trabalho Pedagógico em Espaços Não Escolares"
+  ],
+  "ordemCor": [
+    "Trabalho Pedagógico em Espaços Não Escolares",
+    "Filosofia da Educação",
+    "Fundamentos da Docência",
+    "História da Educação"
   ],
   "lembretes": [
     {
@@ -240,6 +247,24 @@
       "pendencias": 4,
       "minutosLeitura": 8,
       "atualizado": "2026-08-10T23:43:45.138Z"
+    },
+    {
+      "arquivo": "conteudo/historia-da-educacao/2026-08-10-historia-da-educacao.md",
+      "disciplina": "História da Educação",
+      "professor": "Alessandra Moulin",
+      "tratamento": "Prof.ª",
+      "data": "2026-08-10",
+      "tema": "Primeira aula — conteúdo ainda não registrado",
+      "tags": [],
+      "fonte": "",
+      "confianca": "alta",
+      "flashcards": 0,
+      "questoes": 0,
+      "conceitos": 0,
+      "marcos": 0,
+      "pendencias": 3,
+      "minutosLeitura": 1,
+      "atualizado": "2026-08-11T22:15:26.951Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",

@@ -83,7 +83,8 @@ function salvarEstudo(arquivo, dados) {
 // cor própria por disciplina: triagem no olho, não na leitura
 const MATIZES = [25, 152, 212, 282, 48, 334];
 const matizDisciplina = (nome) => {
-  const i = INDICE ? INDICE.disciplinas.indexOf(nome) : -1;
+  const ordem = INDICE ? INDICE.ordemCor || INDICE.disciplinas : null;
+  const i = ordem ? ordem.indexOf(nome) : -1;
   return MATIZES[(i < 0 ? 0 : i) % MATIZES.length];
 };
 
@@ -232,8 +233,13 @@ function renderAula(aula, texto) {
 
   const conf = (meta.confianca || "alta").toLowerCase();
   if (conf === "baixa" || conf === "media") {
+    // o aviso precisa dizer de onde a aula veio de fato: dizer "transcrição de
+    // áudio" numa aula anotada à mão é afirmar coisa errada sobre a fonte
+    const origem = /áudio|audio/i.test(meta.fonte || "")
+      ? `de uma transcrição de áudio de sala${conf === "baixa" ? " com qualidade ruim" : ""}`
+      : "de anotação feita durante a aula, ainda sem conferência";
     partes.push(`<div class="aviso"><span aria-hidden="true">⚠</span><span>
-      Estas anotações vieram de uma transcrição de áudio de sala${conf === "baixa" ? " com qualidade ruim" : ""}.
+      Estas anotações vieram ${origem}.
       Nomes próprios e termos técnicos podem estar imprecisos — confira a seção <b>Pendências</b> antes de estudar para prova.
     </span></div>`);
   }

@@ -376,6 +376,20 @@ function renderAula(aula, texto) {
     </section>`);
   }
 
+  // material escrito por mim a pedido do Luis, não é o que a professora deu.
+  // Fica visualmente separado para nunca ser confundido com conteúdo de aula.
+  const adiantado = pegar("Estudo adiantado");
+  if (adiantado) {
+    partes.push(`<section class="secao"><h2>Estudo adiantado <span class="selo selo-alerta">material meu</span></h2>
+      <div class="adiantado">
+        <p class="adiantado-nota"><b>Isto não é o que a professora disse.</b>
+        É material que escrevi a seu pedido para adiantar o estudo. Quando ela
+        der esse conteúdo em aula, o dela entra no Desenvolvimento e este bloco sai.</p>
+        ${renderProsa(adiantado.corpo)}
+      </div>
+    </section>`);
+  }
+
   const est = doArquivo(aula.arquivo);
   partes.push(`<div class="fim-aula">
     <button id="marcar" class="btn btn-marcar" aria-pressed="${est.estudada ? "true" : "false"}">

@@ -4,7 +4,7 @@ professor: Alessandra Moulin
 tratamento: Prof.ª
 data: 2026-08-10
 tema: A trajetória histórica da educação — da Antiguidade à Contemporaneidade
-tags: [processo formativo, trajetória histórica, correntes pedagógicas, realidade brasileira, Dermeval Saviani, mito da caverna]
+tags: [processo formativo, trajetória histórica, correntes pedagógicas, realidade brasileira, Dermeval Saviani, mito da caverna, unidades do programa]
 fonte: anotação em aula
 confianca: media
 ---
@@ -116,6 +116,34 @@ A primeira unidade do programa tem nome e recorte: **Fundamentos globais e a con
 
 Repare que a unidade se chama *a constituição da escola*: não é história geral com educação de pano de fundo, é a pergunta de como a escola, como instituição, veio a existir. A Revolução Industrial fechando a unidade sugere que é ali que a escola que conhecemos se forma.
 
+### Unidade II — A formação histórica brasileira
+
+A segunda unidade sai do mundo e entra no Brasil, e tem **Dermeval Saviani como referência** — é aqui que o autor anunciado como foco da disciplina de fato entra.
+
+Os períodos:
+
+- **Brasil colônia**
+- **Brasil imperial**
+- **Primeira República**
+
+O objetivo é declarado: **compreender a formação das concepções pedagógicas brasileiras, seus contextos, seus representantes e seus impactos na organização** [da educação].
+
+Vale reparar na estrutura do objetivo, porque ela diz como estudar: para cada concepção pedagógica, saber **o contexto** em que nasceu, **quem** a representa e **o que ela mudou** na organização. É a mesma tríade repetida em cada período — e é o formato mais provável de questão de prova.
+
+Repare também que isso é o pilar da **análise brasileira** virando unidade inteira, e que a Unidade I termina na Revolução Industrial justamente onde esta começa a cobrar o preço no Brasil.
+
+### Unidade III — Concepções políticas e o cenário contemporâneo
+
+A terceira unidade chega ao presente. Os momentos:
+
+- **A tradição e a renovação**
+- **O controle e a crítica**
+- **A proposta transformadora — o presente**
+
+Aqui a disciplina fecha o circuito. As quatro correntes anunciadas antes reaparecem como sequência histórica, e não como lista: a **tradicional** e a **nova** são a tradição e a renovação; a **tecnicista** é o controle; a **crítico-reprodutivista** é a crítica.
+
+E o quarto momento — **a proposta transformadora** — é o que faltava. Era a pergunta que ficou em aberto quando ela listou só quatro correntes: o que vem depois de uma teoria que explica a desigualdade mas não aponta saída. A resposta está anunciada no programa, e no presente.
+
 ### Desigualdade estrutural na educação
 
 Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "realidade brasileira" deixa de ser eixo abstrato e vira caso concreto — e onde a corrente crítico-reprodutivista encontra o material de que fala.
@@ -147,6 +175,9 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - **Decorar x entender** :: decorar é reter o enunciado sem alcançar o que o sustenta; entender é poder reconstruir a ideia com outras palavras e aplicá-la a um caso novo.
 - **Prova Nacional Docente** :: avaliação nacional de docentes citada na aula como o lugar onde a diferença entre decorar e entender aparece na prática profissional.
 - **Unidade I — Fundamentos globais e a constituição da escola** :: a primeira unidade do programa; percorre sociedades antigas, era medieval, modernidade e Revolução Industrial, perguntando como a escola veio a existir como instituição.
+- **Unidade II — A formação histórica brasileira** :: Brasil colônia, Brasil imperial e Primeira República, tendo Saviani como referência; o objetivo é compreender a formação das concepções pedagógicas brasileiras, seus contextos, representantes e impactos na organização.
+- **Unidade III — Concepções políticas e o cenário contemporâneo** :: a tradição e a renovação, o controle e a crítica, e a proposta transformadora no presente.
+- **Proposta transformadora** :: o quarto momento da Unidade III; o que se propõe depois da crítica que explica a desigualdade sem apontar saída.
 - **Desigualdade estrutural na educação** :: a desigualdade que não vem de caso isolado nem de falha individual, mas da forma como o próprio sistema está montado — é o que a professora ilustra com exemplos e o que a corrente crítico-reprodutivista descreve.
 
 ## Mapa
@@ -166,6 +197,15 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
     - Era medieval
     - A modernidade
     - Revolução industrial
+  - Unidade II: a formação histórica brasileira (ref. Saviani)
+    - Brasil colônia
+    - Brasil imperial
+    - Primeira República
+    - Objetivo: contexto, representantes e impactos de cada concepção
+  - Unidade III: concepções políticas e o cenário contemporâneo
+    - A tradição e a renovação
+    - O controle e a crítica
+    - A proposta transformadora — o presente
 - O pedagogo pesquisador
   - Visão e tino de pesquisador, questionador
   - Pilar 1: visão sócio-histórica
@@ -217,6 +257,10 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - Qual autor é o foco da disciplina? :: Dermeval Saviani.
 - Quais correntes pedagógicas a disciplina vai estudar? :: Tradicional, nova, tecnicista e crítico-reprodutivista.
 - Como se chama a Unidade I e o que ela cobre? :: "Fundamentos globais e a constituição da escola" — sociedades antigas, era medieval, modernidade e Revolução Industrial.
+- O que cobre a Unidade II e qual sua referência? :: A formação histórica brasileira — colônia, império e Primeira República — tendo Dermeval Saviani como referência.
+- Qual o objetivo declarado da Unidade II? :: Compreender a formação das concepções pedagógicas brasileiras, seus contextos, seus representantes e seus impactos na organização.
+- Quais os três momentos da Unidade III? :: A tradição e a renovação, o controle e a crítica, e a proposta transformadora no presente.
+- Como as quatro correntes se encaixam nos momentos da Unidade III? :: Tradicional e nova são a tradição e a renovação; a tecnicista é o controle; a crítico-reprodutivista é a crítica — e a proposta transformadora é o que vem depois delas.
 - O que o nome "constituição da escola" indica sobre o recorte da Unidade I? :: Que a pergunta é como a escola veio a existir como instituição, e não história geral com educação de pano de fundo.
 - Onde está o centro na pedagogia tradicional? :: No professor e no conteúdo acumulado a ser transmitido.
 - O que muda da pedagogia tradicional para a nova? :: O centro sai do professor e do conteúdo e vai para o aluno, seus interesses e sua atividade.
@@ -252,11 +296,92 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 
 - Dermeval Saviani — anunciado em aula como o foco da disciplina; confirmar qual obra dele será cobrada.
 
+## Estudo adiantado
+
+### Pilar 1 — Visão sócio-histórica
+
+Ler qualquer coisa da educação como coisa datada e situada, não como verdade solta no ar. Uma prática de ensino, um currículo, uma lei: cada um nasceu em algum lugar, respondendo a algum problema de alguém.
+
+Na prática, é o hábito de perguntar três coisas diante de qualquer ideia pedagógica: **quando** ela apareceu, **que problema** ela vinha resolver, e **a quem** servia. Sem isso, o que é histórico passa por natural — e o que é natural não se questiona.
+
+É o pilar que impede a frase "sempre foi assim". A escola com turmas por idade, sinal e boletim tem menos de dois séculos.
+
+### Pilar 2 — Domínio teórico
+
+Conhecer as teorias que fundamentam a área a ponto de saber usá-las, e não só citá-las. A diferença aparece na hora de discordar: quem domina consegue dizer *por que* discorda, com o argumento do autor na mão.
+
+Na prática, é conseguir reconstruir a tese de um autor com as próprias palavras, saber a que ele se opunha, e saber onde a teoria dele não alcança.
+
+Foi exatamente isso que o exemplo do Paulo Freire testou em aula: dominar a teoria inclui saber que a recepção dela muda conforme quem lê — que já é o pilar 1 trabalhando junto.
+
+### Pilar 3 — Análise brasileira
+
+Trazer o percurso geral para o caso concreto do Brasil, sem transplantar conclusão de fora. Uma teoria pensada para a França industrial do século XIX não descreve automaticamente a escola brasileira.
+
+Na prática, é perguntar o que muda quando o mesmo conceito atravessa a nossa formação: colônia, escravidão, república tardia, analfabetismo de massa até muito tarde, expansão do acesso sem a estrutura correspondente.
+
+É o pilar em que os exemplos de desigualdade estrutural que ela deu na aula se encaixam.
+
+### Pilar 4 — Práxis docente
+
+A articulação entre teoria e prática — e o termo é preciso: práxis não é sinônimo de prática. Prática solta é repetição; teoria solta é discurso. Práxis é a prática informada pela teoria que, ao ser exercida, volta a corrigir a teoria.
+
+Na prática, é o professor que planeja com fundamento, observa o que aconteceu de fato, e reformula — inclusive contra o que a teoria previa.
+
+É o pilar que responde à crítica feita às correntes crítico-reprodutivistas: entender por que a escola reproduz desigualdade não basta se ninguém souber o que fazer na segunda-feira de manhã.
+
+### Pilar 5 — Rigor acadêmico
+
+Método e cuidado com a fonte. Saber de onde veio cada afirmação, distinguir o que o autor disse do que dizem que ele disse, e citar de forma que outra pessoa possa conferir.
+
+Na prática, é não confundir opinião com argumento, não usar fonte que não se leu, e não passar adiante atribuição que não se checou.
+
+É o pilar que segura a linha contra o relativismo: se a leitura de um teórico depende de quem lê, o que impede tudo de virar "cada um tem sua verdade" é justamente o rigor — a obrigação de sustentar o que se afirma.
+
+### Unidade I, período 1 — Sociedades antigas
+
+Na maior parte dessas sociedades a educação acontece **sem escola**: aprende-se na família, no trabalho, nos rituais e na convivência da comunidade. A transmissão é oral e prática.
+
+Onde surge algo parecido com escola, ela nasce ligada ao tempo livre — a palavra grega *skholé* significa ócio, o tempo de quem não precisa trabalhar para viver. A desigualdade já está embutida na origem: educação formal como privilégio de quem está dispensado do trabalho.
+
+Na Grécia, a *paideia* propõe uma formação integral do cidadão livre. Em Roma, o peso recai sobre a retórica e a formação do orador. Em ambos os casos, o alcance é restrito: exclui a maioria — pessoas escravizadas, trabalhadores e, em larga medida, mulheres.
+
+É desse período que vem o mito da caverna, o que explica a professora tê-lo usado logo na abertura.
+
+### Unidade I, período 2 — Era medieval
+
+O saber letrado se concentra na Igreja. As escolas são monásticas e catedralícias, o latim é a língua do conhecimento, e a leitura fica restrita ao clero e a poucos mais.
+
+A finalidade da educação é a formação para a fé, e o método é a escolástica — o comentário rigoroso dos textos autorizados.
+
+A partir dos séculos XI e XII surgem as **universidades**, uma das instituições mais duradouras que a educação já produziu.
+
+Para a imensa maioria, porém, a formação continua sendo pelo ofício: aprendizado prático dentro das corporações, do mestre para o aprendiz.
+
+### Unidade I, período 3 — A modernidade
+
+O centro se desloca do divino para o humano. O humanismo renascentista, a imprensa a partir do século XV e a Reforma Protestante mudam a escala do problema: se cada um deve ler as escrituras por si, muita gente precisa aprender a ler.
+
+A Contrarreforma responde organizando redes de colégios — o que importa diretamente ao Brasil, já que a educação colonial nasce nas mãos dos jesuítas.
+
+No século XVII, Comenius propõe uma didática que pretende ensinar tudo a todos, e a ideia de método de ensino ganha forma. No XVIII, o Iluminismo desloca a educação para o campo do direito e do projeto de Estado.
+
+É aqui que nasce a ideia de **escola pública, nacional e obrigatória** — a ideia, ainda não a realidade.
+
+### Unidade I, período 4 — Revolução industrial
+
+A escola de massas se consolida, e é neste período que se forma quase tudo o que hoje parece óbvio: turmas separadas por idade, séries, horário fixo, sinal, currículo comum, avaliação padronizada.
+
+A razão não é apenas pedagógica. A produção industrial precisa de trabalhadores alfabetizados o suficiente, pontuais, habituados à disciplina do relógio e da hierarquia. A escola forma isso ao mesmo tempo em que ensina.
+
+Daí a tensão que atravessa o resto da disciplina: a escola de massas **amplia o acesso** e **serve à ordem produtiva** simultaneamente. As duas coisas são verdadeiras ao mesmo tempo.
+
+É exatamente esse material que as teorias crítico-reprodutivistas vão usar para argumentar que a escola reproduz a desigualdade em vez de corrigi-la. E é contra essa leitura, aceitando o diagnóstico mas recusando a paralisia, que Saviani vai se posicionar.
+
 ## Pendências
 
 - **A aula abriu por "processos formativos", mas a definição não ficou registrada.** Pedir à professora o que ela entende por processo formativo — é o termo que amarra o resto e está entrando aqui sem definição própria.
 - **Os períodos já existem, as datas ainda não.** A Unidade I nomeia sociedades antigas, era medieval, modernidade e Revolução Industrial, mas sem recorte de datas e sem o que acontece com a educação em cada um. Por isso ainda está no mapa, e não numa `## Linha do tempo`: um trilho com quatro etiquetas vazias não ajudaria. Quando ela der conteúdo a cada período, viram marcos e o site desenha o trilho.
-- Confirmar se há Unidade II e III, e quais são.
 - **Os cinco pilares foram apresentados por nome, sem definição.** As definições de uma linha em `## Conceitos` são minhas, para você conseguir estudar agora — confirmar com ela, principalmente "práxis docente" e "análise brasileira", que podem ter recorte específico da disciplina.
 - **"Em algumas realidades falam que ele é péssimo" — quais realidades?** Ela não especificou se falava de contextos políticos, de redes de ensino, de outros países ou de correntes teóricas rivais. Muda bastante o exemplo. Perguntar.
 - Confirmar se ela vai cobrir as críticas a Paulo Freire como conteúdo da disciplina, ou se ele entrou só como exemplo de teórico com recepção dividida.
@@ -269,7 +394,10 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - **Essas quatro correntes são exatamente a classificação usada por Saviani**, que ela anunciou como foco minutos antes — as três primeiras num grupo, a quarta noutro. A ligação é minha; confirmar se é assim que ela vai organizar a disciplina, e como se chama cada grupo na divisão dele.
 - **Quais foram os exemplos de desigualdade estrutural?** Ficou registrado que ela deu exemplos, mas não quais. São eles que transformam o eixo "realidade brasileira" em caso concreto, e provavelmente é o que cai em prova. Pedir com urgência, enquanto está fresco.
 - **O que exatamente ela disse da Prova Nacional Docente?** Registrei só que citou, ligando à diferença entre decorar e entender. Confirmar se falou de data, de formato, de quem vai prestar, ou se usou como exemplo de avaliação que cobra entendimento. Se for algo com prazo, vira lembrete.
-- Perguntar se há uma quinta corrente na sequência. A lista de quatro costuma vir acompanhada da proposta que o próprio Saviani defende, e ela não apareceu nesta aula.
+- ~~Perguntar se há uma quinta corrente na sequência.~~ **Resolvido pela Unidade III**: a "proposta transformadora" é o quarto momento, depois da crítica. Falta confirmar com ela o nome próprio dessa proposta.
+- **Qual obra do Saviani?** A Unidade II é "a formação histórica brasileira" com ele de referência, e o objetivo fala em "formação das concepções pedagógicas brasileiras, seus contextos, representantes e impactos". Isso aponta para um livro dele sobre as ideias pedagógicas no Brasil, mas ela não nomeou nenhum título — perguntar antes de comprar ou pegar na biblioteca.
+- **"O conteole da critica" na anotação da Unidade III** pode ser "o controle e a crítica" (dois momentos) ou "o controle da crítica" (um só). Registrei como dois. Conferir no plano de ensino.
+- Confirmar se há uma Unidade IV.
 - Confirmar quais correntes pedagógicas ela pretende cobrir, e se segue algum autor ou manual de referência para a disciplina.
 - Esta aula é o programa da disciplina, não conteúdo de prova ainda. Se ela deu exemplo ou nome de autor que não está aqui, acrescentar.
 - Verificar se ela retomou o Ubuntu ou a intencionalidade pedagógica da primeira aula — as duas aulas ainda não estão ligadas no caderno.

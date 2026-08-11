@@ -97,7 +97,7 @@ Quando o Luis disser "me lembra de X", acrescente a linha aqui **e** ofereça ag
 Fica em `localStorage`, chave `estudo`: `{ "<arquivo>": { visto, estudada } }`. Nada disso vai para o repositório — é por dispositivo.
 
 - **Continuar de onde parou** na home: a aula vista mais recentemente que ainda não foi marcada como estudada.
-- **Cor por disciplina**: matiz fixa por posição em `disciplinas` no `index.json`. Disciplina nova entra com cor nova sozinha.
+- **Cor por disciplina**: a matiz sai da posição em `conteudo/cores.json`, uma lista que **só cresce**. O indexador anexa disciplina nova no fim e nunca reordena o que já está lá, então nenhuma disciplina muda de cor por causa de outra. Esse arquivo é versionado — não apague nem reordene à mão, ou as cores viram outras.
 - **Flashcards em blocos de 8.** Errou, a carta volta num bloco adiante — não no atual. O fim de bloco é uma parada legítima, com "Mais 8" e "Parar por hoje" lado a lado.
 
 ## Comandos

@@ -183,21 +183,26 @@ const disciplinas = [...new Set(aulas.map((a) => a.disciplina))].sort((a, b) =>
   a.localeCompare(b, "pt-BR"),
 );
 
-// A cor sai da posição nesta lista, então ela é ordenada pela data da primeira
-// aula da disciplina: quem chega depois entra no fim e não recolore ninguém.
-// Por posição alfabética, uma disciplina nova no meio trocaria a cor das outras.
-const estreia = new Map();
-for (const a of aulas) {
-  const atual = estreia.get(a.disciplina);
-  if (!atual || (a.data && a.data < atual)) estreia.set(a.disciplina, a.data);
+// A cor sai da posição nesta lista, que fica em conteudo/cores.json e só cresce:
+// disciplina nova é anexada no fim e nenhuma outra muda de lugar.
+//
+// Ordenar por nome recoloria as vizinhas quando entrava uma disciplina no meio
+// do alfabeto. Ordenar pela data da primeira aula tinha o mesmo defeito de outro
+// jeito: cadastrar uma aula antiga de uma disciplina que já existe a faz pular
+// para a frente e recolorir todas as outras. Só a lista persistida é estável.
+const CORES = join(CONTEUDO, "cores.json");
+let ordemCor = [];
+try {
+  const lido = JSON.parse(await readFile(CORES, "utf8"));
+  if (Array.isArray(lido)) ordemCor = lido.filter((d) => typeof d === "string");
+} catch {}
+
+const novas = disciplinas.filter((d) => !ordemCor.includes(d));
+if (novas.length) {
+  ordemCor = [...ordemCor, ...novas];
+  await writeFile(CORES, JSON.stringify(ordemCor, null, 2) + "\n", "utf8");
+  console.log(`cor nova para: ${novas.join(", ")}`);
 }
-const ordemCor = [...estreia.entries()]
-  .sort(
-    (x, y) =>
-      (x[1] || "9999").localeCompare(y[1] || "9999") ||
-      x[0].localeCompare(y[0], "pt-BR"),
-  )
-  .map(([nome]) => nome);
 
 const lembretes = await lerLembretes();
 

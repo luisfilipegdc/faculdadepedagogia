@@ -390,6 +390,7 @@ function renderAula(aula, texto) {
     </section>`);
   }
 
+  document.body.classList.remove("painel");
   const est = doArquivo(aula.arquivo);
   partes.push(`<div class="fim-aula">
     <button id="marcar" class="btn btn-marcar" aria-pressed="${est.estudada ? "true" : "false"}">
@@ -499,51 +500,206 @@ function renderInicio(filtro = "") {
 
   const feitas = INDICE.aulas.filter((a) => doArquivo(a.arquivo).estudada).length;
 
+  // busca ativa: a lista simples responde melhor que o painel
+  if (termo) {
+    document.body.classList.remove("painel");
+    principal.innerHTML = `
+      <p class="migalha">Busca</p>
+      <h1>${aulas.length} resultado${aulas.length > 1 ? "s" : ""}</h1>
+      ${blocos}`;
+    return;
+  }
+
+  document.body.classList.add("painel");
   principal.innerHTML = `
-    <p class="migalha">Curso de Pedagogia</p>
-    <h1>Caderno de estudos</h1>
-    <div class="meta">
-      <span>${INDICE.totalAulas} aula${INDICE.totalAulas > 1 ? "s" : ""}</span>
-      <span>${INDICE.disciplinas.length} disciplina${INDICE.disciplinas.length > 1 ? "s" : ""}</span>
-      <span>${INDICE.totalFlashcards} flashcards</span>
-      ${feitas ? `<span class="selo selo-ok">${feitas} estudada${feitas > 1 ? "s" : ""}</span>` : ""}
+    <div class="painel-cab">
+      <p class="migalha">Curso de Pedagogia</p>
+      <h1>Faculdade — Pedagogia</h1>
+      <div class="painel-meta">
+        <span><b>Aulas</b>${INDICE.totalAulas}</span>
+        <span><b>Matérias</b>${INDICE.disciplinas.length}</span>
+        <span><b>Obras</b>${(INDICE.biblioteca?.autores || []).reduce((s, g) => s + g.obras.length, 0)}</span>
+        ${feitas ? `<span><b>Estudadas</b>${feitas}</span>` : ""}
+      </div>
     </div>
-    ${termo ? "" : renderLembretes() + renderRetomar()}
-    ${blocos}`;
+    <div class="colunas">
+      <div>${modMaterias(porDisciplina)}${modPendencias()}</div>
+      <div>${modRetomar()}${modCronograma()}${modAgenda()}${modUltimas()}</div>
+      <div>${modLinks()}${modLeituras()}</div>
+    </div>`;
 }
 
-function renderLembretes() {
-  const hoje = hojeISO();
-  const proximos = (INDICE.lembretes || []).filter((l) => l.data >= hoje);
-  if (!proximos.length) return "";
-  return `<section class="lembretes" aria-label="Lembretes">
-    ${proximos
-      .slice(0, 3)
-      .map((l) => {
-        const quando = quandoRelativo(l.data);
-        const urgente = quando === "hoje" || quando === "amanhã";
-        return `<div class="lembrete${urgente ? " lembrete-urgente" : ""}">
-          <span class="lembrete-quando">${quando}</span>
-          <span class="lembrete-texto">${inline(l.texto)}</span>
-        </div>`;
-      })
-      .join("")}
+const mod = (titulo, extra, corpo) => `
+  <section class="mod">
+    <div class="mod-titulo"><span>${titulo}</span>${extra ? `<span>${extra}</span>` : ""}</div>
+    <div class="mod-corpo">${corpo}</div>
   </section>`;
+
+function modMaterias(porDisciplina) {
+  const linhas = [...porDisciplina.entries()]
+    .sort((x, y) => x[0].localeCompare(y[0], "pt-BR"))
+    .map(
+      ([d, lista]) => `
+      <a class="item" href="#/" data-disc="${escapar(d)}" style="--disc-h:${matizDisciplina(d)}">
+        <span class="item-ponto"></span>
+        <span class="item-nome">${escapar(d)}</span>
+        <span class="item-num">${lista.length}</span>
+      </a>`,
+    )
+    .join("");
+  return mod("Matérias", INDICE.disciplinas.length, linhas);
 }
 
-// retomar custa menos que reescolher: uma sessão nova não deveria começar pela lista inteira
-function renderRetomar() {
-  const candidatas = INDICE.aulas
+function modPendencias() {
+  const abertas = INDICE.aulas
+    .filter((a) => a.pendencias)
+    .sort((x, y) => y.pendencias - x.pendencias)
+    .slice(0, 5);
+  if (!abertas.length) return "";
+  const total = INDICE.aulas.reduce((s, a) => s + a.pendencias, 0);
+  return mod(
+    "A confirmar",
+    total,
+    abertas
+      .map(
+        (a) => `
+      <a class="item" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
+        <span class="item-nome">${escapar(a.tema)}</span>
+        <span class="item-num">${a.pendencias}</span>
+      </a>`,
+      )
+      .join(""),
+  );
+}
+
+function modRetomar() {
+  const c = INDICE.aulas
     .map((a) => ({ a, est: doArquivo(a.arquivo) }))
     .filter((x) => x.est.visto && !x.est.estudada)
     .sort((x, y) => y.est.visto.localeCompare(x.est.visto));
-  if (!candidatas.length) return "";
-  const { a } = candidatas[0];
-  return `<a class="retomar" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
-    <span class="retomar-rotulo">Continuar de onde parou</span>
-    <span class="retomar-tema">${escapar(a.tema)}</span>
-    <span class="retomar-disc">${escapar(a.disciplina)}</span>
-  </a>`;
+  if (!c.length) return "";
+  const { a } = c[0];
+  return mod(
+    "Continuar de onde parou",
+    "",
+    `<a class="item" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
+      <span class="item-ponto"></span>
+      <span class="item-nome"><b>${escapar(a.tema)}</b><br><span class="item-num">${escapar(a.disciplina)} · ${a.minutosLeitura} min</span></span>
+    </a>`,
+  );
+}
+
+const DIAS = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
+
+function modCronograma() {
+  const fixos = INDICE.horarios || [];
+  // sem horários declarados, o dia da semana sai das datas das aulas já registradas
+  const porDia = new Map();
+  for (const h of fixos) {
+    const i = DIAS.indexOf(semAcento(h.dia) === "terca" ? "terça" : h.dia);
+    if (i < 0) continue;
+    if (!porDia.has(i)) porDia.set(i, []);
+    porDia.get(i).push(h);
+  }
+  const deduzido = !fixos.length;
+  if (deduzido) {
+    for (const a of INDICE.aulas) {
+      if (!a.data) continue;
+      const i = new Date(a.data + "T12:00:00Z").getUTCDay();
+      if (!porDia.has(i)) porDia.set(i, []);
+      if (!porDia.get(i).some((x) => x.disciplina === a.disciplina))
+        porDia.get(i).push({ disciplina: a.disciplina, hora: "" });
+    }
+  }
+  const uteis = [1, 2, 3, 4, 5, 6];
+  const cabecalho = uteis
+    .map((d) => `<th>${DIAS[d].slice(0, 3)}</th>`)
+    .join("");
+  const celulas = uteis
+    .map(
+      (d) =>
+        `<td>${(porDia.get(d) || [])
+          .map(
+            (h) =>
+              `<span class="marca-disc" style="--disc-h:${matizDisciplina(h.disciplina)}" title="${escapar(h.disciplina)}">${escapar(h.disciplina.split(" ")[0])}${h.hora ? `<br>${escapar(h.hora)}` : ""}</span>`,
+          )
+          .join("")}</td>`,
+    )
+    .join("");
+  return mod(
+    "Cronograma",
+    deduzido ? "deduzido das aulas" : "",
+    `<table class="cronograma"><thead><tr>${cabecalho}</tr></thead><tbody><tr>${celulas}</tr></tbody></table>
+     ${deduzido ? `<div class="mod-vazio">Só o dia da semana, deduzido das datas. Os horários entram em <code>conteudo/horarios.md</code>.</div>` : ""}`,
+  );
+}
+
+function modAgenda() {
+  const hoje = hojeISO();
+  const proximos = (INDICE.lembretes || []).filter((l) => l.data >= hoje);
+  const corpo = proximos.length
+    ? proximos
+        .map((l) => {
+          const q = quandoRelativo(l.data);
+          return `<div class="tarefa${q === "hoje" || q === "amanhã" ? " tarefa-perto" : ""}">
+            <span>${inline(l.texto)}</span>
+            <span class="tarefa-data">${q}</span>
+          </div>`;
+        })
+        .join("")
+    : `<div class="mod-vazio">Sem nada marcado. Provas e entregas entram em <code>conteudo/lembretes.md</code>.</div>`;
+  return mod("Agenda", proximos.length || "", corpo);
+}
+
+function modUltimas() {
+  return mod(
+    "Últimas aulas",
+    "",
+    INDICE.aulas
+      .slice(0, 5)
+      .map(
+        (a) => `
+      <a class="item" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
+        <span class="item-ponto"></span>
+        <span class="item-nome">${doArquivo(a.arquivo).estudada ? '<span class="tique">✓</span>' : ""}${escapar(a.tema)}</span>
+        <span class="item-num">${dataBonita(a.data).slice(0, 5)}</span>
+      </a>`,
+      )
+      .join(""),
+  );
+}
+
+function modLinks() {
+  const links = INDICE.links || [];
+  return mod(
+    "Links",
+    links.length || "",
+    links.length
+      ? links
+          .map(
+            (l) =>
+              `<a class="link-ext" href="${escapar(l.url)}" target="_blank" rel="noopener noreferrer">${escapar(l.rotulo)}<small>${escapar(l.nota || l.url)}</small></a>`,
+          )
+          .join("")
+      : `<div class="mod-vazio">Portal do aluno, Teams, e-mail da facul. Entram em <code>conteudo/links.md</code>.</div>`,
+  );
+}
+
+function modLeituras() {
+  const autores = INDICE.biblioteca?.autores || [];
+  const obras = autores.flatMap((g) => g.obras.map((o) => ({ ...o, autor: g.autor })));
+  if (!obras.length) return "";
+  return mod(
+    `<a href="#/biblioteca" style="color:inherit;text-decoration:none">Leituras ↗</a>`,
+    obras.length,
+    obras
+      .slice(0, 6)
+      .map(
+        (o) =>
+          `<a class="link-ext" href="#/biblioteca">${escapar(o.obra)}<small>${escapar(o.autor || "sem autor")}${o.ano ? ` · ${o.ano}` : ""}</small></a>`,
+      )
+      .join(""),
+  );
 }
 
 /* ---------------- navegação lateral ---------------- */
@@ -610,6 +766,7 @@ const botaoLink = (link) =>
 
 function renderBiblioteca() {
   window.__cards = null;
+  document.body.classList.remove("painel");
   principal.style.removeProperty("--disc-h");
   document.title = "Biblioteca — Caderno de Pedagogia";
 
@@ -875,6 +1032,15 @@ async function rotear() {
   renderInicio(busca.value);
   renderLateral("");
 }
+
+// clicar numa matéria do painel filtra a lista pela busca
+principal.addEventListener("click", (e) => {
+  const alvo = e.target.closest("[data-disc]");
+  if (!alvo) return;
+  e.preventDefault();
+  busca.value = alvo.dataset.disc;
+  renderInicio(busca.value);
+});
 
 busca.addEventListener("input", () => {
   if (location.hash && location.hash !== "#/") location.hash = "#/";

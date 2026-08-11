@@ -1,5 +1,5 @@
 {
-  "gerado": "2026-08-11T23:36:24.227Z",
+  "gerado": "2026-08-11T23:52:54.146Z",
   "totalAulas": 5,
   "totalFlashcards": 63,
   "disciplinas": [
@@ -20,6 +20,8 @@
       "texto": "Levar **pincel** para a aula prática da Prof.ª Rosa Maria. A tinta ela leva; o avental é opcional."
     }
   ],
+  "links": [],
+  "horarios": [],
   "biblioteca": {
     "autores": [
       {

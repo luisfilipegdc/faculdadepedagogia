@@ -661,6 +661,189 @@ kbd {
   color: var(--texto-3);
 }
 
+/* ---------- painel da home ---------- */
+
+/* na home o painel é a navegação, então a lateral sairia repetida */
+body.painel .lateral {
+  display: none;
+}
+body.painel .corpo {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 80rem;
+}
+body.painel .corpo > #principal {
+  max-width: none;
+}
+
+.painel-cab {
+  padding: 0 0 1.3rem;
+}
+.painel-meta {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--texto-2);
+}
+.painel-meta b {
+  color: var(--texto-3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  margin-right: 0.4rem;
+}
+
+.colunas {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr) 16rem;
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.mod {
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.mod-titulo {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background: var(--bg-3);
+  color: var(--texto-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.mod-corpo {
+  padding: 0.5rem 0.85rem 0.6rem;
+}
+.mod-vazio {
+  color: var(--texto-3);
+  font-size: 0.83rem;
+  padding: 0.35rem 0;
+}
+
+.item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.34rem 0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  text-decoration: none;
+  color: inherit;
+}
+.item:hover {
+  color: var(--disc);
+}
+.item-ponto {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--disc);
+  flex: none;
+  align-self: center;
+}
+.item-nome {
+  flex: 1;
+  min-width: 0;
+}
+.item-num {
+  font-size: 0.76rem;
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+
+.cronograma {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.cronograma th {
+  padding: 0.4rem 0.45rem;
+  text-align: left;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  border-bottom: 1px solid var(--borda);
+  white-space: nowrap;
+}
+.cronograma td {
+  padding: 0.45rem;
+  border-bottom: 1px solid var(--borda);
+  vertical-align: top;
+}
+.cronograma tr:last-child td {
+  border-bottom: 0;
+}
+.marca-disc {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+  background: var(--disc-suave);
+  color: var(--disc);
+  font-size: 0.73rem;
+  font-weight: 650;
+  margin: 0.1rem 0.15rem 0.1rem 0;
+}
+
+.tarefa {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4.6rem;
+  gap: 0.5rem;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+.tarefa:last-child {
+  border-bottom: 0;
+}
+.tarefa-data {
+  font-size: 0.76rem;
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.tarefa-perto .tarefa-data {
+  color: var(--alerta);
+  font-weight: 700;
+}
+
+.link-ext {
+  display: block;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--borda);
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.86rem;
+}
+.link-ext:last-child {
+  border-bottom: 0;
+}
+.link-ext small {
+  display: block;
+  color: var(--texto-3);
+  font-size: 0.73rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 68rem) {
+  .colunas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ---------- layout com navegação lateral ---------- */
 
 .corpo {
@@ -856,17 +1039,14 @@ kbd {
 
 /* L=30% e suave a 95% mantêm as 6 matizes acima de 5.5:1 sobre o próprio
    fundo tingido — a 34% a verde caía para 4.49 e reprovava em AA. */
-.disciplina-bloco,
-.cartao,
-.retomar,
-.obra-aula,
-.nav-grupo,
-main#principal {
+/* Derivar em qualquer elemento, e não numa lista de seletores: qualquer bloco
+   que carregue --disc-h nasce com a cor certa. A lista antiga esquecia os
+   blocos novos e eles saíam todos com a matiz padrão. */
+* {
   --disc: hsl(var(--disc-h, 25) 46% 30%);
   --disc-suave: hsl(var(--disc-h, 25) 62% 95%);
 }
-html[data-tema="escuro"]
-  :is(.disciplina-bloco, .cartao, .retomar, .obra-aula, .nav-grupo, main#principal) {
+html[data-tema="escuro"] * {
   --disc: hsl(var(--disc-h, 25) 55% 74%);
   --disc-suave: hsl(var(--disc-h, 25) 30% 16%);
 }

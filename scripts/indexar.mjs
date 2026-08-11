@@ -48,7 +48,41 @@ function contarItens(mapa, titulo) {
 }
 
 // lembretes.md fica na raiz de conteudo/ e não é aula
-const NAO_E_AULA = new Set(["lembretes.md"]);
+const NAO_E_AULA = new Set(["lembretes.md", "links.md", "horarios.md"]);
+
+// "[Rótulo](url) :: descrição"
+async function lerLinks() {
+  let texto;
+  try {
+    texto = await readFile(join(CONTEUDO, "links.md"), "utf8");
+  } catch {
+    return [];
+  }
+  return texto
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*-\s+\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)\s*(?:::\s*(.*))?$/))
+    .filter(Boolean)
+    .map((m) => ({ rotulo: m[1].trim(), url: m[2], nota: (m[3] || "").trim() }));
+}
+
+// "Disciplina :: Dia :: hh:mm-hh:mm"
+async function lerHorarios() {
+  let texto;
+  try {
+    texto = await readFile(join(CONTEUDO, "horarios.md"), "utf8");
+  } catch {
+    return [];
+  }
+  return texto
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*-\s+(.+?)\s*::\s*(.+?)\s*::\s*(.+)$/))
+    .filter(Boolean)
+    .map((m) => ({
+      disciplina: m[1].trim(),
+      dia: m[2].trim().toLowerCase(),
+      hora: m[3].trim(),
+    }));
+}
 
 function itensDe(mapa, titulo) {
   const bloco = mapa[titulo.toLowerCase()];
@@ -205,6 +239,8 @@ if (novas.length) {
 }
 
 const lembretes = await lerLembretes();
+const links = await lerLinks();
+const horarios = await lerHorarios();
 
 // mesma obra citada em duas aulas vira uma entrada com as duas citações
 const porObra = new Map();
@@ -267,6 +303,8 @@ const indice = {
   disciplinas,
   ordemCor,
   lembretes,
+  links,
+  horarios,
   biblioteca: { autores, tarefas },
   aulas,
 };
@@ -278,5 +316,5 @@ await writeFile(
 );
 
 console.log(
-  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s), ${lembretes.length} lembrete(s), ${totalObras} obra(s) de ${autores.length} autor(es) + ${tarefas.length} indicação(ões)`,
+  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s), ${lembretes.length} lembrete(s), ${links.length} link(s), ${totalObras} obra(s) de ${autores.length} autor(es) + ${tarefas.length} indicação(ões)`,
 );

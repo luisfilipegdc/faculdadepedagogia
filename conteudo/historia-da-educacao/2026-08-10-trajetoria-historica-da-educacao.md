@@ -11,15 +11,15 @@ confianca: media
 
 ## Resumo
 
-A aula apresenta o recorte da disciplina e, antes disso, justifica por que ele é esse.
+A aula apresenta o recorte da disciplina e, antes disso, justifica por que ele é esse. O argumento vem encadeado, de trás para frente: entender a **realidade da educação** exige entender as questões **políticas, sociais e econômicas** que a atravessam, e entender essas questões exige o **contexto histórico** em que elas se formaram.
 
-O argumento vem encadeado, de trás para frente. Entender a **realidade da educação** exige entender as questões **políticas, sociais e econômicas** que a atravessam. E entender essas questões exige o **contexto histórico** em que elas se formaram.
+Daí o objeto: a **trajetória histórica da educação**, percorrida da **Antiguidade à Contemporaneidade**, lida por dois eixos — as **concepções e correntes pedagógicas** que foram se sucedendo, e a **realidade brasileira**.
 
-Daí o objeto: a **trajetória histórica da educação**, percorrida da **Antiguidade à Contemporaneidade**.
+O perfil que a disciplina quer formar é o do **pedagogo pesquisador**, que precisa ter "a visão e o tino de pesquisador, questionador". Ele se apoia em cinco pilares: visão sócio-histórica, domínio teórico, análise brasileira, práxis docente e rigor acadêmico.
 
-Dentro desse percurso, dois eixos de leitura: as **concepções e correntes pedagógicas** que foram se sucedendo, e a **realidade brasileira**.
+A professora insiste nos **teóricos** e usa **Paulo Freire** como exemplo do problema: ele é ícone da educação e, ao mesmo tempo, em algumas realidades é tido como péssimo.
 
-A aula fecha com o perfil que a disciplina quer formar — o **pedagogo pesquisador**, que precisa ter "a visão e o tino de pesquisador, questionador" — apoiado em cinco pilares: visão sócio-histórica, domínio teórico, análise brasileira, práxis docente e rigor acadêmico.
+O exemplo não é sobre Freire — é sobre método. A recepção de um teórico varia conforme a realidade de quem o lê, e é por isso que o domínio teórico não se separa da visão sócio-histórica: saber quem é o autor inclui saber de onde ele é lido, e por quem.
 
 ## Conceitos
 
@@ -33,6 +33,7 @@ A aula fecha com o perfil que a disciplina quer formar — o **pedagogo pesquisa
 - **Análise brasileira** :: 3º pilar; aplicar o percurso e a teoria ao caso concreto do Brasil.
 - **Práxis docente** :: 4º pilar; a articulação entre teoria e prática no exercício da docência — não é a prática sozinha nem a teoria sozinha.
 - **Rigor acadêmico** :: 5º pilar; método e cuidado com a fonte no que se afirma e no que se escreve.
+- **Recepção do teórico** :: o mesmo autor pode ser ícone num contexto e rejeitado em outro; a leitura de uma teoria depende da realidade de quem lê. O exemplo da aula é Paulo Freire.
 
 ## Mapa
 
@@ -62,6 +63,8 @@ A aula fecha com o perfil que a disciplina quer formar — o **pedagogo pesquisa
 - Quais são os cinco pilares do pedagogo pesquisador? :: Visão sócio-histórica, domínio teórico, análise brasileira, práxis docente e rigor acadêmico.
 - Que postura a disciplina pede do pedagogo? :: A visão e o tino de pesquisador — postura questionadora, e não só aplicadora.
 - O que é práxis docente? :: A articulação entre teoria e prática na docência — nem a prática solta, nem a teoria sem exercício.
+- Por que a professora usa Paulo Freire como exemplo ao falar dos teóricos? :: Porque ele é ícone da educação e, em algumas realidades, tido como péssimo — a recepção de um teórico depende de onde e por quem ele é lido.
+- Que pilar o exemplo de Paulo Freire coloca à prova? :: O domínio teórico, que só funciona junto da visão sócio-histórica: conhecer o autor inclui saber de onde ele é lido.
 
 ## Questões
 
@@ -71,12 +74,16 @@ A aula fecha com o perfil que a disciplina quer formar — o **pedagogo pesquisa
 4. O "pedagogo questionador" desta aula e o "aluno questionador" de Fundamentos da Docência descrevem a mesma postura em dois lugares diferentes. Sustente que são a mesma coisa — ou mostre onde diferem.
 5. A "visão sócio-histórica" pedida aqui e a "leitura de mundo" de Paulo Freire pedem o mesmo tipo de olhar. Compare as duas.
 6. O pilar da práxis docente resolve uma tensão que aparece em outras aulas: teoria de prazo longo contra prática de resultado imediato. Como?
+7. Paulo Freire é ícone e é rejeitado, dependendo de quem lê. Em Fundamentos da Docência ele aparece preso e exilado por alfabetizar com consciência crítica. Use os dois fatos para sustentar que a educação é política em sua essência.
+8. Se a recepção de um teórico depende da realidade de quem lê, como um pedagogo pesquisador evita cair no relativismo — ou seja, no "cada um tem sua verdade"? Que pilar segura essa linha?
 
 ## Pendências
 
 - **A aula abriu por "processos formativos", mas a definição não ficou registrada.** Pedir à professora o que ela entende por processo formativo — é o termo que amarra o resto e está entrando aqui sem definição própria.
 - **Ainda não há marcos datados.** A disciplina anunciou o arco da Antiguidade à Contemporaneidade, mas nenhuma data ou período específico foi dado nesta aula. Quando ela apresentar a cronologia, isto aqui vira uma seção `## Linha do tempo` — o site desenha o trilho.
 - **Os cinco pilares foram apresentados por nome, sem definição.** As definições de uma linha em `## Conceitos` são minhas, para você conseguir estudar agora — confirmar com ela, principalmente "práxis docente" e "análise brasileira", que podem ter recorte específico da disciplina.
+- **"Em algumas realidades falam que ele é péssimo" — quais realidades?** Ela não especificou se falava de contextos políticos, de redes de ensino, de outros países ou de correntes teóricas rivais. Muda bastante o exemplo. Perguntar.
+- Confirmar se ela vai cobrir as críticas a Paulo Freire como conteúdo da disciplina, ou se ele entrou só como exemplo de teórico com recepção dividida.
 - Confirmar quais correntes pedagógicas ela pretende cobrir, e se segue algum autor ou manual de referência para a disciplina.
 - Esta aula é o programa da disciplina, não conteúdo de prova ainda. Se ela deu exemplo ou nome de autor que não está aqui, acrescentar.
 - Verificar se ela retomou o Ubuntu ou a intencionalidade pedagógica da primeira aula — as duas aulas ainda não estão ligadas no caderno.

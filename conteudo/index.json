@@ -1,5 +1,5 @@
 {
-  "gerado": "2026-08-11T23:19:18.802Z",
+  "gerado": "2026-08-11T23:23:33.208Z",
   "totalAulas": 5,
   "totalFlashcards": 57,
   "disciplinas": [
@@ -278,11 +278,11 @@
       "confianca": "media",
       "flashcards": 22,
       "questoes": 19,
-      "conceitos": 22,
+      "conceitos": 23,
       "marcos": 0,
-      "pendencias": 17,
-      "minutosLeitura": 14,
-      "atualizado": "2026-08-11T23:19:03.892Z"
+      "pendencias": 18,
+      "minutosLeitura": 18,
+      "atualizado": "2026-08-11T23:23:18.577Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",

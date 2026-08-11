@@ -19,7 +19,97 @@ A professora insiste nos **teóricos** e usa **Paulo Freire** como exemplo do pr
 
 Ela recorre então ao **mito da caverna**, de Platão: prisioneiros acorrentados tomam sombras por realidade, e quem sai e volta para contar não é acreditado. Daí puxa a frase **"o conhecimento liberta"**, sustentada por uma **história de vida**, e a distinção entre **decorar e entender** — que ela leva até a **Prova Nacional Docente**, ou seja, até uma avaliação real da carreira, e não só até a prova da disciplina.
 
-O **foco da disciplina** será **Dermeval Saviani**, e o **domínio teórico** ganha conteúdo: as correntes a estudar são a **tradicional**, a **nova**, a **tecnicista** e a **crítico-reprodutivista**.
+O **foco da disciplina** será **Dermeval Saviani**, e o **domínio teórico** ganha conteúdo: as correntes a estudar são a **tradicional**, a **nova**, a **tecnicista** e a **crítico-reprodutivista**. Ela fecha com exemplos de **desigualdade estrutural na educação**.
+
+## Desenvolvimento
+
+### Abertura: os processos formativos
+
+A aula abre pelos **processos formativos**. É por aí que ela entra na disciplina: antes de qualquer conteúdo, estabelecer de onde se olha.
+
+### Por que o contexto histórico não é enfeite
+
+O argumento vem encadeado, e vale reconstruir na ordem dela:
+
+- Precisamos entender **todas as questões políticas, sociais e econômicas** que cercam a educação.
+- Precisamos saber **qual o percurso** e **qual é a realidade** da educação.
+- Mas, para isso, precisamos entender o **contexto histórico**.
+
+O ponto é forte: o histórico não é introdução opcional que se pula para chegar ao que interessa. É a condição para que o resto faça sentido. Sem ele, a realidade educacional de hoje aparece como se sempre tivesse sido assim.
+
+### O recorte da disciplina
+
+O objeto é a **trajetória histórica da educação**, percorrida **da Antiguidade à Contemporaneidade**.
+
+Dentro desse percurso, dois eixos de leitura:
+
+- **Concepções e correntes pedagógicas** — as diferentes formas de conceber o que é educar, que foram se sucedendo.
+- **A realidade brasileira** — onde o percurso geral desemboca no nosso caso.
+
+### Os pilares do pedagogo pesquisador
+
+O perfil que a disciplina quer formar é o do **pedagogo pesquisador**, sustentado por cinco pilares:
+
+- **Visão sócio-histórica**
+- **Domínio teórico**
+- **Análise brasileira**
+- **Práxis docente**
+- **Rigor acadêmico**
+
+E a postura que amarra os cinco: *"temos que ter a visão e o tino de pesquisador, questionador"*. Não é o pedagogo que aplica receita — é o que investiga a própria educação.
+
+### Os teóricos e a recepção dividida
+
+Ela insiste nos **teóricos** e usa **Paulo Freire** como exemplo do problema: ele é **ícone da educação** e, ao mesmo tempo, **em algumas realidades falam que ele é péssimo**.
+
+O exemplo não é sobre Freire, é sobre método. A recepção de um teórico varia conforme a realidade de quem o lê. Por isso o **domínio teórico** não funciona sozinho: conhecer um autor inclui saber de onde ele é lido e por quem — que é o pilar da **visão sócio-histórica** trabalhando junto.
+
+### O mito da caverna
+
+Ela recorre ao **mito da caverna**, de Platão. A alegoria, como é:
+
+- Prisioneiros acorrentados desde sempre veem apenas sombras projetadas numa parede.
+- Tomam essas sombras por realidade, porque nunca viram outra coisa.
+- Um é solto, sai, e descobre que o que via eram projeções.
+- Volta para contar aos que ficaram — e **não é acreditado**.
+
+A alegoria não termina em libertação tranquila. Termina em rejeição.
+
+### "O conhecimento liberta"
+
+Daí ela puxa a frase: **"o conhecimento liberta"** — que é a saída da caverna dita em quatro palavras.
+
+E não a deixa como frase de efeito: sustenta com uma **história de vida**, um caso concreto de alguém, em vez de argumento abstrato.
+
+### Decorar não é entender
+
+Ela distingue **decorar** de **entender**:
+
+- **Decorar** é reter o enunciado sem alcançar o que o sustenta.
+- **Entender** é poder reconstruir a ideia com outras palavras e aplicá-la a um caso novo.
+
+E leva o ponto até a **Prova Nacional Docente** — ou seja, até uma avaliação real da carreira, não só até a prova da disciplina.
+
+### Dermeval Saviani será o foco
+
+O autor que será o **foco da disciplina** é **Dermeval Saviani**, educador brasileiro e referência no debate sobre educação no Brasil.
+
+### As correntes do domínio teórico
+
+O pilar do domínio teórico ganha conteúdo. As correntes a estudar:
+
+- **Tradicional** — o centro está no professor e no conteúdo já acumulado; o aluno está na ponta que recebe.
+- **Nova** — o centro se desloca para o aluno, seus interesses e sua atividade; o professor passa a acompanhar em vez de expor.
+- **Tecnicista** — o centro passa a ser o método e a eficiência do processo; professor e aluno ficam secundários diante da organização técnica.
+- **Crítico-reprodutivista** — lê a escola como reprodutora das desigualdades da sociedade que a cerca.
+
+Repare no movimento das três primeiras: o centro do ensino muda de lugar a cada uma — professor, aluno, método.
+
+### Desigualdade estrutural na educação
+
+Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "realidade brasileira" deixa de ser eixo abstrato e vira caso concreto — e onde a corrente crítico-reprodutivista encontra o material de que fala.
+
+> Os exemplos em si ainda não estão registrados. Assim que o Luis trouxer, entram aqui um a um.
 
 ## Conceitos
 
@@ -45,6 +135,7 @@ O **foco da disciplina** será **Dermeval Saviani**, e o **domínio teórico** g
 - **Crítico-reprodutivista** :: lê a escola como reprodutora das desigualdades da sociedade que a cerca; explica bem o mecanismo, mas é criticada por não apontar saída pedagógica.
 - **Decorar x entender** :: decorar é reter o enunciado sem alcançar o que o sustenta; entender é poder reconstruir a ideia com outras palavras e aplicá-la a um caso novo.
 - **Prova Nacional Docente** :: avaliação nacional de docentes citada na aula como o lugar onde a diferença entre decorar e entender aparece na prática profissional.
+- **Desigualdade estrutural na educação** :: a desigualdade que não vem de caso isolado nem de falha individual, mas da forma como o próprio sistema está montado — é o que a professora ilustra com exemplos e o que a corrente crítico-reprodutivista descreve.
 
 ## Mapa
 
@@ -156,6 +247,7 @@ O **foco da disciplina** será **Dermeval Saviani**, e o **domínio teórico** g
 - Saviani está aqui só com a descrição mínima de educador brasileiro. Não registrei a corrente à qual ele é associado porque a professora ainda não a nomeou em aula — quando ela nomear, o conceito entra com o nome dela, não com o meu.
 - **As quatro correntes vieram só por nome; as definições de uma linha são minhas.** Conferir com ela, principalmente a crítico-reprodutivista, cuja caracterização como "explica mas não aponta saída" é a crítica que se faz a ela, e não a autodescrição dela.
 - **Essas quatro correntes são exatamente a classificação usada por Saviani**, que ela anunciou como foco minutos antes — as três primeiras num grupo, a quarta noutro. A ligação é minha; confirmar se é assim que ela vai organizar a disciplina, e como se chama cada grupo na divisão dele.
+- **Quais foram os exemplos de desigualdade estrutural?** Ficou registrado que ela deu exemplos, mas não quais. São eles que transformam o eixo "realidade brasileira" em caso concreto, e provavelmente é o que cai em prova. Pedir com urgência, enquanto está fresco.
 - **O que exatamente ela disse da Prova Nacional Docente?** Registrei só que citou, ligando à diferença entre decorar e entender. Confirmar se falou de data, de formato, de quem vai prestar, ou se usou como exemplo de avaliação que cobra entendimento. Se for algo com prazo, vira lembrete.
 - Perguntar se há uma quinta corrente na sequência. A lista de quatro costuma vir acompanhada da proposta que o próprio Saviani defende, e ela não apareceu nesta aula.
 - Confirmar quais correntes pedagógicas ela pretende cobrir, e se segue algum autor ou manual de referência para a disciplina.

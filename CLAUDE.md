@@ -33,6 +33,12 @@ confianca: media
 
 Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 
+## Desenvolvimento
+
+### Subtítulo do trecho da aula
+
+Aqui vai tudo, na ordem em que aconteceu. Parágrafos, listas, o que for.
+
 ## Conceitos
 
 - **Termo** :: definição em uma frase.
@@ -66,6 +72,9 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 
 Regras de conteúdo:
 
+- **O caderno não é resumo, é base viva.** A ideia é um Notion por aula: tudo o que apareceu fica registrado. `## Desenvolvimento` é onde a aula mora inteira, em `###` por trecho, na ordem em que aconteceu. **Nunca corte conteúdo para caber** — se está ficando grande, quebre em mais subtítulos.
+- **`## Resumo` é a porta de entrada**, não o conteúdo. Máximo 5 parágrafos, e ele pode ser condensado à vontade porque nada se perde: o detalhe está no Desenvolvimento.
+- **Aula ao vivo se escreve em camadas.** O Luis manda o material em pedaços enquanto a aula acontece; cada pedaço entra como novo `###`, e as outras seções são atualizadas depois.
 - **Blocos curtos.** Luis lê melhor em pedaços pequenos. Nada de parágrafo com 8 linhas.
 - **`::` é o separador** de conceito/definição, pergunta/resposta e ano/marco. Não use outro.
 - **`## Linha do tempo`** é `ano :: **Marco** — detalhe`. O ` — ` (travessão com espaços) separa o título do marco do texto explicativo; sem ele, tudo vira título. Use quando o professor mostrar cronologia — o site desenha o trilho.

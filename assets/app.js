@@ -179,6 +179,49 @@ function renderMapa(nos) {
     .join("")}</ul>`;
 }
 
+// bloco livre: ### subtítulo, parágrafos e listas. É o que sustenta o
+// ## Desenvolvimento, onde a aula fica inteira em vez de resumida.
+function renderProsa(bloco) {
+  const saida = [];
+  let lista = null;
+  let paragrafo = [];
+  const fecharLista = () => {
+    if (lista) saida.push(`<ul class="lista-simples">${lista.join("")}</ul>`);
+    lista = null;
+  };
+  const fecharParagrafo = () => {
+    if (paragrafo.length) saida.push(`<p>${inline(paragrafo.join(" "))}</p>`);
+    paragrafo = [];
+  };
+
+  for (const linha of bloco.split(/\r?\n/)) {
+    const t = linha.trim();
+    if (!t) {
+      fecharParagrafo();
+      fecharLista();
+      continue;
+    }
+    const sub = t.match(/^###\s+(.*)$/);
+    if (sub) {
+      fecharParagrafo();
+      fecharLista();
+      saida.push(`<h3 class="sub">${inline(sub[1])}</h3>`);
+      continue;
+    }
+    const item = t.match(/^[-*]\s+(.*)$/);
+    if (item) {
+      fecharParagrafo();
+      (lista ||= []).push(`<li>${inline(item[1])}</li>`);
+      continue;
+    }
+    fecharLista();
+    paragrafo.push(t);
+  }
+  fecharParagrafo();
+  fecharLista();
+  return saida.join("");
+}
+
 // primeiro " — " que está fora de um par **negrito** (o título pode conter travessão)
 function corteTravessao(txt) {
   let forte = false;
@@ -248,6 +291,13 @@ function renderAula(aula, texto) {
   if (resumo) {
     partes.push(`<section class="secao"><h2>Resumo</h2>
       ${paragrafos(resumo.corpo).map((p) => `<p>${inline(p)}</p>`).join("")}
+    </section>`);
+  }
+
+  const desenvolvimento = pegar("Desenvolvimento");
+  if (desenvolvimento) {
+    partes.push(`<section class="secao"><h2>Desenvolvimento</h2>
+      ${renderProsa(desenvolvimento.corpo)}
     </section>`);
   }
 

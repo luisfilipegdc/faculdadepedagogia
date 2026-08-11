@@ -646,6 +646,24 @@ kbd {
   color: var(--texto-3);
 }
 
+/* ---------- desenvolvimento (a aula inteira) ---------- */
+
+.sub {
+  font-size: 1.06rem;
+  font-weight: 650;
+  margin: 1.9rem 0 0.6rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--disc, var(--acento));
+  line-height: 1.35;
+}
+.secao .sub:first-child {
+  margin-top: 0.4rem;
+}
+.sub + p,
+.sub + ul {
+  margin-top: 0;
+}
+
 /* ---------- cor por disciplina ---------- */
 
 /* L=30% e suave a 95% mantêm as 6 matizes acima de 5.5:1 sobre o próprio

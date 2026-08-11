@@ -350,6 +350,86 @@ a {
   opacity: 1;
 }
 
+/* ---------- linha do tempo ---------- */
+
+.linha-tempo {
+  list-style: none;
+  margin: 0;
+  padding: 0.2rem 0 0.2rem 0.1rem;
+  display: grid;
+  gap: 0.1rem;
+}
+.lt-marco {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.4rem 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.55rem 0;
+}
+/* trilho: sai do centro do ano e vai até o próximo marco */
+.lt-marco::before {
+  content: "";
+  position: absolute;
+  left: 2.2rem;
+  top: 1.95rem;
+  bottom: -0.4rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--acento) 0%,
+    var(--borda) 100%
+  );
+  opacity: 0.45;
+  transform: translateX(-1px);
+}
+.lt-marco:last-child::before {
+  display: none;
+}
+.lt-ano {
+  position: relative;
+  z-index: 1;
+  justify-self: stretch;
+  text-align: center;
+  padding: 0.2rem 0.35rem;
+  border-radius: 999px;
+  background: var(--acento-suave);
+  color: var(--acento);
+  border: 1px solid color-mix(in srgb, var(--acento) 30%, transparent);
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+.lt-corpo {
+  display: grid;
+  gap: 0.18rem;
+  padding-bottom: 0.35rem;
+}
+.lt-titulo {
+  font-weight: 650;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+.lt-detalhe {
+  color: var(--texto-2);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 30rem) {
+  .lt-marco {
+    grid-template-columns: 3.6rem 1fr;
+    gap: 0.7rem;
+  }
+  .lt-marco::before {
+    left: 1.8rem;
+  }
+  .lt-ano {
+    font-size: 0.78rem;
+  }
+}
+
 .lista-questoes {
   padding-left: 1.3rem;
   margin: 0;
@@ -564,6 +644,253 @@ kbd {
   padding: 3rem 1rem;
   text-align: center;
   color: var(--texto-3);
+}
+
+/* ---------- cor por disciplina ---------- */
+
+/* L=30% e suave a 95% mantêm as 6 matizes acima de 5.5:1 sobre o próprio
+   fundo tingido — a 34% a verde caía para 4.49 e reprovava em AA. */
+.disciplina-bloco,
+.cartao,
+.retomar,
+.obra-aula,
+main#principal {
+  --disc: hsl(var(--disc-h, 25) 46% 30%);
+  --disc-suave: hsl(var(--disc-h, 25) 62% 95%);
+}
+html[data-tema="escuro"]
+  :is(.disciplina-bloco, .cartao, .retomar, .obra-aula, main#principal) {
+  --disc: hsl(var(--disc-h, 25) 55% 74%);
+  --disc-suave: hsl(var(--disc-h, 25) 30% 16%);
+}
+
+h2::before {
+  background: var(--disc, var(--acento));
+}
+.disciplina-titulo {
+  color: var(--disc);
+}
+.cartao {
+  border-left: 3px solid var(--disc);
+}
+.cartao-feito {
+  background: linear-gradient(to right, var(--disc-suave), var(--bg-2) 55%);
+}
+.tique {
+  color: var(--ok);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+/* ---------- lembretes ---------- */
+
+.lembretes {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 0 1.4rem;
+}
+.lembrete {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--bg-3);
+  font-size: 0.96rem;
+}
+.lembrete-urgente {
+  border-color: color-mix(in srgb, var(--alerta) 45%, transparent);
+  background: var(--alerta-suave);
+}
+.lembrete-quando {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  flex: none;
+}
+.lembrete-urgente .lembrete-quando {
+  color: var(--alerta);
+}
+
+/* ---------- retomar ---------- */
+
+.retomar {
+  display: grid;
+  gap: 0.15rem;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.8rem;
+  border: 1px solid var(--disc);
+  border-left: 3px solid var(--disc);
+  border-radius: var(--raio);
+  background: var(--disc-suave);
+  text-decoration: none;
+  color: inherit;
+}
+.retomar:hover {
+  border-color: var(--disc);
+  filter: brightness(0.98);
+}
+.retomar-rotulo {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--disc);
+}
+.retomar-tema {
+  font-weight: 650;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.retomar-disc {
+  font-size: 0.88rem;
+  color: var(--texto-2);
+}
+
+/* ---------- sumário da aula ---------- */
+
+.sumario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.5rem;
+}
+.chip {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--borda);
+  background: var(--bg-2);
+  color: var(--texto-2);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.chip:hover {
+  border-color: var(--disc);
+  color: var(--disc);
+}
+
+/* ---------- fim da aula ---------- */
+
+.fim-aula {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 3rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borda);
+}
+.btn-marcar[aria-pressed="true"] {
+  background: var(--ok-suave);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+.btn-voltar {
+  font-size: 0.92rem;
+  color: var(--texto-2);
+}
+
+/* ---------- biblioteca ---------- */
+
+.btn-biblioteca {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.obra-aviso {
+  color: var(--texto-3);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+  max-width: 38rem;
+}
+
+.autor-bloco {
+  margin-bottom: 2.2rem;
+}
+.autor-nome {
+  font-size: 1.15rem;
+  margin: 0 0 0.9rem;
+}
+
+.lista-obras {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+.obra {
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+.obra-sem-titulo {
+  background: none;
+  border-style: dashed;
+}
+.obra-titulo {
+  font-weight: 650;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+.obra-ano {
+  font-weight: 500;
+  color: var(--texto-3);
+  font-size: 0.9rem;
+}
+.obra-citacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  font-size: 0.93rem;
+  color: var(--texto-2);
+}
+.obra-nota {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+.obra-aula {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--disc-suave);
+  color: var(--disc);
+  text-decoration: none;
+  white-space: nowrap;
+  flex: none;
+}
+.obra-link {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--acento);
+  color: var(--acento);
+  text-decoration: none;
+}
+.obra-link:hover {
+  background: var(--acento-suave);
 }
 
 @media (prefers-reduced-motion: reduce) {

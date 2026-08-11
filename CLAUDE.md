@@ -21,6 +21,7 @@ Frontmatter YAML simples (chave: valor, uma por linha; listas em `[a, b]`):
 ---
 disciplina: Pedagogia em Espaços Não Escolares
 professor: Rosa Maria
+tratamento: Prof.ª
 data: 2026-08-05
 tema: Pedagogia para além da sala de aula
 tags: [espaços não escolares, EJA, educação especial]
@@ -42,6 +43,10 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
   - Ramo
     - Detalhe
 
+## Linha do tempo
+
+- 1988 :: **Nome do marco** — o que mudou, em uma frase.
+
 ## Flashcards
 
 - Pergunta? :: Resposta curta.
@@ -52,7 +57,7 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 
 ## Para ler
 
-- Autor, *Obra* — por que importa.
+- Autor, *Obra* (1979) — por que importa. [PDF na biblioteca da facul](https://...)
 
 ## Pendências
 
@@ -62,10 +67,38 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 Regras de conteúdo:
 
 - **Blocos curtos.** Luis lê melhor em pedaços pequenos. Nada de parágrafo com 8 linhas.
-- **`::` é o separador** de conceito/definição e de pergunta/resposta. Não use outro.
+- **`::` é o separador** de conceito/definição, pergunta/resposta e ano/marco. Não use outro.
+- **`## Linha do tempo`** é `ano :: **Marco** — detalhe`. O ` — ` (travessão com espaços) separa o título do marco do texto explicativo; sem ele, tudo vira título. Use quando o professor mostrar cronologia — o site desenha o trilho.
 - **Seções são opcionais**, mas a ordem acima é fixa quando existirem.
 - **`confianca`** = `alta` | `media` | `baixa`. Use `baixa` quando a transcrição estava ruim; o site mostra um aviso.
+- **`tratamento`** é o `Prof.` / `Prof.ª` que aparece antes do nome. O site não deduz — sem esse campo, mostra só o nome. Nunca infira a partir do nome; se não souber, deixe vazio e pergunte.
 - **Nunca invente** nome de autor, obra ou conceito que não apareceu no material. Se o áudio embaralhou, escreva o palpite em `## Pendências` com um `?`.
+
+## Biblioteca
+
+A página `#/biblioteca` é montada só a partir do `## Para ler` das aulas. O indexador separa `Autor`, `*Obra*` e `(ano)`, junta a mesma obra citada em aulas diferentes e agrupa por autor.
+
+- Item **sem `*obra*`** não vira livro. Vai para "Indicações sem obra definida" — é o caso de "Fundamentos do EJA", que é assunto, não título.
+- Item que é **só um nome de autor** encaixa junto das obras daquele autor, se ele já tiver alguma na lista. É correspondência exata, sem adivinhação.
+- **Link é opcional**, no fim da linha, em `[rótulo](url)`. Vira botão na biblioteca.
+
+Sobre o link: aponte para fonte legítima — repositório institucional, portal público, ou a assinatura de e-books da faculdade. **Nunca** cole link de cópia pirata, e nunca baixe o arquivo para dentro do repositório. Se não houver fonte legítima conhecida, deixe sem link.
+
+## Lembretes
+
+`conteudo/lembretes.md` — uma linha por lembrete, `AAAA-MM-DD :: texto`. Não é aula: o indexador ignora esse arquivo na contagem e joga a lista em `index.json`.
+
+O site mostra só os que ainda não passaram, com "hoje" / "amanhã" / "em N dias" no lugar da data seca, e destaca em laranja quando é hoje ou amanhã. Lembrete vencido some sozinho — não precisa apagar à mão.
+
+Quando o Luis disser "me lembra de X", acrescente a linha aqui **e** ofereça agendar o aviso de verdade; o arquivo sozinho só avisa quem abre o site.
+
+## Estudo (estado no navegador)
+
+Fica em `localStorage`, chave `estudo`: `{ "<arquivo>": { visto, estudada } }`. Nada disso vai para o repositório — é por dispositivo.
+
+- **Continuar de onde parou** na home: a aula vista mais recentemente que ainda não foi marcada como estudada.
+- **Cor por disciplina**: matiz fixa por posição em `disciplinas` no `index.json`. Disciplina nova entra com cor nova sozinha.
+- **Flashcards em blocos de 8.** Errou, a carta volta num bloco adiante — não no atual. O fim de bloco é uma parada legítima, com "Mais 8" e "Parar por hoje" lado a lado.
 
 ## Comandos
 

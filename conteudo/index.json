@@ -1,16 +1,227 @@
 {
-  "gerado": "2026-08-10T23:12:33.354Z",
+  "gerado": "2026-08-10T23:55:51.965Z",
   "totalAulas": 3,
   "totalFlashcards": 31,
   "disciplinas": [
     "Filosofia da Educação",
+    "Fundamentos da Docência",
     "Trabalho Pedagógico em Espaços Não Escolares"
   ],
+  "lembretes": [
+    {
+      "data": "2026-08-13",
+      "texto": "Levar **pincel** para a aula prática da Prof.ª Rosa Maria. A tinta ela leva; o avental é opcional."
+    }
+  ],
+  "biblioteca": {
+    "autores": [
+      {
+        "autor": "Alvin Toffler",
+        "obras": [
+          {
+            "obra": "O Choque do Futuro",
+            "ano": "1970",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "de onde vem a frase sobre aprender, desaprender e reaprender.",
+                "aula": {
+                  "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
+                  "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
+                  "disciplina": "Filosofia da Educação",
+                  "data": "2026-08-08"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": []
+      },
+      {
+        "autor": "Jean-François Lyotard",
+        "obras": [
+          {
+            "obra": "A Condição Pós-Moderna",
+            "ano": "1979",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "a origem da tese das metanarrativas. Ler ao menos a introdução.",
+                "aula": {
+                  "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
+                  "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
+                  "disciplina": "Filosofia da Educação",
+                  "data": "2026-08-08"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": []
+      },
+      {
+        "autor": "Paulo Freire",
+        "obras": [
+          {
+            "obra": "A Importância do Ato de Ler",
+            "ano": "",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "o texto curto onde está a leitura de mundo. Comece por aqui.",
+                "aula": {
+                  "arquivo": "conteudo/fundamentos-da-docencia/2026-08-10-o-que-e-educacao.md",
+                  "tema": "O que é educação? Leitura de mundo e educação como ato político",
+                  "disciplina": "Fundamentos da Docência",
+                  "data": "2026-08-10"
+                }
+              }
+            ]
+          },
+          {
+            "obra": "Pedagogia do Oprimido",
+            "ano": "",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "a crítica à educação bancária e a proposta emancipadora.",
+                "aula": {
+                  "arquivo": "conteudo/fundamentos-da-docencia/2026-08-10-o-que-e-educacao.md",
+                  "tema": "O que é educação? Leitura de mundo e educação como ato político",
+                  "disciplina": "Fundamentos da Docência",
+                  "data": "2026-08-10"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": [
+          {
+            "nota": "retomar junto com a aula sobre \"o que é educação\"; é o contraponto brasileiro a esse diagnóstico.",
+            "link": null,
+            "aula": {
+              "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
+              "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
+              "disciplina": "Filosofia da Educação",
+              "data": "2026-08-08"
+            }
+          }
+        ]
+      },
+      {
+        "autor": "Zygmunt Bauman",
+        "obras": [
+          {
+            "obra": "Modernidade Líquida",
+            "ano": "2000",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "o diagnóstico geral.",
+                "aula": {
+                  "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
+                  "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
+                  "disciplina": "Filosofia da Educação",
+                  "data": "2026-08-08"
+                }
+              }
+            ]
+          },
+          {
+            "obra": "Vida para o Consumo",
+            "ano": "2008",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "como as pessoas viram mercadoria de si mesmas.",
+                "aula": {
+                  "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
+                  "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
+                  "disciplina": "Filosofia da Educação",
+                  "data": "2026-08-08"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": []
+      },
+      {
+        "autor": "",
+        "obras": [
+          {
+            "obra": "Manifesto dos Pioneiros da Educação Nova",
+            "ano": "1932",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "leitura pedida em aula; é curto e está disponível on-line.",
+                "aula": {
+                  "arquivo": "conteudo/fundamentos-da-docencia/2026-08-10-o-que-e-educacao.md",
+                  "tema": "O que é educação? Leitura de mundo e educação como ato político",
+                  "disciplina": "Fundamentos da Docência",
+                  "data": "2026-08-10"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": []
+      }
+    ],
+    "tarefas": [
+      {
+        "texto": "Retomar a legislação e as diretrizes do estágio em espaços não escolares do próprio curso",
+        "nota": "a carga horária foi citada em aula e precisa ser conferida no plano da disciplina.",
+        "link": null,
+        "aula": {
+          "arquivo": "conteudo/espacos-nao-escolares/2026-08-05-pedagogia-alem-da-sala-de-aula.md",
+          "tema": "A pedagogia para além da sala de aula",
+          "disciplina": "Trabalho Pedagógico em Espaços Não Escolares",
+          "data": "2026-08-05"
+        }
+      },
+      {
+        "texto": "Material introdutório sobre pedagogia hospitalar",
+        "nota": "é o exemplo que abriu a aula e deve voltar.",
+        "link": null,
+        "aula": {
+          "arquivo": "conteudo/espacos-nao-escolares/2026-08-05-pedagogia-alem-da-sala-de-aula.md",
+          "tema": "A pedagogia para além da sala de aula",
+          "disciplina": "Trabalho Pedagógico em Espaços Não Escolares",
+          "data": "2026-08-05"
+        }
+      },
+      {
+        "texto": "Fundamentos do EJA",
+        "nota": "a professora sinalizou que o projeto de alfabetização de jovens e adultos vai virar prática da turma.",
+        "link": null,
+        "aula": {
+          "arquivo": "conteudo/espacos-nao-escolares/2026-08-05-pedagogia-alem-da-sala-de-aula.md",
+          "tema": "A pedagogia para além da sala de aula",
+          "disciplina": "Trabalho Pedagógico em Espaços Não Escolares",
+          "data": "2026-08-05"
+        }
+      },
+      {
+        "texto": "Auguste Comte",
+        "nota": "revisar as ideias centrais do positivismo e sua entrada no Brasil republicano.",
+        "link": null,
+        "aula": {
+          "arquivo": "conteudo/fundamentos-da-docencia/2026-08-10-o-que-e-educacao.md",
+          "tema": "O que é educação? Leitura de mundo e educação como ato político",
+          "disciplina": "Fundamentos da Docência",
+          "data": "2026-08-10"
+        }
+      }
+    ]
+  },
   "aulas": [
     {
-      "arquivo": "conteudo/filosofia-da-educacao/2026-08-10-o-que-e-educacao.md",
-      "disciplina": "Filosofia da Educação",
-      "professor": "",
+      "arquivo": "conteudo/fundamentos-da-docencia/2026-08-10-o-que-e-educacao.md",
+      "disciplina": "Fundamentos da Docência",
+      "professor": "Cláudio Amorim",
+      "tratamento": "Prof.",
       "data": "2026-08-10",
       "tema": "O que é educação? Leitura de mundo e educação como ato político",
       "tags": [
@@ -25,14 +236,16 @@
       "flashcards": 10,
       "questoes": 6,
       "conceitos": 10,
+      "marcos": 10,
       "pendencias": 4,
-      "minutosLeitura": 6,
-      "atualizado": "2026-08-10T23:02:43.799Z"
+      "minutosLeitura": 8,
+      "atualizado": "2026-08-10T23:43:45.138Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
       "disciplina": "Filosofia da Educação",
       "professor": "",
+      "tratamento": "",
       "data": "2026-08-08",
       "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
       "tags": [
@@ -48,14 +261,16 @@
       "flashcards": 10,
       "questoes": 6,
       "conceitos": 8,
+      "marcos": 0,
       "pendencias": 5,
-      "minutosLeitura": 5,
-      "atualizado": "2026-08-10T23:01:59.731Z"
+      "minutosLeitura": 6,
+      "atualizado": "2026-08-10T23:43:53.866Z"
     },
     {
       "arquivo": "conteudo/espacos-nao-escolares/2026-08-05-pedagogia-alem-da-sala-de-aula.md",
       "disciplina": "Trabalho Pedagógico em Espaços Não Escolares",
       "professor": "Rosa Maria",
+      "tratamento": "Prof.ª",
       "data": "2026-08-05",
       "tema": "A pedagogia para além da sala de aula",
       "tags": [
@@ -71,9 +286,10 @@
       "flashcards": 11,
       "questoes": 6,
       "conceitos": 10,
+      "marcos": 0,
       "pendencias": 7,
       "minutosLeitura": 7,
-      "atualizado": "2026-08-10T23:12:27.983Z"
+      "atualizado": "2026-08-10T23:43:58.678Z"
     }
   ]
 }

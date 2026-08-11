@@ -17,9 +17,9 @@ O perfil que a disciplina quer formar é o do **pedagogo pesquisador**, que prec
 
 A professora insiste nos **teóricos** e usa **Paulo Freire** como exemplo do problema: ele é ícone da educação e, ao mesmo tempo, em algumas realidades é tido como péssimo. O exemplo não é sobre Freire — é sobre método. A recepção de um teórico varia conforme a realidade de quem o lê, e por isso o domínio teórico não se separa da visão sócio-histórica.
 
-Ela recorre então ao **mito da caverna**, de Platão: prisioneiros acorrentados desde sempre tomam as sombras projetadas na parede por realidade; quem é solto e sai descobre que o que via era projeção, e ao voltar para contar não é acreditado. Daí ela puxa a frase **"o conhecimento liberta"** — que é a saída da caverna dita em quatro palavras — e a sustenta com uma **história de vida**, um caso concreto em vez de um argumento abstrato.
+Ela recorre então ao **mito da caverna**, de Platão: prisioneiros acorrentados tomam sombras por realidade, e quem sai e volta para contar não é acreditado. Daí puxa a frase **"o conhecimento liberta"**, sustentada por uma **história de vida**, e a distinção entre **decorar e entender** — que ela leva até a **Prova Nacional Docente**, ou seja, até uma avaliação real da carreira, e não só até a prova da disciplina.
 
-O autor que será o **foco da disciplina** é **Dermeval Saviani**. E o **domínio teórico** ganha conteúdo: as correntes a estudar são a **tradicional**, a **nova**, a **tecnicista** e a **crítico-reprodutivista**.
+O **foco da disciplina** será **Dermeval Saviani**, e o **domínio teórico** ganha conteúdo: as correntes a estudar são a **tradicional**, a **nova**, a **tecnicista** e a **crítico-reprodutivista**.
 
 ## Conceitos
 
@@ -43,6 +43,8 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**. E o **domín
 - **Pedagogia nova** :: desloca o centro para o aluno, seus interesses e sua atividade; o professor passa a acompanhar em vez de expor.
 - **Pedagogia tecnicista** :: põe o método e a eficiência do processo no centro; professor e aluno ficam secundários diante da organização técnica do ensino.
 - **Crítico-reprodutivista** :: lê a escola como reprodutora das desigualdades da sociedade que a cerca; explica bem o mecanismo, mas é criticada por não apontar saída pedagógica.
+- **Decorar x entender** :: decorar é reter o enunciado sem alcançar o que o sustenta; entender é poder reconstruir a ideia com outras palavras e aplicá-la a um caso novo.
+- **Prova Nacional Docente** :: avaliação nacional de docentes citada na aula como o lugar onde a diferença entre decorar e entender aparece na prática profissional.
 
 ## Mapa
 
@@ -72,6 +74,10 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**. E o **domín
     - Voltar e não ser acreditado
     - "O conhecimento liberta"
       - Sustentada por uma história de vida
+  - Decorar x entender
+    - Decorar: reter o enunciado
+    - Entender: reconstruir e aplicar
+    - Chega até a Prova Nacional Docente
 - Foco da disciplina
   - Dermeval Saviani
 - Correntes a estudar (domínio teórico)
@@ -107,6 +113,8 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**. E o **domín
 - O que caracteriza a pedagogia tecnicista? :: O método e a eficiência do processo no centro — professor e aluno ficam secundários diante da organização técnica.
 - Qual a tese das teorias crítico-reprodutivistas? :: Que a escola reproduz as desigualdades da sociedade em vez de corrigi-las.
 - Qual a crítica mais comum às teorias crítico-reprodutivistas? :: Que explicam bem o mecanismo da desigualdade, mas não apontam saída pedagógica.
+- Qual a diferença entre decorar e entender? :: Decorar é reter o enunciado sem alcançar o que o sustenta; entender é reconstruir a ideia com outras palavras e aplicá-la a um caso novo.
+- Onde a professora diz que a diferença entre decorar e entender aparece na prática? :: Na Prova Nacional Docente — uma avaliação da carreira, não só a prova da disciplina.
 
 ## Questões
 
@@ -126,6 +134,9 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**. E o **domín
 14. Tradicional, nova e tecnicista deslocam o centro do ensino de lugar em lugar: professor, aluno, método. O que cada deslocamento ganha e o que perde?
 15. A crítico-reprodutivista explica por que a escola reproduz desigualdade, mas é acusada de não apontar saída. Por que uma teoria que só explica é um problema para quem vai dar aula na segunda-feira?
 16. Ligue as quatro correntes ao pilar da análise brasileira: qual delas descreve melhor a escola pública que você conhece, e por quê?
+17. Decorar e entender produzem a mesma nota em muitas provas. Que tipo de questão consegue separar os dois?
+18. A pedagogia tradicional é acusada de premiar quem decora. Isso é defeito da corrente ou de como ela foi aplicada? Sustente.
+19. "O conhecimento liberta" e "decorar não é entender" são o mesmo argumento em dois registros. Mostre por quê, usando a caverna.
 
 ## Para ler
 
@@ -145,6 +156,7 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**. E o **domín
 - Saviani está aqui só com a descrição mínima de educador brasileiro. Não registrei a corrente à qual ele é associado porque a professora ainda não a nomeou em aula — quando ela nomear, o conceito entra com o nome dela, não com o meu.
 - **As quatro correntes vieram só por nome; as definições de uma linha são minhas.** Conferir com ela, principalmente a crítico-reprodutivista, cuja caracterização como "explica mas não aponta saída" é a crítica que se faz a ela, e não a autodescrição dela.
 - **Essas quatro correntes são exatamente a classificação usada por Saviani**, que ela anunciou como foco minutos antes — as três primeiras num grupo, a quarta noutro. A ligação é minha; confirmar se é assim que ela vai organizar a disciplina, e como se chama cada grupo na divisão dele.
+- **O que exatamente ela disse da Prova Nacional Docente?** Registrei só que citou, ligando à diferença entre decorar e entender. Confirmar se falou de data, de formato, de quem vai prestar, ou se usou como exemplo de avaliação que cobra entendimento. Se for algo com prazo, vira lembrete.
 - Perguntar se há uma quinta corrente na sequência. A lista de quatro costuma vir acompanhada da proposta que o próprio Saviani defende, e ela não apareceu nesta aula.
 - Confirmar quais correntes pedagógicas ela pretende cobrir, e se segue algum autor ou manual de referência para a disciplina.
 - Esta aula é o programa da disciplina, não conteúdo de prova ainda. Se ela deu exemplo ou nome de autor que não está aqui, acrescentar.

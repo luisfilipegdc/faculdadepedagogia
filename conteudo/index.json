@@ -1,7 +1,7 @@
 {
-  "gerado": "2026-08-11T23:15:31.600Z",
+  "gerado": "2026-08-11T23:17:17.288Z",
   "totalAulas": 5,
-  "totalFlashcards": 49,
+  "totalFlashcards": 55,
   "disciplinas": [
     "Filosofia da Educação",
     "Fundamentos da Docência",
@@ -276,13 +276,13 @@
       ],
       "fonte": "anotação em aula",
       "confianca": "media",
-      "flashcards": 14,
-      "questoes": 13,
-      "conceitos": 16,
+      "flashcards": 20,
+      "questoes": 16,
+      "conceitos": 20,
       "marcos": 0,
-      "pendencias": 13,
-      "minutosLeitura": 10,
-      "atualizado": "2026-08-11T23:15:24.072Z"
+      "pendencias": 16,
+      "minutosLeitura": 13,
+      "atualizado": "2026-08-11T23:17:02.840Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",

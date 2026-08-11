@@ -19,7 +19,7 @@ A professora insiste nos **teóricos** e usa **Paulo Freire** como exemplo do pr
 
 Ela recorre então ao **mito da caverna**, de Platão: prisioneiros acorrentados desde sempre tomam as sombras projetadas na parede por realidade; quem é solto e sai descobre que o que via era projeção, e ao voltar para contar não é acreditado. Daí ela puxa a frase **"o conhecimento liberta"** — que é a saída da caverna dita em quatro palavras — e a sustenta com uma **história de vida**, um caso concreto em vez de um argumento abstrato.
 
-O autor que será o **foco da disciplina** é **Dermeval Saviani**.
+O autor que será o **foco da disciplina** é **Dermeval Saviani**. E o **domínio teórico** ganha conteúdo: as correntes a estudar são a **tradicional**, a **nova**, a **tecnicista** e a **crítico-reprodutivista**.
 
 ## Conceitos
 
@@ -39,6 +39,10 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**.
 - **"O conhecimento liberta"** :: a frase que a professora tira da caverna; a libertação do prisioneiro é o conhecimento, e por isso a educação não é um detalhe da vida de alguém.
 - **História de vida** :: o recurso que ela usa para sustentar a frase — um caso concreto de alguém, em vez de argumento abstrato.
 - **Dermeval Saviani** :: o autor que será o foco da disciplina; educador brasileiro, referência no debate sobre educação no Brasil.
+- **Pedagogia tradicional** :: centrada no professor e na transmissão do conteúdo já acumulado; o aluno está na ponta que recebe.
+- **Pedagogia nova** :: desloca o centro para o aluno, seus interesses e sua atividade; o professor passa a acompanhar em vez de expor.
+- **Pedagogia tecnicista** :: põe o método e a eficiência do processo no centro; professor e aluno ficam secundários diante da organização técnica do ensino.
+- **Crítico-reprodutivista** :: lê a escola como reprodutora das desigualdades da sociedade que a cerca; explica bem o mecanismo, mas é criticada por não apontar saída pedagógica.
 
 ## Mapa
 
@@ -70,6 +74,16 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**.
       - Sustentada por uma história de vida
 - Foco da disciplina
   - Dermeval Saviani
+- Correntes a estudar (domínio teórico)
+  - Tradicional
+    - Centro no professor e no conteúdo
+  - Nova
+    - Centro no aluno e no interesse
+  - Tecnicista
+    - Centro no método e na eficiência
+  - Crítico-reprodutivista
+    - Escola reproduz a desigualdade
+    - Explica, mas não aponta saída
 
 ## Flashcards
 
@@ -87,6 +101,12 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**.
 - Que frase a professora tira do mito da caverna? :: "O conhecimento liberta" — a saída da caverna dita em quatro palavras.
 - Como ela sustenta a frase "o conhecimento liberta"? :: Com uma história de vida, um caso concreto em vez de argumento abstrato.
 - Qual autor é o foco da disciplina? :: Dermeval Saviani.
+- Quais correntes pedagógicas a disciplina vai estudar? :: Tradicional, nova, tecnicista e crítico-reprodutivista.
+- Onde está o centro na pedagogia tradicional? :: No professor e no conteúdo acumulado a ser transmitido.
+- O que muda da pedagogia tradicional para a nova? :: O centro sai do professor e do conteúdo e vai para o aluno, seus interesses e sua atividade.
+- O que caracteriza a pedagogia tecnicista? :: O método e a eficiência do processo no centro — professor e aluno ficam secundários diante da organização técnica.
+- Qual a tese das teorias crítico-reprodutivistas? :: Que a escola reproduz as desigualdades da sociedade em vez de corrigi-las.
+- Qual a crítica mais comum às teorias crítico-reprodutivistas? :: Que explicam bem o mecanismo da desigualdade, mas não apontam saída pedagógica.
 
 ## Questões
 
@@ -103,6 +123,9 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**.
 11. A caverna é da Antiguidade e abre uma disciplina sobre educação hoje. Que argumento essa escolha sustenta sobre a utilidade do contexto histórico?
 12. "O conhecimento liberta" é uma frase de efeito até ser sustentada. Que trabalho a história de vida faz que o argumento abstrato não faria?
 13. A frase promete libertação, mas na caverna quem sai e volta é rejeitado. As duas coisas se contradizem, ou a rejeição faz parte do preço? Sustente.
+14. Tradicional, nova e tecnicista deslocam o centro do ensino de lugar em lugar: professor, aluno, método. O que cada deslocamento ganha e o que perde?
+15. A crítico-reprodutivista explica por que a escola reproduz desigualdade, mas é acusada de não apontar saída. Por que uma teoria que só explica é um problema para quem vai dar aula na segunda-feira?
+16. Ligue as quatro correntes ao pilar da análise brasileira: qual delas descreve melhor a escola pública que você conhece, e por quê?
 
 ## Para ler
 
@@ -120,6 +143,9 @@ O autor que será o **foco da disciplina** é **Dermeval Saviani**.
 - **De quem era a história de vida?** Não ficou registrado se era caso dela, de aluno, de personagem conhecido ou de alguém do material. É o que dá força ao "o conhecimento liberta", e sem isso a frase fica solta no caderno. Pedir.
 - **Saviani: qual obra?** Ela anunciou o autor como foco, sem título. Confirmar qual livro ou texto vai ser cobrado, para entrar em `## Para ler` com obra e ano e aparecer direito na biblioteca.
 - Saviani está aqui só com a descrição mínima de educador brasileiro. Não registrei a corrente à qual ele é associado porque a professora ainda não a nomeou em aula — quando ela nomear, o conceito entra com o nome dela, não com o meu.
+- **As quatro correntes vieram só por nome; as definições de uma linha são minhas.** Conferir com ela, principalmente a crítico-reprodutivista, cuja caracterização como "explica mas não aponta saída" é a crítica que se faz a ela, e não a autodescrição dela.
+- **Essas quatro correntes são exatamente a classificação usada por Saviani**, que ela anunciou como foco minutos antes — as três primeiras num grupo, a quarta noutro. A ligação é minha; confirmar se é assim que ela vai organizar a disciplina, e como se chama cada grupo na divisão dele.
+- Perguntar se há uma quinta corrente na sequência. A lista de quatro costuma vir acompanhada da proposta que o próprio Saviani defende, e ela não apareceu nesta aula.
 - Confirmar quais correntes pedagógicas ela pretende cobrir, e se segue algum autor ou manual de referência para a disciplina.
 - Esta aula é o programa da disciplina, não conteúdo de prova ainda. Se ela deu exemplo ou nome de autor que não está aqui, acrescentar.
 - Verificar se ela retomou o Ubuntu ou a intencionalidade pedagógica da primeira aula — as duas aulas ainda não estão ligadas no caderno.

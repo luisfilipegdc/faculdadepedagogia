@@ -1,7 +1,7 @@
 {
-  "gerado": "2026-08-11T22:23:24.868Z",
+  "gerado": "2026-08-11T22:42:19.554Z",
   "totalAulas": 5,
-  "totalFlashcards": 35,
+  "totalFlashcards": 38,
   "disciplinas": [
     "Filosofia da Educação",
     "Fundamentos da Docência",
@@ -249,22 +249,27 @@
       "atualizado": "2026-08-10T23:43:45.138Z"
     },
     {
-      "arquivo": "conteudo/historia-da-educacao/2026-08-10-historia-da-educacao.md",
+      "arquivo": "conteudo/historia-da-educacao/2026-08-10-trajetoria-historica-da-educacao.md",
       "disciplina": "História da Educação",
       "professor": "Alessandra Moulin",
       "tratamento": "Prof.ª",
       "data": "2026-08-10",
-      "tema": "Segunda aula — conteúdo ainda não registrado",
-      "tags": [],
-      "fonte": "",
-      "confianca": "alta",
-      "flashcards": 0,
-      "questoes": 0,
-      "conceitos": 0,
+      "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
+      "tags": [
+        "processo formativo",
+        "trajetória histórica",
+        "correntes pedagógicas",
+        "realidade brasileira"
+      ],
+      "fonte": "anotação em aula",
+      "confianca": "media",
+      "flashcards": 3,
+      "questoes": 3,
+      "conceitos": 4,
       "marcos": 0,
-      "pendencias": 4,
-      "minutosLeitura": 1,
-      "atualizado": "2026-08-11T22:22:28.135Z"
+      "pendencias": 5,
+      "minutosLeitura": 3,
+      "atualizado": "2026-08-11T22:41:59.706Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",

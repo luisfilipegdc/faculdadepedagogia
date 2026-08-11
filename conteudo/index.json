@@ -1,7 +1,7 @@
 {
-  "gerado": "2026-08-11T23:10:40.828Z",
+  "gerado": "2026-08-11T23:15:31.600Z",
   "totalAulas": 5,
-  "totalFlashcards": 46,
+  "totalFlashcards": 49,
   "disciplinas": [
     "Filosofia da Educação",
     "Fundamentos da Docência",
@@ -220,6 +220,17 @@
           "disciplina": "Fundamentos da Docência",
           "data": "2026-08-10"
         }
+      },
+      {
+        "texto": "Dermeval Saviani",
+        "nota": "anunciado em aula como o foco da disciplina; confirmar qual obra dele será cobrada.",
+        "link": null,
+        "aula": {
+          "arquivo": "conteudo/historia-da-educacao/2026-08-10-trajetoria-historica-da-educacao.md",
+          "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
+          "disciplina": "História da Educação",
+          "data": "2026-08-10"
+        }
       }
     ]
   },
@@ -259,17 +270,19 @@
         "processo formativo",
         "trajetória histórica",
         "correntes pedagógicas",
-        "realidade brasileira"
+        "realidade brasileira",
+        "Dermeval Saviani",
+        "mito da caverna"
       ],
       "fonte": "anotação em aula",
       "confianca": "media",
-      "flashcards": 11,
-      "questoes": 11,
-      "conceitos": 13,
+      "flashcards": 14,
+      "questoes": 13,
+      "conceitos": 16,
       "marcos": 0,
-      "pendencias": 10,
-      "minutosLeitura": 8,
-      "atualizado": "2026-08-11T23:10:26.236Z"
+      "pendencias": 13,
+      "minutosLeitura": 10,
+      "atualizado": "2026-08-11T23:15:24.072Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",

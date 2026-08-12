@@ -1115,20 +1115,36 @@ body.painel .corpo > #principal {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
   }
+  /* Duas linhas limpas: identidade em cima, busca embaixo. Antes o topo
+     quebrava em três, com a busca espremida num botão de 3 letras. */
+  .topo {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+  }
   .btn-menu {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-right: auto;
+    order: -1;
+    margin: 0;
   }
-  /* espremida entre os ícones, a busca virava um círculo vazio */
+  .marca {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .topo-acoes {
-    flex-wrap: wrap;
+    flex: 1 1 100%;
+    order: 3;
+    justify-content: flex-start;
+    gap: 0.5rem;
   }
   .busca {
-    order: 3;
-    flex: 1 1 100%;
-    width: 100%;
+    flex: 1;
+    width: auto;
+    min-width: 0;
   }
   .lateral {
     display: none;
@@ -1423,6 +1439,98 @@ h2::before {
 }
 .obra-link:hover {
   background: var(--acento-suave);
+}
+
+/* ---------- celular ---------- */
+
+@media (max-width: 34rem) {
+  .corpo {
+    padding: 0 1rem;
+  }
+  main {
+    padding-top: 1.2rem;
+    padding-bottom: 3.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  /* a linha institucional é conferência, não uso diário */
+  .painel-cab .painel-meta:first-of-type {
+    display: none;
+  }
+
+  .agora {
+    padding: 1.2rem 1.15rem;
+  }
+  .agora-titulo {
+    font-size: 1.15rem;
+  }
+
+  /* alvos de toque: 44px é o mínimo confortável com o polegar */
+  .linha-simples,
+  .gaveta > summary {
+    min-height: 2.75rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  /* as tags servem para buscar, não para ler — no celular só ocupam a tela */
+  .meta .selo-acento {
+    display: none;
+  }
+
+  /* o sumário virava quatro linhas de pílulas; agora é uma faixa que rola */
+  .sumario {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .sumario::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    scroll-snap-align: start;
+  }
+
+  /* tabela larga rola sozinha em vez de estourar a página */
+  .gaveta-corpo {
+    overflow-x: auto;
+  }
+  .cronograma {
+    min-width: 30rem;
+  }
+
+  .secao p {
+    max-width: none;
+  }
+  .obra-citacao {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .tarefa {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tarefa-data {
+    text-align: left;
+  }
+  .fim-aula {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+  }
+  .btn-marcar {
+    width: 100%;
+    padding: 0.75rem 1.1rem;
+  }
+  .btn-voltar {
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

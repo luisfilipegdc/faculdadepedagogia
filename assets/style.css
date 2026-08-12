@@ -1379,10 +1379,64 @@ h2::before {
   gap: 0.7rem;
 }
 .obra {
-  padding: 0.85rem 1.1rem;
+  padding: 0.95rem 1.1rem;
+  margin-bottom: 0.6rem;
   background: var(--bg-2);
   border: 1px solid var(--borda);
-  border-radius: var(--raio);
+  border-radius: 10px;
+}
+/* a bibliografia oficial precisa vencer visualmente as citadas de passagem:
+   é ela que decide o que ler primeiro */
+.obra-basica {
+  border-left: 3px solid var(--disc);
+  padding: 1.1rem 1.2rem;
+}
+.obra-lida {
+  background: none;
+}
+.obra-lida .obra-titulo {
+  color: var(--texto-2);
+}
+.obra-topo {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.obra-autor {
+  font-size: 0.85rem;
+  color: var(--texto-2);
+  margin-top: 0.1rem;
+}
+.marcar-lida {
+  flex: none;
+  font-family: var(--fonte);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--borda);
+  background: var(--bg-3);
+  color: var(--texto-2);
+  cursor: pointer;
+  min-height: 1.9rem;
+}
+.marcar-lida:hover {
+  border-color: var(--disc);
+  color: var(--disc);
+}
+.marcar-lida[aria-pressed="true"] {
+  background: var(--ok-suave);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+.obra-aulas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
 }
 .obra-sem-titulo {
   background: none;

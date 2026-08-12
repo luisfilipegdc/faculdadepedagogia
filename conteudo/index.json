@@ -1,5 +1,5 @@
 {
-  "gerado": "2026-08-12T03:26:07.006Z",
+  "gerado": "2026-08-12T03:33:35.812Z",
   "totalAulas": 5,
   "totalFlashcards": 70,
   "disciplinas": [
@@ -18,7 +18,11 @@
   "lembretes": [
     {
       "data": "2026-08-13",
-      "texto": "Levar **pincel** para a aula prática da Prof.ª Rosa Maria. A tinta ela leva; o avental é opcional."
+      "texto": "**Aula de Estágio com a Prof.ª Rosa Maria**, 19h–22h. Levar **pincel** — a tinta ela leva, o avental é opcional."
+    },
+    {
+      "data": "2026-08-13",
+      "texto": "Perguntar à Prof.ª Rosa: a carga horária é **80h** (declaração) ou **40h** (o que soou no áudio)? E a primeira aula foi **05/08 ou 06/08**?"
     }
   ],
   "links": [],
@@ -80,6 +84,7 @@
             "obra": "O Choque do Futuro",
             "ano": "1970",
             "link": null,
+            "basica": false,
             "citacoes": [
               {
                 "nota": "de onde vem a frase sobre aprender, desaprender e reaprender.",
@@ -102,9 +107,10 @@
             "obra": "Pensamento Pedagógico e Políticas de Educação",
             "ano": "2013",
             "link": null,
+            "basica": true,
             "citacoes": [
               {
-                "nota": "bibliografia básica; UnB/Liber. Liga pensamento pedagógico a política, que é o objetivo declarado da Unidade II.",
+                "nota": "UnB/Liber. Liga pensamento pedagógico a política, que é o objetivo declarado da Unidade II.",
                 "aula": {
                   "arquivo": "conteudo/historia-da-educacao/2026-08-11-trajetoria-historica-da-educacao.md",
                   "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
@@ -124,6 +130,7 @@
             "obra": "A Condição Pós-Moderna",
             "ano": "1979",
             "link": null,
+            "basica": false,
             "citacoes": [
               {
                 "nota": "a origem da tese das metanarrativas. Ler ao menos a introdução.",
@@ -146,9 +153,10 @@
             "obra": "O Programa Diversidade na Universidade e Construção de uma Política Educacional Anti-Racista",
             "ano": "2007",
             "link": null,
+            "basica": true,
             "citacoes": [
               {
-                "nota": "bibliografia básica; MEC/UNESCO, e-book.",
+                "nota": "MEC/UNESCO, e-book. Publicação de órgão público, então costuma ter acesso livre.",
                 "aula": {
                   "arquivo": "conteudo/historia-da-educacao/2026-08-11-trajetoria-historica-da-educacao.md",
                   "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
@@ -168,9 +176,10 @@
             "obra": "História da Educação no Brasil (1930/1973)",
             "ano": "2014",
             "link": null,
+            "basica": true,
             "citacoes": [
               {
-                "nota": "bibliografia básica; Editora Vozes. O recorte 1930–1973 é onde a Unidade II desemboca.",
+                "nota": "Editora Vozes. O recorte 1930–1973 é onde a Unidade II desemboca.",
                 "aula": {
                   "arquivo": "conteudo/historia-da-educacao/2026-08-11-trajetoria-historica-da-educacao.md",
                   "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
@@ -190,6 +199,7 @@
             "obra": "A Importância do Ato de Ler",
             "ano": "",
             "link": null,
+            "basica": false,
             "citacoes": [
               {
                 "nota": "o texto curto onde está a leitura de mundo. Comece por aqui.",
@@ -206,6 +216,7 @@
             "obra": "Pedagogia do Oprimido",
             "ano": "",
             "link": null,
+            "basica": false,
             "citacoes": [
               {
                 "nota": "a crítica à educação bancária e a proposta emancipadora.",
@@ -239,6 +250,7 @@
             "obra": "Modernidade Líquida",
             "ano": "2000",
             "link": null,
+            "basica": false,
             "citacoes": [
               {
                 "nota": "o diagnóstico geral.",
@@ -255,6 +267,7 @@
             "obra": "Vida para o Consumo",
             "ano": "2008",
             "link": null,
+            "basica": false,
             "citacoes": [
               {
                 "nota": "como as pessoas viram mercadoria de si mesmas.",
@@ -277,6 +290,7 @@
             "obra": "Manifesto dos Pioneiros da Educação Nova",
             "ano": "1932",
             "link": null,
+            "basica": false,
             "citacoes": [
               {
                 "nota": "leitura pedida em aula; é curto e está disponível on-line.",
@@ -376,7 +390,7 @@
       "marcos": 0,
       "pendencias": 27,
       "minutosLeitura": 35,
-      "atualizado": "2026-08-12T03:25:42.877Z"
+      "atualizado": "2026-08-12T03:33:35.571Z"
     },
     {
       "arquivo": "conteudo/fundamentos-da-docencia/2026-08-10-o-que-e-educacao.md",

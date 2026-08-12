@@ -63,7 +63,7 @@ Aqui vai tudo, na ordem em que aconteceu. Parágrafos, listas, o que for.
 
 ## Para ler
 
-- Autor, *Obra* (1979) — por que importa. [PDF na biblioteca da facul](https://...)
+- [básica] Autor, *Obra* (1979) — por que importa. [PDF na biblioteca da facul](https://...)
 
 ## Pendências
 
@@ -90,6 +90,8 @@ A página `#/biblioteca` é montada só a partir do `## Para ler` das aulas. O i
 - Item **sem `*obra*`** não vira livro. Vai para "Indicações sem obra definida" — é o caso de "Fundamentos do EJA", que é assunto, não título.
 - Item que é **só um nome de autor** encaixa junto das obras daquele autor, se ele já tiver alguma na lista. É correspondência exata, sem adivinhação.
 - **Link é opcional**, no fim da linha, em `[rótulo](url)`. Vira botão na biblioteca.
+- **`[básica]` no começo da linha** marca a bibliografia oficial da disciplina. A biblioteca separa essas obras num bloco "comece por aqui", acima do que só foi citado de passagem. Use só para o que o professor declarou como bibliografia básica — se tudo virar básica, a separação perde a função.
+- **Marcar como lida** é estado do navegador, chave `lidas`, como o `estudada` das aulas. Não vai para o repositório.
 
 Sobre o link: aponte para fonte legítima — repositório institucional, portal público, ou a assinatura de e-books da faculdade. **Nunca** cole link de cópia pirata, e nunca baixe o arquivo para dentro do repositório. Se não houver fonte legítima conhecida, deixe sem link.
 

@@ -764,6 +764,16 @@ lateral.addEventListener("click", (e) => {
 
 /* ---------------- biblioteca ---------------- */
 
+/* leituras marcadas como lidas ficam no navegador, como o estudo das aulas */
+let LIDAS = ler("lidas", {});
+const foiLida = (chave) => !!LIDAS[chave];
+function alternarLida(chave) {
+  if (LIDAS[chave]) delete LIDAS[chave];
+  else LIDAS[chave] = new Date().toISOString();
+  guardar("lidas", LIDAS);
+}
+const chaveLeitura = (o) => semAcento(`${o.autor || ""} ${o.obra}`).replace(/[^a-z0-9]+/g, "-");
+
 const botaoLink = (link) =>
   link
     ? `<a class="obra-link" href="${escapar(link.url)}" target="_blank" rel="noopener noreferrer">${escapar(link.rotulo)} ↗</a>`
@@ -776,90 +786,120 @@ function renderBiblioteca() {
   document.title = "Biblioteca — Caderno de Pedagogia";
 
   const bib = INDICE.biblioteca || { autores: [], tarefas: [] };
-  const totalObras = bib.autores.reduce((s, a) => s + a.obras.length, 0);
+  const todas = bib.autores.flatMap((g) =>
+    g.obras.map((o) => ({ ...o, autor: g.autor })),
+  );
+  const basicas = todas.filter((o) => o.basica);
+  const citadas = todas.filter((o) => !o.basica);
 
-  if (!totalObras && !bib.tarefas.length) {
+  if (!todas.length && !bib.tarefas.length) {
     principal.innerHTML = `<p class="migalha"><a href="#/">Caderno</a></p><h1>Biblioteca</h1>
       <p class="vazio">Nenhuma leitura citada nas aulas ainda.</p>`;
     return;
   }
 
-  const linkAula = (aula) =>
-    `<a class="obra-aula" href="#/aula/${encodeURIComponent(aula.arquivo)}" style="--disc-h:${matizDisciplina(aula.disciplina)}">${escapar(aula.disciplina)} · ${dataBonita(aula.data)}</a>`;
+  const lidas = todas.filter((o) => foiLida(chaveLeitura(o))).length;
 
-  const blocos = bib.autores
-    .map(
-      (grupo) => `
-      <section class="autor-bloco">
-        <h2 class="autor-nome">${grupo.autor ? escapar(grupo.autor) : "Obras sem autor citado"}</h2>
-        <ul class="lista-obras">
-          ${grupo.obras
-            .map(
-              (o) => `
-            <li class="obra">
-              <div class="obra-titulo">${escapar(o.obra)}${o.ano ? ` <span class="obra-ano">${escapar(o.ano)}</span>` : ""}</div>
-              ${botaoLink(o.link)}
-              ${o.citacoes
-                .map(
-                  (c) => `<div class="obra-citacao">
-                    ${c.nota ? `<span class="obra-nota">${inline(c.nota)}</span>` : ""}
-                    ${linkAula(c.aula)}
-                  </div>`,
-                )
-                .join("")}
-            </li>`,
-            )
-            .join("")}
-          ${grupo.mencoes
-            .map(
-              (m) => `
-            <li class="obra obra-sem-titulo">
-              <div class="obra-titulo">Sem obra específica indicada</div>
-              ${botaoLink(m.link)}
-              <div class="obra-citacao">
-                ${m.nota ? `<span class="obra-nota">${inline(m.nota)}</span>` : ""}
-                ${linkAula(m.aula)}
-              </div>
-            </li>`,
-            )
-            .join("")}
-        </ul>
-      </section>`,
-    )
-    .join("");
+  const cartaoObra = (o, destaque) => {
+    const chave = chaveLeitura(o);
+    const lida = foiLida(chave);
+    const aulas = o.citacoes.map((c) => c.aula);
+    const disc = aulas[0]?.disciplina || "";
+    return `<article class="obra${destaque ? " obra-basica" : ""}${lida ? " obra-lida" : ""}"
+             style="--disc-h:${matizDisciplina(disc)}">
+      <div class="obra-topo">
+        <div>
+          <div class="obra-titulo">${escapar(o.obra)}${o.ano ? ` <span class="obra-ano">${escapar(o.ano)}</span>` : ""}</div>
+          <div class="obra-autor">${escapar(o.autor || "sem autor citado")}</div>
+        </div>
+        <button class="marcar-lida" data-leitura="${chave}" aria-pressed="${lida}"
+                title="${lida ? "Marcar como não lida" : "Marcar como lida"}">${lida ? "✓ lida" : "marcar lida"}</button>
+      </div>
+      ${o.citacoes[0]?.nota ? `<p class="obra-nota">${inline(o.citacoes[0].nota)}</p>` : ""}
+      ${botaoLink(o.link)}
+      <div class="obra-aulas">
+        ${aulas
+          .map(
+            (a) =>
+              `<a class="obra-aula" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">${escapar(a.disciplina)} · ${dataBonita(a.data).slice(0, 5)}</a>`,
+          )
+          .join("")}
+      </div>
+    </article>`;
+  };
 
-  const tarefas = bib.tarefas.length
-    ? `<section class="autor-bloco">
-        <h2 class="autor-nome">Indicações sem obra definida</h2>
-        <p class="obra-aviso">O professor pediu o assunto, não um título. Confirmar a referência exata antes de citar em trabalho.</p>
-        <ul class="lista-obras">
-          ${bib.tarefas
-            .map(
-              (t) => `
-            <li class="obra obra-sem-titulo">
-              <div class="obra-titulo">${inline(t.texto)}</div>
-              ${botaoLink(t.link)}
-              <div class="obra-citacao">
-                ${t.nota ? `<span class="obra-nota">${inline(t.nota)}</span>` : ""}
-                ${linkAula(t.aula)}
-              </div>
-            </li>`,
-            )
-            .join("")}
-        </ul>
-      </section>`
-    : "";
+  const porAutor = (lista) => {
+    const grupos = new Map();
+    for (const o of lista) {
+      const k = o.autor || "Sem autor citado";
+      if (!grupos.has(k)) grupos.set(k, []);
+      grupos.get(k).push(o);
+    }
+    return [...grupos.entries()]
+      .sort((a, b) => (a[0] === "Sem autor citado" ? 1 : b[0] === "Sem autor citado" ? -1 : a[0].localeCompare(b[0], "pt-BR")))
+      .map(
+        ([autor, obras]) => `
+        <div class="autor-bloco">
+          <h3 class="autor-nome">${escapar(autor)}</h3>
+          ${obras.map((o) => cartaoObra(o, false)).join("")}
+        </div>`,
+      )
+      .join("");
+  };
 
   principal.innerHTML = `
     <p class="migalha"><a href="#/">Caderno</a></p>
     <h1>Biblioteca</h1>
     <div class="meta">
-      <span>${totalObras} obra${totalObras > 1 ? "s" : ""}</span>
-      <span>${bib.autores.filter((a) => a.autor).length} autores</span>
-      ${bib.tarefas.length ? `<span class="selo selo-alerta">${bib.tarefas.length} a confirmar</span>` : ""}
+      <span>${todas.length} obra${todas.length > 1 ? "s" : ""}</span>
+      ${lidas ? `<span class="selo selo-ok">${lidas} lida${lidas > 1 ? "s" : ""}</span>` : ""}
     </div>
-    <p class="obra-aviso">Montada a partir do <b>Para ler</b> de cada aula — nada aqui foi acrescentado por fora.</p>
-    ${blocos}${tarefas}`;
+
+    ${
+      basicas.length
+        ? `<section class="secao">
+            <h2>Bibliografia básica <span class="selo selo-ok">comece por aqui</span></h2>
+            <p class="obra-aviso">As que a disciplina cobra. As outras foram citadas de passagem em aula.</p>
+            ${basicas.map((o) => cartaoObra(o, true)).join("")}
+          </section>`
+        : ""
+    }
+
+    ${
+      citadas.length
+        ? `<section class="secao">
+            <h2>Citadas em aula <span class="selo">${citadas.length}</span></h2>
+            ${porAutor(citadas)}
+          </section>`
+        : ""
+    }
+
+    ${
+      bib.tarefas.length
+        ? `<details class="gaveta">
+            <summary>Indicações sem obra definida<span class="gaveta-conta">${bib.tarefas.length}</span></summary>
+            <div class="gaveta-corpo">
+              <p class="obra-aviso">O professor pediu o assunto, não um título. Confirmar a referência antes de citar em trabalho.</p>
+              ${bib.tarefas
+                .map(
+                  (t) => `<div class="obra obra-sem-titulo">
+                    <div class="obra-titulo">${inline(t.texto)}</div>
+                    ${t.nota ? `<p class="obra-nota">${inline(t.nota)}</p>` : ""}
+                    <div class="obra-aulas"><a class="obra-aula" href="#/aula/${encodeURIComponent(t.aula.arquivo)}" style="--disc-h:${matizDisciplina(t.aula.disciplina)}">${escapar(t.aula.disciplina)} · ${dataBonita(t.aula.data).slice(0, 5)}</a></div>
+                  </div>`,
+                )
+                .join("")}
+            </div>
+          </details>`
+        : ""
+    }`;
+
+  principal.querySelectorAll("[data-leitura]").forEach((b) =>
+    b.addEventListener("click", () => {
+      alternarLida(b.dataset.leitura);
+      renderBiblioteca();
+    }),
+  );
 }
 
 /* ---------------- modo flashcard ---------------- */

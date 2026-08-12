@@ -373,9 +373,9 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 
 ## Para ler
 
-- Otaíza de O. Romanelli, *História da Educação no Brasil (1930/1973)* (2014) — bibliografia básica; Editora Vozes. O recorte 1930–1973 é onde a Unidade II desemboca.
-- Célio da Cunha; Maria Abádia da Silva, *Pensamento Pedagógico e Políticas de Educação* (2013) — bibliografia básica; UnB/Liber. Liga pensamento pedagógico a política, que é o objetivo declarado da Unidade II.
-- Maria Lúcia Braga; Maria Helena Silveira, *O Programa Diversidade na Universidade e Construção de uma Política Educacional Anti-Racista* (2007) — bibliografia básica; MEC/UNESCO, e-book.
+- [básica] Otaíza de O. Romanelli, *História da Educação no Brasil (1930/1973)* (2014) — Editora Vozes. O recorte 1930–1973 é onde a Unidade II desemboca.
+- [básica] Célio da Cunha; Maria Abádia da Silva, *Pensamento Pedagógico e Políticas de Educação* (2013) — UnB/Liber. Liga pensamento pedagógico a política, que é o objetivo declarado da Unidade II.
+- [básica] Maria Lúcia Braga; Maria Helena Silveira, *O Programa Diversidade na Universidade e Construção de uma Política Educacional Anti-Racista* (2007) — MEC/UNESCO, e-book. Publicação de órgão público, então costuma ter acesso livre.
 - Dermeval Saviani — anunciado em aula como o foco da disciplina; confirmar qual obra dele será cobrada.
 
 ## Estudo adiantado

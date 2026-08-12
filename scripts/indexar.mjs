@@ -118,8 +118,15 @@ function itensDe(mapa, titulo) {
 // "Autor, *Obra* (1979) — nota" e as três variações que aparecem de fato:
 // sem autor, sem obra, e a tarefa de leitura que não é obra nenhuma.
 function parseLeitura(linha) {
-  // link legítimo no fim da linha: [rótulo](url) — sai da nota e vira botão
+  // "[básica]" no início marca a bibliografia oficial da disciplina, que a
+  // biblioteca separa do que só foi citado de passagem em aula
   let resto = linha;
+  let basica = false;
+  const mBasica = resto.match(/^\s*\[b[áa]sica\]\s*/i);
+  if (mBasica) {
+    basica = true;
+    resto = resto.slice(mBasica[0].length);
+  }
   let link = null;
   const mLink = resto.match(/\s*\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)\s*$/);
   if (mLink) {
@@ -142,6 +149,7 @@ function parseLeitura(linha) {
     texto,
     nota,
     link,
+    basica,
     obra: mObra ? mObra[1].trim() : "",
     autor: mObra ? autor : "",
     ano: mAno ? mAno[1] : "",
@@ -278,12 +286,14 @@ for (const l of todasLeituras) {
       autor: l.autor,
       ano: l.ano,
       link: l.link,
+      basica: false,
       citacoes: [],
     });
   }
   const alvo = porObra.get(chave);
   if (!alvo.ano && l.ano) alvo.ano = l.ano;
   if (!alvo.link && l.link) alvo.link = l.link;
+  if (l.basica) alvo.basica = true;
   alvo.citacoes.push({ nota: l.nota, aula: l.aula });
 }
 
@@ -299,6 +309,7 @@ for (const o of [...porObra.values()].sort((a, b) =>
     obra: o.obra,
     ano: o.ano,
     link: o.link,
+    basica: o.basica,
     citacoes: o.citacoes,
   });
 }

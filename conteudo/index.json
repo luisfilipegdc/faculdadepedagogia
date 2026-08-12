@@ -1,5 +1,5 @@
 {
-  "gerado": "2026-08-12T00:13:29.186Z",
+  "gerado": "2026-08-12T00:14:58.732Z",
   "totalAulas": 5,
   "totalFlashcards": 70,
   "disciplinas": [
@@ -22,6 +22,20 @@
   ],
   "links": [],
   "horarios": [],
+  "curso": [
+    {
+      "rotulo": "Instituição",
+      "valor": "Universidade Católica de Brasília"
+    },
+    {
+      "rotulo": "Curso",
+      "valor": "Pedagogia"
+    },
+    {
+      "rotulo": "Semestre",
+      "valor": "2026/2"
+    }
+  ],
   "biblioteca": {
     "autores": [
       {
@@ -331,7 +345,7 @@
       "arquivo": "conteudo/historia-da-educacao/2026-08-10-trajetoria-historica-da-educacao.md",
       "disciplina": "História da Educação",
       "professor": "Alessandra Moulin",
-      "tratamento": "Prof.ª",
+      "tratamento": "Prof.ª Dr.ª",
       "data": "2026-08-10",
       "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
       "tags": [
@@ -351,7 +365,7 @@
       "marcos": 0,
       "pendencias": 27,
       "minutosLeitura": 33,
-      "atualizado": "2026-08-12T00:13:28.849Z"
+      "atualizado": "2026-08-12T00:14:18.778Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",
@@ -407,7 +421,7 @@
       "arquivo": "conteudo/historia-da-educacao/2026-08-03-pibid-intencionalidade-e-ubuntu.md",
       "disciplina": "História da Educação",
       "professor": "Alessandra Moulin",
-      "tratamento": "Prof.ª",
+      "tratamento": "Prof.ª Dr.ª",
       "data": "2026-08-03",
       "tema": "PIBID, intencionalidade pedagógica e Ubuntu",
       "tags": [
@@ -424,7 +438,7 @@
       "marcos": 0,
       "pendencias": 6,
       "minutosLeitura": 3,
-      "atualizado": "2026-08-11T22:22:11.991Z"
+      "atualizado": "2026-08-12T00:14:10.145Z"
     }
   ]
 }

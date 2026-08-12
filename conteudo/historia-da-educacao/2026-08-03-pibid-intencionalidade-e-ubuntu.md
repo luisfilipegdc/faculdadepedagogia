@@ -1,7 +1,7 @@
 ---
 disciplina: História da Educação
 professor: Alessandra Moulin
-tratamento: Prof.ª
+tratamento: Prof.ª Dr.ª
 data: 2026-08-03
 tema: PIBID, intencionalidade pedagógica e Ubuntu
 tags: [PIBID, intencionalidade pedagógica, Ubuntu, formação de professores]

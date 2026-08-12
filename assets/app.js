@@ -516,6 +516,9 @@ function renderInicio(filtro = "") {
       <p class="migalha">Curso de Pedagogia</p>
       <h1>Faculdade — Pedagogia</h1>
       <div class="painel-meta">
+        ${(INDICE.curso || []).map((c) => `<span><b>${escapar(c.rotulo)}</b>${escapar(c.valor)}</span>`).join("")}
+      </div>
+      <div class="painel-meta">
         <span><b>Aulas</b>${INDICE.totalAulas}</span>
         <span><b>Matérias</b>${INDICE.disciplinas.length}</span>
         <span><b>Obras</b>${(INDICE.biblioteca?.autores || []).reduce((s, g) => s + g.obras.length, 0)}</span>

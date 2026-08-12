@@ -48,7 +48,12 @@ function contarItens(mapa, titulo) {
 }
 
 // lembretes.md fica na raiz de conteudo/ e não é aula
-const NAO_E_AULA = new Set(["lembretes.md", "links.md", "horarios.md"]);
+const NAO_E_AULA = new Set([
+  "lembretes.md",
+  "links.md",
+  "horarios.md",
+  "curso.md",
+]);
 
 // "[Rótulo](url) :: descrição"
 async function lerLinks() {
@@ -63,6 +68,21 @@ async function lerLinks() {
     .map((l) => l.match(/^\s*-\s+\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)\s*(?:::\s*(.*))?$/))
     .filter(Boolean)
     .map((m) => ({ rotulo: m[1].trim(), url: m[2], nota: (m[3] || "").trim() }));
+}
+
+// "Rótulo :: valor" — a linha institucional do topo do painel
+async function lerCurso() {
+  let texto;
+  try {
+    texto = await readFile(join(CONTEUDO, "curso.md"), "utf8");
+  } catch {
+    return [];
+  }
+  return texto
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*-\s+(.+?)\s*::\s*(.+)$/))
+    .filter(Boolean)
+    .map((m) => ({ rotulo: m[1].trim(), valor: m[2].trim() }));
 }
 
 // "Disciplina :: Dia :: hh:mm-hh:mm"
@@ -241,6 +261,7 @@ if (novas.length) {
 const lembretes = await lerLembretes();
 const links = await lerLinks();
 const horarios = await lerHorarios();
+const curso = await lerCurso();
 
 // mesma obra citada em duas aulas vira uma entrada com as duas citações
 const porObra = new Map();
@@ -305,6 +326,7 @@ const indice = {
   lembretes,
   links,
   horarios,
+  curso,
   biblioteca: { autores, tarefas },
   aulas,
 };

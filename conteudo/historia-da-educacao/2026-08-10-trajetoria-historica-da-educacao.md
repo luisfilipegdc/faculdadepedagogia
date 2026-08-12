@@ -1,7 +1,7 @@
 ---
 disciplina: História da Educação
 professor: Alessandra Moulin
-tratamento: Prof.ª
+tratamento: Prof.ª Dr.ª
 data: 2026-08-10
 tema: A trajetória histórica da educação — da Antiguidade à Contemporaneidade
 tags: [processo formativo, trajetória histórica, correntes pedagógicas, realidade brasileira, Dermeval Saviani, mito da caverna, unidades do programa]
@@ -22,6 +22,12 @@ Ela recorre então ao **mito da caverna**, de Platão: prisioneiros acorrentados
 O **foco da disciplina** será **Dermeval Saviani**, e o **domínio teórico** ganha conteúdo: as correntes a estudar são a **tradicional**, a **nova**, a **tecnicista** e a **crítico-reprodutivista**. Ela fecha com exemplos de **desigualdade estrutural na educação**.
 
 ## Desenvolvimento
+
+### Abertura do semestre
+
+O primeiro slide dá as boas-vindas ao **semestre 2026/2**, assinado por **Prof.ª Dr.ª Alessandra Moulin**, da **Universidade Católica de Brasília**.
+
+A tese da disciplina já vem na abertura: compreender o passado da educação é o primeiro passo para construir o futuro da profissão. Ela promete um semestre "excelente e rigoroso" — e o rigor volta depois, como o quinto pilar do pedagogo pesquisador.
 
 ### Abertura: os processos formativos
 

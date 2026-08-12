@@ -188,6 +188,29 @@ Três obras:
 
 Repare no recorte: a Romanelli cobre 1930–1973, que é exatamente onde a Unidade II desemboca; a de Cunha e Silva liga pensamento pedagógico a política, que é o objetivo declarado da mesma unidade; e a terceira é publicação MEC/UNESCO, o que costuma significar acesso livre.
 
+### Dinâmica — dois objetos e a história da educação
+
+Ela põe dois objetos na mesa e pede para compará-los com a história da educação:
+
+- Uma **placa decorativa vintage** de oficina — carro antigo vermelho, "Garage — Service & Repair".
+- Um **controle de videogame** branco.
+
+O que a dinâmica cobra não é "qual é velho e qual é novo". É aplicar os pilares: ler cada objeto no seu contexto (visão sócio-histórica) e enquadrá-lo numa concepção pedagógica (domínio teórico).
+
+### Dinâmica — as leituras possíveis
+
+> Esta é a minha leitura da dinâmica, não a resposta dela.
+
+**A placa é a oficina, e a oficina é a escola pré-industrial.** Antes da escola de massas, aprendia-se o ofício com o mestre, dentro da corporação, fazendo. "Service & Repair" é a pedagogia do mestre-aprendiz: o saber passa de quem tem para quem não tem, na prática. É a **pedagogia tradicional** no seu berço.
+
+**O controle é o aluno que age.** Ele só existe se alguém o segurar; sem mão, não faz nada. É a **pedagogia nova**, que tira o centro de quem expõe e põe em quem faz.
+
+**Mas os dois são produtos de linha de montagem.** Todo controle é idêntico ao próximo, a interface é padronizada, e a placa "antiga" é uma reprodução fabricada hoje. Isso é o **tecnicismo**: o método e a eficiência acima de quem ensina e de quem aprende. E é a Revolução Industrial, que fecha a Unidade I, chegando aos dois objetos.
+
+**E quem tem o controle na mão?** Nem toda casa tem videogame. O objeto que parece o mais democrático dos dois é o que mais depende de renda, de energia, de internet. Aí está a leitura **crítico-reprodutivista**: o acesso à ferramenta reproduz a desigualdade de fora dela.
+
+**O fecho é a própria aula.** Jogar é olhar uma tela e tomar imagens projetadas por realidade, com o corpo preso na cadeira. É a **caverna de Platão** com controle na mão. A diferença é que o jogador escolheu entrar — e pode sair.
+
 ### Desigualdade estrutural na educação
 
 Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "realidade brasileira" deixa de ser eixo abstrato e vira caso concreto — e onde a corrente crítico-reprodutivista encontra o material de que fala.

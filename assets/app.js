@@ -526,10 +526,96 @@ function renderInicio(filtro = "") {
       </div>
     </div>
     <div class="colunas">
-      <div>${modMaterias(porDisciplina)}${modPendencias()}</div>
-      <div>${modRetomar()}${modCronograma()}${modAgenda()}${modUltimas()}</div>
-      <div>${modLinks()}${modLeituras()}</div>
+      ${faixaUrgente()}
+      ${blocoAgora()}
+      ${blocoSemana()}
+      ${blocoMaterias(porDisciplina)}
+      ${gaveta("Cronograma da semana", "", modCronogramaCorpo())}
+      ${gaveta("Leituras e links", (INDICE.biblioteca?.autores || []).reduce((s, g) => s + g.obras.length, 0), modLeiturasCorpo())}
+      ${gaveta("Últimas aulas", INDICE.totalAulas, modUltimasCorpo())}
     </div>`;
+}
+
+const gaveta = (titulo, conta, corpo) => `
+  <details class="gaveta">
+    <summary>${titulo}${conta ? `<span class="gaveta-conta">${conta}</span>` : ""}</summary>
+    <div class="gaveta-corpo">${corpo}</div>
+  </details>`;
+
+const urgentes = () => {
+  const hoje = hojeISO();
+  return (INDICE.lembretes || []).filter((l) => {
+    const q = quandoRelativo(l.data);
+    return l.data >= hoje && (q === "hoje" || q === "amanhã");
+  });
+};
+
+// faixa fina: avisa sem roubar o lugar da ação principal
+function faixaUrgente() {
+  return urgentes()
+    .map(
+      (l) => `<div class="urgente">
+        <span class="urgente-quando">${quandoRelativo(l.data)}</span>
+        <span>${inline(l.texto)}</span>
+      </div>`,
+    )
+    .join("");
+}
+
+// nível 1: uma coisa só, e é sempre estudar — é para isso que o site existe
+function blocoAgora() {
+  const c = INDICE.aulas
+    .map((a) => ({ a, est: doArquivo(a.arquivo) }))
+    .filter((x) => x.est.visto && !x.est.estudada)
+    .sort((x, y) => y.est.visto.localeCompare(x.est.visto));
+  const alvo = c.length ? c[0].a : INDICE.aulas[0];
+  if (!alvo) return "";
+  const voltando = c.length;
+  return `<a class="agora" href="#/aula/${encodeURIComponent(alvo.arquivo)}" style="--disc-h:${matizDisciplina(alvo.disciplina)}">
+    <span class="agora-rotulo">${voltando ? "Continuar de onde parou" : "Começar pela mais recente"}</span>
+    <span class="agora-titulo">${escapar(alvo.tema)}</span>
+    <span class="agora-sub">${escapar(alvo.disciplina)} · ${alvo.minutosLeitura} min de leitura</span>
+  </a>`;
+}
+
+// nível 2: o que vem depois do que já está na faixa — nunca repete
+function blocoSemana() {
+  const hoje = hojeISO();
+  const naFaixa = new Set(urgentes().map((l) => l.data + l.texto));
+  const proximos = (INDICE.lembretes || []).filter(
+    (l) => l.data >= hoje && !naFaixa.has(l.data + l.texto),
+  );
+  if (!proximos.length) return "";
+  return `<section class="bloco">
+    <h2 class="faixa-titulo">Agenda</h2>
+    ${proximos
+      .slice(0, 4)
+      .map((l) => {
+        const q = quandoRelativo(l.data);
+        return `<div class="linha-simples${q === "hoje" || q === "amanhã" ? " linha-perto" : ""}">
+          <span class="linha-quando">${q}</span>
+          <span>${inline(l.texto)}</span>
+        </div>`;
+      })
+      .join("")}
+  </section>`;
+}
+
+function blocoMaterias(porDisciplina) {
+  return `<section class="bloco">
+    <h2 class="faixa-titulo">Matérias</h2>
+    ${[...porDisciplina.entries()]
+      .sort((x, y) => x[0].localeCompare(y[0], "pt-BR"))
+      .map(
+        ([d, lista]) => `
+        <a class="linha-simples" href="#/" data-disc="${escapar(d)}" style="--disc-h:${matizDisciplina(d)}">
+          <span class="item-ponto"></span>
+          <span class="item-nome">${escapar(d)}</span>
+          <span class="item-num">${lista.length} aula${lista.length > 1 ? "s" : ""}</span>
+        </a>`,
+      )
+      .join("")}
+  </section>`;
 }
 
 const mod = (titulo, extra, corpo) => `
@@ -538,63 +624,12 @@ const mod = (titulo, extra, corpo) => `
     <div class="mod-corpo">${corpo}</div>
   </section>`;
 
-function modMaterias(porDisciplina) {
-  const linhas = [...porDisciplina.entries()]
-    .sort((x, y) => x[0].localeCompare(y[0], "pt-BR"))
-    .map(
-      ([d, lista]) => `
-      <a class="item" href="#/" data-disc="${escapar(d)}" style="--disc-h:${matizDisciplina(d)}">
-        <span class="item-ponto"></span>
-        <span class="item-nome">${escapar(d)}</span>
-        <span class="item-num">${lista.length}</span>
-      </a>`,
-    )
-    .join("");
-  return mod("Matérias", INDICE.disciplinas.length, linhas);
-}
 
-function modPendencias() {
-  const abertas = INDICE.aulas
-    .filter((a) => a.pendencias)
-    .sort((x, y) => y.pendencias - x.pendencias)
-    .slice(0, 5);
-  if (!abertas.length) return "";
-  const total = INDICE.aulas.reduce((s, a) => s + a.pendencias, 0);
-  return mod(
-    "A confirmar",
-    total,
-    abertas
-      .map(
-        (a) => `
-      <a class="item" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
-        <span class="item-nome">${escapar(a.tema)}</span>
-        <span class="item-num">${a.pendencias}</span>
-      </a>`,
-      )
-      .join(""),
-  );
-}
 
-function modRetomar() {
-  const c = INDICE.aulas
-    .map((a) => ({ a, est: doArquivo(a.arquivo) }))
-    .filter((x) => x.est.visto && !x.est.estudada)
-    .sort((x, y) => y.est.visto.localeCompare(x.est.visto));
-  if (!c.length) return "";
-  const { a } = c[0];
-  return mod(
-    "Continuar de onde parou",
-    "",
-    `<a class="item" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
-      <span class="item-ponto"></span>
-      <span class="item-nome"><b>${escapar(a.tema)}</b><br><span class="item-num">${escapar(a.disciplina)} · ${a.minutosLeitura} min</span></span>
-    </a>`,
-  );
-}
 
 const DIAS = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
 
-function modCronograma() {
+function modCronogramaCorpo() {
   const fixos = INDICE.horarios || [];
   // sem horários declarados, o dia da semana sai das datas das aulas já registradas
   const porDia = new Map();
@@ -629,80 +664,47 @@ function modCronograma() {
           .join("")}</td>`,
     )
     .join("");
-  return mod(
-    "Cronograma",
-    deduzido ? "deduzido das aulas" : "",
-    `<table class="cronograma"><thead><tr>${cabecalho}</tr></thead><tbody><tr>${celulas}</tr></tbody></table>
-     ${deduzido ? `<div class="mod-vazio">Só o dia da semana, deduzido das datas. Os horários entram em <code>conteudo/horarios.md</code>.</div>` : ""}`,
-  );
+  return `<table class="cronograma"><thead><tr>${cabecalho}</tr></thead><tbody><tr>${celulas}</tr></tbody></table>
+    ${deduzido ? `<div class="mod-vazio">Só o dia da semana, deduzido das datas das aulas. Os horários entram em <code>conteudo/horarios.md</code>.</div>` : ""}`;
 }
 
-function modAgenda() {
-  const hoje = hojeISO();
-  const proximos = (INDICE.lembretes || []).filter((l) => l.data >= hoje);
-  const corpo = proximos.length
-    ? proximos
-        .map((l) => {
-          const q = quandoRelativo(l.data);
-          return `<div class="tarefa${q === "hoje" || q === "amanhã" ? " tarefa-perto" : ""}">
-            <span>${inline(l.texto)}</span>
-            <span class="tarefa-data">${q}</span>
-          </div>`;
-        })
-        .join("")
-    : `<div class="mod-vazio">Sem nada marcado. Provas e entregas entram em <code>conteudo/lembretes.md</code>.</div>`;
-  return mod("Agenda", proximos.length || "", corpo);
+
+function modUltimasCorpo() {
+  return INDICE.aulas
+    .map(
+      (a) => `
+    <a class="linha-simples" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
+      <span class="linha-quando">${dataBonita(a.data).slice(0, 5)}</span>
+      <span class="item-nome">${doArquivo(a.arquivo).estudada ? '<span class="tique">✓</span>' : ""}${escapar(a.tema)}</span>
+    </a>`,
+    )
+    .join("");
 }
 
-function modUltimas() {
-  return mod(
-    "Últimas aulas",
-    "",
-    INDICE.aulas
-      .slice(0, 5)
-      .map(
-        (a) => `
-      <a class="item" href="#/aula/${encodeURIComponent(a.arquivo)}" style="--disc-h:${matizDisciplina(a.disciplina)}">
-        <span class="item-ponto"></span>
-        <span class="item-nome">${doArquivo(a.arquivo).estudada ? '<span class="tique">✓</span>' : ""}${escapar(a.tema)}</span>
-        <span class="item-num">${dataBonita(a.data).slice(0, 5)}</span>
-      </a>`,
-      )
-      .join(""),
-  );
-}
 
-function modLinks() {
-  const links = INDICE.links || [];
-  return mod(
-    "Links",
-    links.length || "",
-    links.length
-      ? links
-          .map(
-            (l) =>
-              `<a class="link-ext" href="${escapar(l.url)}" target="_blank" rel="noopener noreferrer">${escapar(l.rotulo)}<small>${escapar(l.nota || l.url)}</small></a>`,
-          )
-          .join("")
-      : `<div class="mod-vazio">Portal do aluno, Teams, e-mail da facul. Entram em <code>conteudo/links.md</code>.</div>`,
-  );
-}
-
-function modLeituras() {
+function modLeiturasCorpo() {
   const autores = INDICE.biblioteca?.autores || [];
   const obras = autores.flatMap((g) => g.obras.map((o) => ({ ...o, autor: g.autor })));
-  if (!obras.length) return "";
-  return mod(
-    `<a href="#/biblioteca" style="color:inherit;text-decoration:none">Leituras ↗</a>`,
-    obras.length,
-    obras
-      .slice(0, 6)
-      .map(
-        (o) =>
-          `<a class="link-ext" href="#/biblioteca">${escapar(o.obra)}<small>${escapar(o.autor || "sem autor")}${o.ano ? ` · ${o.ano}` : ""}</small></a>`,
-      )
-      .join(""),
-  );
+  const links = INDICE.links || [];
+  const parteObras = obras.length
+    ? obras
+        .slice(0, 6)
+        .map(
+          (o) =>
+            `<a class="link-ext" href="#/biblioteca">${escapar(o.obra)}<small>${escapar(o.autor || "sem autor")}${o.ano ? ` · ${o.ano}` : ""}</small></a>`,
+        )
+        .join("") +
+      `<a class="linha-simples" href="#/biblioteca"><span class="item-nome">Ver a biblioteca inteira ↗</span></a>`
+    : "";
+  const parteLinks = links.length
+    ? links
+        .map(
+          (l) =>
+            `<a class="link-ext" href="${escapar(l.url)}" target="_blank" rel="noopener noreferrer">${escapar(l.rotulo)}<small>${escapar(l.nota || l.url)}</small></a>`,
+        )
+        .join("")
+    : `<div class="mod-vazio">Portal do aluno e Teams entram em <code>conteudo/links.md</code>.</div>`;
+  return parteObras + parteLinks;
 }
 
 /* ---------------- navegação lateral ---------------- */

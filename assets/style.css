@@ -694,11 +694,156 @@ body.painel .corpo > #principal {
   margin-right: 0.4rem;
 }
 
+/* Coluna única. Três colunas de módulos iguais faziam oito blocos disputarem
+   a mesma atenção — sem ponto focal, a tela lê como bagunça. */
 .colunas {
-  display: grid;
-  grid-template-columns: 15rem minmax(0, 1fr) 16rem;
-  gap: 1.1rem;
-  align-items: start;
+  display: block;
+  max-width: 44rem;
+}
+
+/* faixa de aviso: informa sem competir com a ação principal */
+.urgente {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.9rem;
+  border-radius: 10px;
+  background: var(--alerta-suave);
+  border-left: 3px solid var(--alerta);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.urgente-quando {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--alerta);
+  flex: none;
+}
+
+/* nível 1: a única coisa que a tela pede agora */
+.agora {
+  display: block;
+  padding: 1.5rem 1.6rem;
+  border-radius: 14px;
+  background: var(--disc-suave);
+  border: 1px solid var(--disc);
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 2.2rem;
+}
+.agora:hover {
+  filter: brightness(0.985);
+}
+.agora-rotulo {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--disc);
+  margin-bottom: 0.5rem;
+}
+.agora-titulo {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 680;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.agora-sub {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--texto-2);
+  margin-top: 0.4rem;
+}
+
+/* nível 2: discreto, sem caixa */
+.faixa-titulo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  margin: 0 0 0.7rem;
+}
+.bloco {
+  margin-bottom: 2.2rem;
+}
+
+.linha-simples {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--borda);
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.linha-simples:last-child {
+  border-bottom: 0;
+}
+.linha-simples:hover {
+  color: var(--disc);
+}
+.linha-quando {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  flex: none;
+  min-width: 4.6rem;
+}
+.linha-perto .linha-quando {
+  color: var(--alerta);
+}
+
+/* nível 3: existe, mas não ocupa a tela */
+.gaveta {
+  border-top: 1px solid var(--borda);
+}
+.gaveta:last-of-type {
+  border-bottom: 1px solid var(--borda);
+}
+.gaveta > summary {
+  cursor: pointer;
+  padding: 0.85rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto-2);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gaveta > summary::-webkit-details-marker {
+  display: none;
+}
+.gaveta > summary::before {
+  content: "▸";
+  color: var(--texto-3);
+  font-size: 0.8rem;
+  transition: transform 0.15s ease;
+}
+.gaveta[open] > summary::before {
+  transform: rotate(90deg);
+}
+.gaveta > summary:hover {
+  color: var(--texto);
+}
+.gaveta-conta {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+}
+.gaveta-corpo {
+  padding: 0 0 1.1rem;
 }
 
 .mod {

@@ -144,6 +144,18 @@ Aqui a disciplina fecha o circuito. As quatro correntes anunciadas antes reapare
 
 E o quarto momento — **a proposta transformadora** — é o que faltava. Era a pergunta que ficou em aberto quando ela listou só quatro correntes: o que vem depois de uma teoria que explica a desigualdade mas não aponta saída. A resposta está anunciada no programa, e no presente.
 
+### A arquitetura da avaliação
+
+Ela projeta como a nota é montada:
+
+- **N1** — 4,5 pontos (1º bimestre)
+- **N2** — 4,5 pontos (2º bimestre)
+- **IPI** — 1,0 ponto (Projeto Institucional)
+
+Os três somam a **nota final (N)**, numa escala de 0 a 10. A **média mínima para aprovação direta é 7,0**.
+
+Uma conta que vale fazer, e que o slide não faz: as provas sozinhas valem no máximo **9,0**. Quem abre mão do IPI precisa tirar 7,0 desses 9,0 — quase **78% dos pontos das provas** — para passar direto. Com o IPI inteiro no bolso, bastam 6,0 de 9,0, ou seja **67%**. Um ponto que parece pequeno muda a régua em onze pontos percentuais.
+
 ### Desigualdade estrutural na educação
 
 Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "realidade brasileira" deixa de ser eixo abstrato e vira caso concreto — e onde a corrente crítico-reprodutivista encontra o material de que fala.
@@ -177,6 +189,8 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - **Unidade I — Fundamentos globais e a constituição da escola** :: a primeira unidade do programa; percorre sociedades antigas, era medieval, modernidade e Revolução Industrial, perguntando como a escola veio a existir como instituição.
 - **Unidade II — A formação histórica brasileira** :: Brasil colônia, Brasil imperial e Primeira República, tendo Saviani como referência; o objetivo é compreender a formação das concepções pedagógicas brasileiras, seus contextos, representantes e impactos na organização.
 - **Unidade III — Concepções políticas e o cenário contemporâneo** :: a tradição e a renovação, o controle e a crítica, e a proposta transformadora no presente.
+- **Arquitetura da avaliação** :: N1 (4,5) + N2 (4,5) + IPI (1,0) = nota final, de 0 a 10; aprovação direta a partir de 7,0.
+- **IPI** :: Projeto Institucional; vale 1,0 ponto da nota final e é o que separa precisar de 67% ou de 78% dos pontos das provas.
 - **Proposta transformadora** :: o quarto momento da Unidade III; o que se propõe depois da crítica que explica a desigualdade sem apontar saída.
 - **Desigualdade estrutural na educação** :: a desigualdade que não vem de caso isolado nem de falha individual, mas da forma como o próprio sistema está montado — é o que a professora ilustra com exemplos e o que a corrente crítico-reprodutivista descreve.
 
@@ -256,6 +270,9 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - Como ela sustenta a frase "o conhecimento liberta"? :: Com uma história de vida, um caso concreto em vez de argumento abstrato.
 - Qual autor é o foco da disciplina? :: Dermeval Saviani.
 - Quais correntes pedagógicas a disciplina vai estudar? :: Tradicional, nova, tecnicista e crítico-reprodutivista.
+- Como é composta a nota final da disciplina? :: N1 (4,5 pontos, 1º bimestre) + N2 (4,5 pontos, 2º bimestre) + IPI (1,0 ponto, Projeto Institucional), em escala de 0 a 10.
+- Qual a média mínima para aprovação direta? :: 7,0.
+- Quanto vale o IPI e por que ele importa mais do que parece? :: 1,0 ponto — sem ele as provas valem no máximo 9,0, e a exigência sobe de 67% para 78% dos pontos das provas.
 - Como se chama a Unidade I e o que ela cobre? :: "Fundamentos globais e a constituição da escola" — sociedades antigas, era medieval, modernidade e Revolução Industrial.
 - O que cobre a Unidade II e qual sua referência? :: A formação histórica brasileira — colônia, império e Primeira República — tendo Dermeval Saviani como referência.
 - Qual o objetivo declarado da Unidade II? :: Compreender a formação das concepções pedagógicas brasileiras, seus contextos, seus representantes e seus impactos na organização.
@@ -393,6 +410,9 @@ Daí a tensão que atravessa o resto da disciplina: a escola de massas **amplia 
 - **As quatro correntes vieram só por nome; as definições de uma linha são minhas.** Conferir com ela, principalmente a crítico-reprodutivista, cuja caracterização como "explica mas não aponta saída" é a crítica que se faz a ela, e não a autodescrição dela.
 - **Essas quatro correntes são exatamente a classificação usada por Saviani**, que ela anunciou como foco minutos antes — as três primeiras num grupo, a quarta noutro. A ligação é minha; confirmar se é assim que ela vai organizar a disciplina, e como se chama cada grupo na divisão dele.
 - **Quais foram os exemplos de desigualdade estrutural?** Ficou registrado que ela deu exemplos, mas não quais. São eles que transformam o eixo "realidade brasileira" em caso concreto, e provavelmente é o que cai em prova. Pedir com urgência, enquanto está fresco.
+- **O IPI ainda não tem forma.** Sabemos que o Projeto Institucional vale 1,0 ponto, mas não o que é, quando entrega, nem se é individual ou em grupo. É o ponto que muda a régua de aprovação de 67% para 78% — perguntar cedo.
+- **Faltam as datas de N1 e N2.** Os bimestres existem, as datas não. Quando saírem, entram em `conteudo/lembretes.md` e viram aviso no celular.
+- No quadro ela escreveu **Spotify** e **YouTube** junto de outra palavra que não deu para ler na foto. Pode ser onde ela publica material ou indica conteúdo — perguntar.
 - **O que exatamente ela disse da Prova Nacional Docente?** Registrei só que citou, ligando à diferença entre decorar e entender. Confirmar se falou de data, de formato, de quem vai prestar, ou se usou como exemplo de avaliação que cobra entendimento. Se for algo com prazo, vira lembrete.
 - ~~Perguntar se há uma quinta corrente na sequência.~~ **Resolvido pela Unidade III**: a "proposta transformadora" é o quarto momento, depois da crítica. Falta confirmar com ela o nome próprio dessa proposta.
 - **Qual obra do Saviani?** A Unidade II é "a formação histórica brasileira" com ele de referência, e o objetivo fala em "formação das concepções pedagógicas brasileiras, seus contextos, representantes e impactos". Isso aponta para um livro dele sobre as ideias pedagógicas no Brasil, mas ela não nomeou nenhum título — perguntar antes de comprar ou pegar na biblioteca.

@@ -2,7 +2,7 @@
 disciplina: História da Educação
 professor: Alessandra Moulin
 tratamento: Prof.ª Dr.ª
-data: 2026-08-10
+data: 2026-08-11
 tema: A trajetória histórica da educação — da Antiguidade à Contemporaneidade
 tags: [processo formativo, trajetória histórica, correntes pedagógicas, realidade brasileira, Dermeval Saviani, mito da caverna, unidades do programa]
 fonte: anotação em aula

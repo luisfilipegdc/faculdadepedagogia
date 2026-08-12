@@ -2,7 +2,7 @@
 disciplina: História da Educação
 professor: Alessandra Moulin
 tratamento: Prof.ª Dr.ª
-data: 2026-08-03
+data: 2026-08-04
 tema: PIBID, intencionalidade pedagógica e Ubuntu
 tags: [PIBID, intencionalidade pedagógica, Ubuntu, formação de professores]
 fonte: anotação de colega (foto)
@@ -43,7 +43,7 @@ A aula fecha com o **Ubuntu**: "eu sou porque você é".
 
 ## Pendências
 
-- **Data inferida, confirmar.** Não há data de aula na foto. Entrei com 03/08/2026 porque é a segunda-feira anterior à aula de hoje (10/08), que é a segunda da disciplina. Se a primeira aula foi em outro dia, corrigir aqui e renomear o arquivo.
+- **Data inferida a partir do horário oficial.** Não há data na foto. A declaração de matrícula põe História da Educação na **terça-feira**, e a segunda aula foi em 11/08 (terça), então a primeira caiu em **04/08**. Antes eu tinha registrado 03/08, uma segunda — errado. Confirmar se não houve aula cancelada ou remarcada no meio.
 - **O nome por extenso do PIBID não bate.** A sigla oficial é *Programa Institucional de Bolsa de Iniciação à Docência*. A anotação traz "Fomento à Inovação da Formação Inicial e Continuada de Professores", que descreve outra coisa. Conferir com a professora se ela citou o PIBID mesmo, se citou outro programa, ou se a colega trocou na hora de anotar.
 - **Ligação entre o Ubuntu e as duas perguntas é leitura minha**, não está escrita na anotação. Confirmar se a professora ligou os dois pontos ou se foram assuntos separados.
 - Uma das linhas da anotação ficou ilegível na foto — algo como "duas perguntas importantes para se fazer" antes da atividade. O sentido geral está firme, a frase exata não.

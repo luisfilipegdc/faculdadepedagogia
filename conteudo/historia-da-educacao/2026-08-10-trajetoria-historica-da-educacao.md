@@ -156,6 +156,32 @@ Os três somam a **nota final (N)**, numa escala de 0 a 10. A **média mínima p
 
 Uma conta que vale fazer, e que o slide não faz: as provas sozinhas valem no máximo **9,0**. Quem abre mão do IPI precisa tirar 7,0 desses 9,0 — quase **78% dos pontos das provas** — para passar direto. Com o IPI inteiro no bolso, bastam 6,0 de 9,0, ou seja **67%**. Um ponto que parece pequeno muda a régua em onze pontos percentuais.
 
+### Detalhamento das avaliações bimestrais
+
+Cada bimestre vale 4,5 e se divide em duas partes, uma individual e uma coletiva.
+
+**N1 — 4,5 pontos**
+
+- **Avaliação individual (1,5)** — construção de **mapa mental** com base nos conteúdos da **Unidade I**.
+- **Atividade colaborativa (3,0)** — entrega e apresentação em sala, **em trios**.
+
+**N2 — 4,5 pontos**
+
+- **Avaliação individual (1,5)** — construção de **mapa mental** com base nos conteúdos da **Unidade II**.
+- **Atividade colaborativa (3,0)** — **análise de fonte histórica**, **em duplas**, com entrega e/ou apresentação.
+
+Duas coisas saltam. A parte **coletiva vale o dobro da individual** nos dois bimestres — 3,0 contra 1,5 — então com quem você faz dupla e trio pesa mais na nota do que qualquer prova sua. E a avaliação individual é **mapa mental nas duas vezes**, ou seja, o formato é conhecido desde já: quem acompanha as unidades enquanto acontecem chega com o mapa meio pronto.
+
+### O acervo fundamental — bibliografia básica
+
+Três obras:
+
+- **ROMANELLI, Otaíza de O.** — *História da Educação no Brasil (1930/1973)*, Vozes, 2014.
+- **CUNHA, Célio da; SILVA, Maria Abádia da** — *Pensamento Pedagógico e Políticas de Educação*, UnB/Liber, 2013.
+- **BRAGA, Maria Lúcia; SILVEIRA, Maria Helena** — *O Programa Diversidade na Universidade e Construção de uma Política Educacional Anti-Racista*, MEC/UNESCO, 2007, e-book.
+
+Repare no recorte: a Romanelli cobre 1930–1973, que é exatamente onde a Unidade II desemboca; a de Cunha e Silva liga pensamento pedagógico a política, que é o objetivo declarado da mesma unidade; e a terceira é publicação MEC/UNESCO, o que costuma significar acesso livre.
+
 ### Desigualdade estrutural na educação
 
 Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "realidade brasileira" deixa de ser eixo abstrato e vira caso concreto — e onde a corrente crítico-reprodutivista encontra o material de que fala.
@@ -189,6 +215,9 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - **Unidade I — Fundamentos globais e a constituição da escola** :: a primeira unidade do programa; percorre sociedades antigas, era medieval, modernidade e Revolução Industrial, perguntando como a escola veio a existir como instituição.
 - **Unidade II — A formação histórica brasileira** :: Brasil colônia, Brasil imperial e Primeira República, tendo Saviani como referência; o objetivo é compreender a formação das concepções pedagógicas brasileiras, seus contextos, representantes e impactos na organização.
 - **Unidade III — Concepções políticas e o cenário contemporâneo** :: a tradição e a renovação, o controle e a crítica, e a proposta transformadora no presente.
+- **Mapa mental (avaliação individual)** :: o formato da parte individual dos dois bimestres, valendo 1,5 cada; N1 sobre a Unidade I, N2 sobre a Unidade II.
+- **Atividade colaborativa** :: a parte coletiva, valendo 3,0 em cada bimestre — em trios na N1 (entrega e apresentação em sala) e em duplas na N2 (análise de fonte histórica).
+- **Análise de fonte histórica** :: formato da atividade colaborativa da N2, em duplas.
 - **Arquitetura da avaliação** :: N1 (4,5) + N2 (4,5) + IPI (1,0) = nota final, de 0 a 10; aprovação direta a partir de 7,0.
 - **IPI** :: Projeto Institucional; vale 1,0 ponto da nota final e é o que separa precisar de 67% ou de 78% dos pontos das provas.
 - **Proposta transformadora** :: o quarto momento da Unidade III; o que se propõe depois da crítica que explica a desigualdade sem apontar saída.
@@ -270,6 +299,10 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 - Como ela sustenta a frase "o conhecimento liberta"? :: Com uma história de vida, um caso concreto em vez de argumento abstrato.
 - Qual autor é o foco da disciplina? :: Dermeval Saviani.
 - Quais correntes pedagógicas a disciplina vai estudar? :: Tradicional, nova, tecnicista e crítico-reprodutivista.
+- Como se divide a N1? :: Avaliação individual de 1,5 (mapa mental da Unidade I) mais atividade colaborativa de 3,0 (entrega e apresentação em sala, em trios).
+- Como se divide a N2? :: Avaliação individual de 1,5 (mapa mental da Unidade II) mais atividade colaborativa de 3,0 (análise de fonte histórica, em duplas).
+- Qual formato se repete nas duas avaliações individuais? :: Mapa mental — na N1 sobre a Unidade I, na N2 sobre a Unidade II.
+- Quais as três obras da bibliografia básica? :: Romanelli, *História da Educação no Brasil (1930/1973)*; Cunha e Silva, *Pensamento Pedagógico e Políticas de Educação*; Braga e Silveira, *O Programa Diversidade na Universidade*.
 - Como é composta a nota final da disciplina? :: N1 (4,5 pontos, 1º bimestre) + N2 (4,5 pontos, 2º bimestre) + IPI (1,0 ponto, Projeto Institucional), em escala de 0 a 10.
 - Qual a média mínima para aprovação direta? :: 7,0.
 - Quanto vale o IPI e por que ele importa mais do que parece? :: 1,0 ponto — sem ele as provas valem no máximo 9,0, e a exigência sobe de 67% para 78% dos pontos das provas.
@@ -311,6 +344,9 @@ Ela dá **exemplos de desigualdade estrutural na educação**. É aqui que a "re
 
 ## Para ler
 
+- Otaíza de O. Romanelli, *História da Educação no Brasil (1930/1973)* (2014) — bibliografia básica; Editora Vozes. O recorte 1930–1973 é onde a Unidade II desemboca.
+- Célio da Cunha; Maria Abádia da Silva, *Pensamento Pedagógico e Políticas de Educação* (2013) — bibliografia básica; UnB/Liber. Liga pensamento pedagógico a política, que é o objetivo declarado da Unidade II.
+- Maria Lúcia Braga; Maria Helena Silveira, *O Programa Diversidade na Universidade e Construção de uma Política Educacional Anti-Racista* (2007) — bibliografia básica; MEC/UNESCO, e-book.
 - Dermeval Saviani — anunciado em aula como o foco da disciplina; confirmar qual obra dele será cobrada.
 
 ## Estudo adiantado
@@ -410,6 +446,9 @@ Daí a tensão que atravessa o resto da disciplina: a escola de massas **amplia 
 - **As quatro correntes vieram só por nome; as definições de uma linha são minhas.** Conferir com ela, principalmente a crítico-reprodutivista, cuja caracterização como "explica mas não aponta saída" é a crítica que se faz a ela, e não a autodescrição dela.
 - **Essas quatro correntes são exatamente a classificação usada por Saviani**, que ela anunciou como foco minutos antes — as três primeiras num grupo, a quarta noutro. A ligação é minha; confirmar se é assim que ela vai organizar a disciplina, e como se chama cada grupo na divisão dele.
 - **Quais foram os exemplos de desigualdade estrutural?** Ficou registrado que ela deu exemplos, mas não quais. São eles que transformam o eixo "realidade brasileira" em caso concreto, e provavelmente é o que cai em prova. Pedir com urgência, enquanto está fresco.
+- **Datas de tudo.** N1, N2, entregas das colaborativas e formação dos grupos — nada tem data ainda. É o que falta para a agenda funcionar de verdade.
+- **Como se formam os trios e as duplas?** Se for escolha livre, vale combinar cedo: a parte coletiva vale 3,0 contra 1,5 da individual, ou seja, o dobro.
+- **O que conta como "fonte histórica"** na atividade da N2 — documento de época, legislação, foto, depoimento? Muda completamente a preparação.
 - **O IPI ainda não tem forma.** Sabemos que o Projeto Institucional vale 1,0 ponto, mas não o que é, quando entrega, nem se é individual ou em grupo. É o ponto que muda a régua de aprovação de 67% para 78% — perguntar cedo.
 - **Faltam as datas de N1 e N2.** Os bimestres existem, as datas não. Quando saírem, entram em `conteudo/lembretes.md` e viram aviso no celular.
 - No quadro ela escreveu **Spotify** e **YouTube** junto de outra palavra que não deu para ler na foto. Pode ser onde ela publica material ou indica conteúdo — perguntar.

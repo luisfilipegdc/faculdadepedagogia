@@ -1,7 +1,7 @@
 {
-  "gerado": "2026-08-12T00:04:33.416Z",
+  "gerado": "2026-08-12T00:13:29.186Z",
   "totalAulas": 5,
-  "totalFlashcards": 66,
+  "totalFlashcards": 70,
   "disciplinas": [
     "Filosofia da Educação",
     "Fundamentos da Docência",
@@ -47,6 +47,28 @@
         "mencoes": []
       },
       {
+        "autor": "Célio da Cunha; Maria Abádia da Silva",
+        "obras": [
+          {
+            "obra": "Pensamento Pedagógico e Políticas de Educação",
+            "ano": "2013",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "bibliografia básica; UnB/Liber. Liga pensamento pedagógico a política, que é o objetivo declarado da Unidade II.",
+                "aula": {
+                  "arquivo": "conteudo/historia-da-educacao/2026-08-10-trajetoria-historica-da-educacao.md",
+                  "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
+                  "disciplina": "História da Educação",
+                  "data": "2026-08-10"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": []
+      },
+      {
         "autor": "Jean-François Lyotard",
         "obras": [
           {
@@ -61,6 +83,50 @@
                   "tema": "Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas",
                   "disciplina": "Filosofia da Educação",
                   "data": "2026-08-08"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": []
+      },
+      {
+        "autor": "Maria Lúcia Braga; Maria Helena Silveira",
+        "obras": [
+          {
+            "obra": "O Programa Diversidade na Universidade e Construção de uma Política Educacional Anti-Racista",
+            "ano": "2007",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "bibliografia básica; MEC/UNESCO, e-book.",
+                "aula": {
+                  "arquivo": "conteudo/historia-da-educacao/2026-08-10-trajetoria-historica-da-educacao.md",
+                  "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
+                  "disciplina": "História da Educação",
+                  "data": "2026-08-10"
+                }
+              }
+            ]
+          }
+        ],
+        "mencoes": []
+      },
+      {
+        "autor": "Otaíza de O. Romanelli",
+        "obras": [
+          {
+            "obra": "História da Educação no Brasil (1930/1973)",
+            "ano": "2014",
+            "link": null,
+            "citacoes": [
+              {
+                "nota": "bibliografia básica; Editora Vozes. O recorte 1930–1973 é onde a Unidade II desemboca.",
+                "aula": {
+                  "arquivo": "conteudo/historia-da-educacao/2026-08-10-trajetoria-historica-da-educacao.md",
+                  "tema": "A trajetória histórica da educação — da Antiguidade à Contemporaneidade",
+                  "disciplina": "História da Educação",
+                  "data": "2026-08-10"
                 }
               }
             ]
@@ -279,13 +345,13 @@
       ],
       "fonte": "anotação em aula",
       "confianca": "media",
-      "flashcards": 31,
+      "flashcards": 35,
       "questoes": 19,
-      "conceitos": 29,
+      "conceitos": 32,
       "marcos": 0,
-      "pendencias": 24,
-      "minutosLeitura": 30,
-      "atualizado": "2026-08-12T00:04:10.072Z"
+      "pendencias": 27,
+      "minutosLeitura": 33,
+      "atualizado": "2026-08-12T00:13:28.849Z"
     },
     {
       "arquivo": "conteudo/filosofia-da-educacao/2026-08-08-pos-modernidade-e-o-fim-das-metanarrativas.md",

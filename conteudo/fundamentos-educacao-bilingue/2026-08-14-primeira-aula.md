@@ -1,6 +1,6 @@
 ---
 disciplina: Fundamentos da Educação Bilíngue
-professor: Valícia
+professor: Valícia Gomes
 tratamento:
 data: 2026-08-14
 tema: Primeira aula — em registro
@@ -18,6 +18,6 @@ O Luis está mandando o material enquanto a aula acontece. Cada trecho entra aqu
 ## Pendências
 
 - **Falta o tratamento da professora.** O caderno não deduz `Prof.` ou `Prof.ª` a partir do nome — perguntar e preencher no frontmatter.
-- **Falta o sobrenome.** Registrado só como "Valícia".
+- ~~Falta o sobrenome.~~ **Resolvido**: Valícia Gomes, pelo e-mail institucional da UCB.
 - Confirmar o tema da aula para renomear o arquivo, que está com nome provisório.
 - Confirmar se esta é mesmo a primeira aula da disciplina no semestre.

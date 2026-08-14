@@ -1,5 +1,5 @@
 {
-  "gerado": "2026-08-14T22:40:47.611Z",
+  "gerado": "2026-08-14T22:41:35.976Z",
   "totalAulas": 6,
   "totalFlashcards": 70,
   "disciplinas": [
@@ -370,7 +370,7 @@
     {
       "arquivo": "conteudo/fundamentos-educacao-bilingue/2026-08-14-primeira-aula.md",
       "disciplina": "Fundamentos da Educação Bilíngue",
-      "professor": "Valícia",
+      "professor": "Valícia Gomes",
       "tratamento": "",
       "data": "2026-08-14",
       "tema": "Primeira aula — em registro",
@@ -383,7 +383,7 @@
       "marcos": 0,
       "pendencias": 4,
       "minutosLeitura": 1,
-      "atualizado": "2026-08-14T22:40:33.775Z"
+      "atualizado": "2026-08-14T22:41:35.790Z"
     },
     {
       "arquivo": "conteudo/historia-da-educacao/2026-08-11-trajetoria-historica-da-educacao.md",

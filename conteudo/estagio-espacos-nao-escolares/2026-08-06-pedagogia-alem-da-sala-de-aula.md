@@ -2,7 +2,7 @@
 disciplina: Estágio Supervisionado Obrigatório - Espaços Não Escolares
 professor: Rosa Maria
 tratamento: Prof.ª
-data: 2026-08-05
+data: 2026-08-06
 tema: A pedagogia para além da sala de aula
 tags: [espaços não escolares, pedagogia hospitalar, EJA, educação especial, estágio, ética profissional]
 fonte: áudio da aula (28 min)
@@ -102,7 +102,7 @@ Atravessando tudo, uma insistência: leia. A professora cobra leitura como condi
 
 ## Pendências
 
-- **A data desta aula não bate com o horário oficial.** Está registrada em 05/08/2026, que é uma **quarta**, mas a declaração põe esta disciplina na **quinta**. A quinta mais próxima é 06/08. Como a data veio junto do áudio original e não fui eu que a inferi, deixei como está — confirme e eu corrijo o arquivo e o nome dele.
+- ~~A data desta aula não batia com o horário oficial.~~ **Resolvido pelo Luis em 14/08**: a aula foi na **quinta, 06/08/2026**. O arquivo e o frontmatter foram corrigidos.
 - **Carga horária**: o áudio soa como "40 horas em ambientes não escolares", mas a declaração diz **80 horas** para a disciplina. Pode ser que as 40h sejam só a parte de estágio em campo, e as 80h o total. Vale perguntar.
 - **Nome completo da professora**: no áudio a apresentação sai embolada. Está registrado aqui como Rosa Maria — confirmar grafia e sobrenome.
 - ~~Nome da disciplina.~~ **Resolvido pela declaração de matrícula**: o nome oficial é *Estágio Supervisionado Obrigatório - Espaços Não Escolares*, 80 horas, quinta-feira das 19h às 22h, turma GPE08N10213.

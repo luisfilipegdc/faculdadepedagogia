@@ -42,6 +42,36 @@ html[data-tema="escuro"] {
   box-sizing: border-box;
 }
 
+/* A barra padrão do Windows é larga e cinza-clara; dentro da lateral ela
+   ficava mais visível que a própria navegação. Fina, arredondada e na cor
+   do texto secundário — some no meio do conteúdo até você precisar dela.
+   scrollbar-width e scrollbar-color são herdados, então basta no html. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--texto-3) 40%, transparent)
+    transparent;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--texto-3) 38%, transparent);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--texto-3) 75%, transparent);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 body {
   margin: 0;
   background: var(--bg);

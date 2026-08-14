@@ -1,38 +1,40 @@
 /* Caderno de Pedagogia — folha de estilo única, sem dependências. */
 
 :root {
-  --bg: #fbfaf7;
+  --bg: #f6f7f9;
   --bg-2: #ffffff;
-  --bg-3: #f2efe9;
-  --texto: #1e1b16;
-  --texto-2: #5f574a;
-  --texto-3: #8b8172;
-  --borda: #e2ddd2;
-  --acento: #a2542a;
-  --acento-suave: #f4e7dd;
-  --ok: #2f6b46;
-  --ok-suave: #e2f0e7;
-  --alerta: #8a5a06;
+  --bg-3: #eceef1;
+  --texto: #14171a;
+  --texto-2: #545c65;
+  --texto-3: #616a75;
+  --borda: #e1e4e8;
+  --acento: #245bb5;
+  --acento-suave: #e8eefb;
+  --ok: #17683f;
+  --ok-suave: #e3f2e9;
+  --alerta: #8a5100;
   --alerta-suave: #fbeed3;
-  --sombra: 0 1px 2px rgba(30, 27, 22, 0.06), 0 8px 24px rgba(30, 27, 22, 0.06);
+  --sombra: 0 1px 2px rgba(16, 20, 26, 0.05), 0 6px 20px rgba(16, 20, 26, 0.06);
+  --fonte: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   --raio: 14px;
   --largura: 46rem;
 }
 
 html[data-tema="escuro"] {
-  --bg: #16150f;
-  --bg-2: #1e1c15;
-  --bg-3: #262319;
-  --texto: #f0ece2;
-  --texto-2: #b9b1a1;
-  --texto-3: #8b8272;
-  --borda: #322e23;
-  --acento: #e39a68;
-  --acento-suave: #33251b;
-  --ok: #7fc79b;
-  --ok-suave: #1c2b21;
-  --alerta: #e0b45e;
-  --alerta-suave: #2e2617;
+  --bg: #15171b;
+  --bg-2: #1c1f24;
+  --bg-3: #262a30;
+  --texto: #e9ebee;
+  --texto-2: #a5adb7;
+  --texto-3: #8b939d;
+  --borda: #2b3038;
+  --acento: #7fa9f0;
+  --acento-suave: #1b2434;
+  --ok: #6fc394;
+  --ok-suave: #17251d;
+  --alerta: #dfb264;
+  --alerta-suave: #2b2417;
   --sombra: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -40,14 +42,46 @@ html[data-tema="escuro"] {
   box-sizing: border-box;
 }
 
+/* A barra padrão do Windows é larga e cinza-clara; dentro da lateral ela
+   ficava mais visível que a própria navegação. Fina, arredondada e na cor
+   do texto secundário — some no meio do conteúdo até você precisar dela.
+   scrollbar-width e scrollbar-color são herdados, então basta no html. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--texto-3) 40%, transparent)
+    transparent;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--texto-3) 38%, transparent);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--texto-3) 75%, transparent);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--texto);
-  font-family: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.65;
+  font-family: var(--fonte);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: -0.006em;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .pular {
@@ -108,7 +142,7 @@ body {
   padding: 0.5rem 0.85rem;
   font: inherit;
   font-size: 0.95rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   color: var(--texto);
   background: var(--bg-2);
   border: 1px solid var(--borda);
@@ -144,7 +178,7 @@ main {
 }
 
 .migalha {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -156,14 +190,16 @@ main {
 }
 
 h1 {
-  font-size: clamp(1.85rem, 5vw, 2.6rem);
-  line-height: 1.15;
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.2;
   margin: 0 0 0.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
 }
 
 h2 {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
+  font-weight: 650;
   margin: 3rem 0 1rem;
   letter-spacing: -0.01em;
   display: flex;
@@ -189,7 +225,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem 0.75rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.85rem;
   color: var(--texto-2);
   margin-bottom: 1.5rem;
@@ -199,7 +235,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -217,6 +253,15 @@ a {
   background: var(--alerta-suave);
   color: var(--alerta);
 }
+/* dentro do cartão o selo é metadado, não alarme: dez etiquetas laranjas
+   competindo com cinco títulos fazem o título perder. Cinza, mas legível —
+   --texto-3 sobre --bg-3 dava 2.97:1 e reprovava. */
+.cartao-meta .selo,
+.cartao-meta .selo-alerta {
+  background: var(--bg-3);
+  color: var(--texto-2);
+  font-weight: 600;
+}
 .selo-ok {
   background: var(--ok-suave);
   color: var(--ok);
@@ -229,7 +274,7 @@ a {
   background: var(--alerta-suave);
   color: var(--alerta);
   border-radius: var(--raio);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 2rem;
@@ -241,7 +286,7 @@ a {
   margin-bottom: 2.5rem;
 }
 .disciplina-titulo {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -254,30 +299,30 @@ a {
 
 .cartao {
   display: block;
-  padding: 1.1rem 1.25rem;
-  margin-bottom: 0.7rem;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.35rem;
   background: var(--bg-2);
   border: 1px solid var(--borda);
-  border-radius: var(--raio);
+  border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.12s ease, border-color 0.12s ease;
+  transition: background 0.12s ease, border-color 0.12s ease;
 }
 .cartao:hover {
-  transform: translateY(-1px);
-  border-color: var(--acento);
+  background: var(--bg-3);
+  border-color: color-mix(in srgb, var(--disc) 40%, var(--borda));
 }
 .cartao-tema {
-  font-size: 1.12rem;
+  font-size: 1.02rem;
   font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 0.35rem;
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
 }
 .cartao-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.7rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   color: var(--texto-3);
 }
@@ -307,7 +352,7 @@ a {
 }
 .lista-conceitos b {
   display: block;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -458,7 +503,7 @@ a {
 }
 
 .btn {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.9rem;
   font-weight: 600;
   padding: 0.55rem 1.1rem;
@@ -511,7 +556,7 @@ html[data-tema="escuro"] .btn {
 }
 .cartao-flash summary::before {
   content: "?";
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--acento);
@@ -559,7 +604,7 @@ html[data-tema="escuro"] .btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.85rem;
   color: var(--texto-3);
 }
@@ -579,7 +624,7 @@ html[data-tema="escuro"] .btn {
   color: inherit;
 }
 .flash-rotulo {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -591,7 +636,7 @@ html[data-tema="escuro"] .btn {
   line-height: 1.45;
 }
 .flash-dica {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.78rem;
   color: var(--texto-3);
 }
@@ -634,7 +679,7 @@ kbd {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   color: var(--texto-3);
   border-top: 1px solid var(--borda);
@@ -646,20 +691,553 @@ kbd {
   color: var(--texto-3);
 }
 
+/* ---------- painel da home ---------- */
+
+/* na home o painel é a navegação, então a lateral sairia repetida */
+body.painel .lateral {
+  display: none;
+}
+body.painel .corpo {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 80rem;
+}
+body.painel .corpo > #principal {
+  max-width: none;
+}
+
+.painel-cab {
+  padding: 0 0 1.3rem;
+}
+.painel-meta {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--texto-2);
+}
+.painel-meta b {
+  color: var(--texto-3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  margin-right: 0.4rem;
+}
+
+/* Coluna única. Três colunas de módulos iguais faziam oito blocos disputarem
+   a mesma atenção — sem ponto focal, a tela lê como bagunça. */
+.colunas {
+  display: block;
+  max-width: 44rem;
+}
+
+/* faixa de aviso: informa sem competir com a ação principal */
+.urgente {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.9rem;
+  border-radius: 10px;
+  background: var(--alerta-suave);
+  border-left: 3px solid var(--alerta);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.urgente-quando {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--alerta);
+  flex: none;
+}
+
+/* nível 1: a única coisa que a tela pede agora */
+.agora {
+  display: block;
+  padding: 1.5rem 1.6rem;
+  border-radius: 14px;
+  background: var(--disc-suave);
+  border: 1px solid var(--disc);
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 2.2rem;
+}
+.agora:hover {
+  filter: brightness(0.985);
+}
+.agora-rotulo {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--disc);
+  margin-bottom: 0.5rem;
+}
+.agora-titulo {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 680;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.agora-sub {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--texto-2);
+  margin-top: 0.4rem;
+}
+
+/* nível 2: discreto, sem caixa */
+.faixa-titulo {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  margin: 0 0 0.7rem;
+}
+.bloco {
+  margin-bottom: 2.2rem;
+}
+
+.linha-simples {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--borda);
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.linha-simples:last-child {
+  border-bottom: 0;
+}
+.linha-simples:hover {
+  color: var(--disc);
+}
+.linha-quando {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  flex: none;
+  min-width: 4.6rem;
+}
+.linha-perto .linha-quando {
+  color: var(--alerta);
+}
+
+/* nível 3: existe, mas não ocupa a tela */
+.gaveta {
+  border-top: 1px solid var(--borda);
+}
+.gaveta:last-of-type {
+  border-bottom: 1px solid var(--borda);
+}
+.gaveta > summary {
+  cursor: pointer;
+  padding: 0.85rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto-2);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gaveta > summary::-webkit-details-marker {
+  display: none;
+}
+.gaveta > summary::before {
+  content: "▸";
+  color: var(--texto-3);
+  font-size: 0.8rem;
+  transition: transform 0.15s ease;
+}
+.gaveta[open] > summary::before {
+  transform: rotate(90deg);
+}
+.gaveta > summary:hover {
+  color: var(--texto);
+}
+.gaveta-conta {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+}
+.gaveta-corpo {
+  padding: 0 0 1.1rem;
+}
+
+.mod {
+  background: var(--bg-2);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.mod-titulo {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background: var(--bg-3);
+  color: var(--texto-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.mod-corpo {
+  padding: 0.5rem 0.85rem 0.6rem;
+}
+.mod-vazio {
+  color: var(--texto-3);
+  font-size: 0.83rem;
+  padding: 0.35rem 0;
+}
+
+.item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.34rem 0;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  text-decoration: none;
+  color: inherit;
+}
+.item:hover {
+  color: var(--disc);
+}
+.item-ponto {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--disc);
+  flex: none;
+  align-self: center;
+}
+.item-nome {
+  flex: 1;
+  min-width: 0;
+}
+.item-num {
+  font-size: 0.76rem;
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+
+.cronograma {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.cronograma th {
+  padding: 0.4rem 0.45rem;
+  text-align: left;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  border-bottom: 1px solid var(--borda);
+  white-space: nowrap;
+}
+.cronograma td {
+  padding: 0.45rem;
+  border-bottom: 1px solid var(--borda);
+  vertical-align: top;
+}
+.cronograma tr:last-child td {
+  border-bottom: 0;
+}
+.marca-disc {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+  background: var(--disc-suave);
+  color: var(--disc);
+  font-size: 0.73rem;
+  font-weight: 650;
+  margin: 0.1rem 0.15rem 0.1rem 0;
+}
+
+.tarefa {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4.6rem;
+  gap: 0.5rem;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid var(--borda);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+.tarefa:last-child {
+  border-bottom: 0;
+}
+.tarefa-data {
+  font-size: 0.76rem;
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.tarefa-perto .tarefa-data {
+  color: var(--alerta);
+  font-weight: 700;
+}
+
+.link-ext {
+  display: block;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--borda);
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.86rem;
+}
+.link-ext:last-child {
+  border-bottom: 0;
+}
+.link-ext small {
+  display: block;
+  color: var(--texto-3);
+  font-size: 0.73rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 68rem) {
+  .colunas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- layout com navegação lateral ---------- */
+
+.corpo {
+  display: grid;
+  grid-template-columns: 15.5rem minmax(0, 1fr);
+  gap: 2rem;
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  align-items: start;
+}
+.corpo > #principal {
+  max-width: 52rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
+.lateral {
+  position: sticky;
+  top: 4.6rem;
+  border-right: 1px solid var(--borda);
+  padding-right: 0.9rem;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.6rem 0 2rem;
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--texto-2);
+  font-size: 0.93rem;
+  font-weight: 550;
+}
+.nav-item:hover {
+  background: var(--bg-3);
+  color: var(--texto);
+}
+
+.nav-titulo {
+  font-family: var(--fonte);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+  margin: 1.4rem 0 0.4rem 0.6rem;
+}
+
+.nav-grupo {
+  margin-bottom: 0.9rem;
+}
+.nav-disciplina {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--disc);
+  line-height: 1.3;
+}
+.nav-ponto {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--disc);
+  flex: none;
+}
+
+.nav-aula {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  margin-left: 0.55rem;
+  border-left: 2px solid var(--borda);
+  text-decoration: none;
+  color: var(--texto-2);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+.nav-aula:hover {
+  background: var(--bg-3);
+  color: var(--texto);
+}
+.nav-atual {
+  background: var(--disc-suave, var(--bg-3));
+  color: var(--texto);
+  font-weight: 600;
+  border-left-color: var(--disc);
+}
+.nav-data {
+  color: var(--texto-3);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+}
+.nav-tema {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.nav-feita .nav-tema::after {
+  content: " ✓";
+  color: var(--ok);
+}
+
+.btn-menu {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  .corpo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  /* Duas linhas limpas: identidade em cima, busca embaixo. Antes o topo
+     quebrava em três, com a busca espremida num botão de 3 letras. */
+  .topo {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0.6rem 0.9rem;
+  }
+  .btn-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    order: -1;
+    margin: 0;
+  }
+  .marca {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .topo-acoes {
+    flex: 1 1 100%;
+    order: 3;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+  .busca {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+  .lateral {
+    display: none;
+    position: static;
+    max-height: none;
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--borda);
+    margin-bottom: 1rem;
+  }
+  body.com-lateral .lateral {
+    display: grid;
+  }
+}
+
+/* ---------- desenvolvimento (a aula inteira) ---------- */
+
+.sub {
+  font-size: 1.06rem;
+  font-weight: 650;
+  margin: 1.9rem 0 0.6rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--disc, var(--acento));
+  line-height: 1.35;
+}
+.secao .sub:first-child {
+  margin-top: 0.4rem;
+}
+.sub + p,
+.sub + ul {
+  margin-top: 0;
+}
+
+/* ---------- estudo adiantado (material meu, não da aula) ---------- */
+
+.adiantado {
+  border: 1px dashed color-mix(in srgb, var(--alerta) 45%, transparent);
+  border-radius: var(--raio);
+  padding: 1.1rem 1.3rem 0.4rem;
+  background: color-mix(in srgb, var(--alerta-suave) 35%, transparent);
+}
+.adiantado-nota {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--alerta);
+  margin: 0 0 1.2rem;
+  max-width: none;
+}
+.adiantado .sub {
+  border-left-color: var(--alerta);
+}
+
 /* ---------- cor por disciplina ---------- */
 
 /* L=30% e suave a 95% mantêm as 6 matizes acima de 5.5:1 sobre o próprio
    fundo tingido — a 34% a verde caía para 4.49 e reprovava em AA. */
-.disciplina-bloco,
-.cartao,
-.retomar,
-.obra-aula,
-main#principal {
+/* Derivar em qualquer elemento, e não numa lista de seletores: qualquer bloco
+   que carregue --disc-h nasce com a cor certa. A lista antiga esquecia os
+   blocos novos e eles saíam todos com a matiz padrão. */
+* {
   --disc: hsl(var(--disc-h, 25) 46% 30%);
   --disc-suave: hsl(var(--disc-h, 25) 62% 95%);
 }
-html[data-tema="escuro"]
-  :is(.disciplina-bloco, .cartao, .retomar, .obra-aula, main#principal) {
+html[data-tema="escuro"] * {
   --disc: hsl(var(--disc-h, 25) 55% 74%);
   --disc-suave: hsl(var(--disc-h, 25) 30% 16%);
 }
@@ -705,7 +1283,7 @@ h2::before {
   background: var(--alerta-suave);
 }
 .lembrete-quando {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -736,7 +1314,7 @@ h2::before {
   filter: brightness(0.98);
 }
 .retomar-rotulo {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -762,7 +1340,7 @@ h2::before {
   margin: 0 0 0.5rem;
 }
 .chip {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.78rem;
   font-weight: 600;
   padding: 0.3rem 0.7rem;
@@ -831,10 +1409,64 @@ h2::before {
   gap: 0.7rem;
 }
 .obra {
-  padding: 0.85rem 1.1rem;
+  padding: 0.95rem 1.1rem;
+  margin-bottom: 0.6rem;
   background: var(--bg-2);
   border: 1px solid var(--borda);
-  border-radius: var(--raio);
+  border-radius: 10px;
+}
+/* a bibliografia oficial precisa vencer visualmente as citadas de passagem:
+   é ela que decide o que ler primeiro */
+.obra-basica {
+  border-left: 3px solid var(--disc);
+  padding: 1.1rem 1.2rem;
+}
+.obra-lida {
+  background: none;
+}
+.obra-lida .obra-titulo {
+  color: var(--texto-2);
+}
+.obra-topo {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.obra-autor {
+  font-size: 0.85rem;
+  color: var(--texto-2);
+  margin-top: 0.1rem;
+}
+.marcar-lida {
+  flex: none;
+  font-family: var(--fonte);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--borda);
+  background: var(--bg-3);
+  color: var(--texto-2);
+  cursor: pointer;
+  min-height: 1.9rem;
+}
+.marcar-lida:hover {
+  border-color: var(--disc);
+  color: var(--disc);
+}
+.marcar-lida[aria-pressed="true"] {
+  background: var(--ok-suave);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+.obra-aulas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
 }
 .obra-sem-titulo {
   background: none;
@@ -864,7 +1496,7 @@ h2::before {
   min-width: 0;
 }
 .obra-aula {
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -880,7 +1512,7 @@ h2::before {
 .obra-link {
   display: inline-block;
   margin-top: 0.45rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--fonte);
   font-size: 0.82rem;
   font-weight: 600;
   padding: 0.25rem 0.7rem;
@@ -891,6 +1523,98 @@ h2::before {
 }
 .obra-link:hover {
   background: var(--acento-suave);
+}
+
+/* ---------- celular ---------- */
+
+@media (max-width: 34rem) {
+  .corpo {
+    padding: 0 1rem;
+  }
+  main {
+    padding-top: 1.2rem;
+    padding-bottom: 3.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  /* a linha institucional é conferência, não uso diário */
+  .painel-cab .painel-meta:first-of-type {
+    display: none;
+  }
+
+  .agora {
+    padding: 1.2rem 1.15rem;
+  }
+  .agora-titulo {
+    font-size: 1.15rem;
+  }
+
+  /* alvos de toque: 44px é o mínimo confortável com o polegar */
+  .linha-simples,
+  .gaveta > summary {
+    min-height: 2.75rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  /* as tags servem para buscar, não para ler — no celular só ocupam a tela */
+  .meta .selo-acento {
+    display: none;
+  }
+
+  /* o sumário virava quatro linhas de pílulas; agora é uma faixa que rola */
+  .sumario {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .sumario::-webkit-scrollbar {
+    display: none;
+  }
+  .chip {
+    scroll-snap-align: start;
+  }
+
+  /* tabela larga rola sozinha em vez de estourar a página */
+  .gaveta-corpo {
+    overflow-x: auto;
+  }
+  .cronograma {
+    min-width: 30rem;
+  }
+
+  .secao p {
+    max-width: none;
+  }
+  .obra-citacao {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .tarefa {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tarefa-data {
+    text-align: left;
+  }
+  .fim-aula {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+  }
+  .btn-marcar {
+    width: 100%;
+    padding: 0.75rem 1.1rem;
+  }
+  .btn-voltar {
+    text-align: center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

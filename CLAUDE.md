@@ -33,6 +33,12 @@ confianca: media
 
 Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 
+## Desenvolvimento
+
+### Subtítulo do trecho da aula
+
+Aqui vai tudo, na ordem em que aconteceu. Parágrafos, listas, o que for.
+
 ## Conceitos
 
 - **Termo** :: definição em uma frase.
@@ -57,7 +63,7 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 
 ## Para ler
 
-- Autor, *Obra* (1979) — por que importa. [PDF na biblioteca da facul](https://...)
+- [básica] Autor, *Obra* (1979) — por que importa. [PDF na biblioteca da facul](https://...)
 
 ## Pendências
 
@@ -66,6 +72,9 @@ Parágrafos curtos. Uma ideia por parágrafo. No máximo 5 parágrafos.
 
 Regras de conteúdo:
 
+- **O caderno não é resumo, é base viva.** A ideia é um Notion por aula: tudo o que apareceu fica registrado. `## Desenvolvimento` é onde a aula mora inteira, em `###` por trecho, na ordem em que aconteceu. **Nunca corte conteúdo para caber** — se está ficando grande, quebre em mais subtítulos.
+- **`## Resumo` é a porta de entrada**, não o conteúdo. Máximo 5 parágrafos, e ele pode ser condensado à vontade porque nada se perde: o detalhe está no Desenvolvimento.
+- **Aula ao vivo se escreve em camadas.** O Luis manda o material em pedaços enquanto a aula acontece; cada pedaço entra como novo `###`, e as outras seções são atualizadas depois.
 - **Blocos curtos.** Luis lê melhor em pedaços pequenos. Nada de parágrafo com 8 linhas.
 - **`::` é o separador** de conceito/definição, pergunta/resposta e ano/marco. Não use outro.
 - **`## Linha do tempo`** é `ano :: **Marco** — detalhe`. O ` — ` (travessão com espaços) separa o título do marco do texto explicativo; sem ele, tudo vira título. Use quando o professor mostrar cronologia — o site desenha o trilho.
@@ -81,6 +90,8 @@ A página `#/biblioteca` é montada só a partir do `## Para ler` das aulas. O i
 - Item **sem `*obra*`** não vira livro. Vai para "Indicações sem obra definida" — é o caso de "Fundamentos do EJA", que é assunto, não título.
 - Item que é **só um nome de autor** encaixa junto das obras daquele autor, se ele já tiver alguma na lista. É correspondência exata, sem adivinhação.
 - **Link é opcional**, no fim da linha, em `[rótulo](url)`. Vira botão na biblioteca.
+- **`[básica]` no começo da linha** marca a bibliografia oficial da disciplina. A biblioteca separa essas obras num bloco "comece por aqui", acima do que só foi citado de passagem. Use só para o que o professor declarou como bibliografia básica — se tudo virar básica, a separação perde a função.
+- **Marcar como lida** é estado do navegador, chave `lidas`, como o `estudada` das aulas. Não vai para o repositório.
 
 Sobre o link: aponte para fonte legítima — repositório institucional, portal público, ou a assinatura de e-books da faculdade. **Nunca** cole link de cópia pirata, e nunca baixe o arquivo para dentro do repositório. Se não houver fonte legítima conhecida, deixe sem link.
 
@@ -97,7 +108,7 @@ Quando o Luis disser "me lembra de X", acrescente a linha aqui **e** ofereça ag
 Fica em `localStorage`, chave `estudo`: `{ "<arquivo>": { visto, estudada } }`. Nada disso vai para o repositório — é por dispositivo.
 
 - **Continuar de onde parou** na home: a aula vista mais recentemente que ainda não foi marcada como estudada.
-- **Cor por disciplina**: matiz fixa por posição em `disciplinas` no `index.json`. Disciplina nova entra com cor nova sozinha.
+- **Cor por disciplina**: a matiz sai da posição em `conteudo/cores.json`, uma lista que **só cresce**. O indexador anexa disciplina nova no fim e nunca reordena o que já está lá, então nenhuma disciplina muda de cor por causa de outra. Esse arquivo é versionado — não apague nem reordene à mão, ou as cores viram outras.
 - **Flashcards em blocos de 8.** Errou, a carta volta num bloco adiante — não no atual. O fim de bloco é uma parada legítima, com "Mais 8" e "Parar por hoje" lado a lado.
 
 ## Comandos

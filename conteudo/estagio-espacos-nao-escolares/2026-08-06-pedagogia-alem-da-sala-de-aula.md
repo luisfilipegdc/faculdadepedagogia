@@ -1,8 +1,8 @@
 ---
-disciplina: Trabalho Pedagógico em Espaços Não Escolares
+disciplina: Estágio Supervisionado Obrigatório - Espaços Não Escolares
 professor: Rosa Maria
 tratamento: Prof.ª
-data: 2026-08-05
+data: 2026-08-06
 tema: A pedagogia para além da sala de aula
 tags: [espaços não escolares, pedagogia hospitalar, EJA, educação especial, estágio, ética profissional]
 fonte: áudio da aula (28 min)
@@ -102,9 +102,10 @@ Atravessando tudo, uma insistência: leia. A professora cobra leitura como condi
 
 ## Pendências
 
-- **Carga horária do estágio**: o áudio soa como "40 horas em ambientes não escolares", mas ficou abafado. Conferir no plano de ensino antes de se organizar.
+- ~~A data desta aula não batia com o horário oficial.~~ **Resolvido pelo Luis em 14/08**: a aula foi na **quinta, 06/08/2026**. O arquivo e o frontmatter foram corrigidos.
+- **Carga horária**: o áudio soa como "40 horas em ambientes não escolares", mas a declaração diz **80 horas** para a disciplina. Pode ser que as 40h sejam só a parte de estágio em campo, e as 80h o total. Vale perguntar.
 - **Nome completo da professora**: no áudio a apresentação sai embolada. Está registrado aqui como Rosa Maria — confirmar grafia e sobrenome.
-- **Nome da disciplina**: entendi "Trabalho Pedagógico em Espaços Não Escolares". Conferir o nome exato na matrícula.
+- ~~Nome da disciplina.~~ **Resolvido pela declaração de matrícula**: o nome oficial é *Estágio Supervisionado Obrigatório - Espaços Não Escolares*, 80 horas, quinta-feira das 19h às 22h, turma GPE08N10213.
 - **Plataformas de leitura citadas**: "Ciranda do Livro" e uma segunda começando com "Árvore" — a própria professora disse que ia confirmar o nome depois. Vale anotar quando ela trouxer.
 - **Próxima aula é prática**: levar pincel. A tinta ela leva. Avental é opcional (ela tem para ensino médio e fundamental).
 - Trecho entre 24:00 e 27:00 é apresentação pessoal dos alunos e da professora — não tem conteúdo de prova, deixei de fora de propósito.

@@ -48,7 +48,61 @@ function contarItens(mapa, titulo) {
 }
 
 // lembretes.md fica na raiz de conteudo/ e não é aula
-const NAO_E_AULA = new Set(["lembretes.md"]);
+const NAO_E_AULA = new Set([
+  "lembretes.md",
+  "links.md",
+  "horarios.md",
+  "curso.md",
+]);
+
+// "[Rótulo](url) :: descrição"
+async function lerLinks() {
+  let texto;
+  try {
+    texto = await readFile(join(CONTEUDO, "links.md"), "utf8");
+  } catch {
+    return [];
+  }
+  return texto
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*-\s+\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)\s*(?:::\s*(.*))?$/))
+    .filter(Boolean)
+    .map((m) => ({ rotulo: m[1].trim(), url: m[2], nota: (m[3] || "").trim() }));
+}
+
+// "Rótulo :: valor" — a linha institucional do topo do painel
+async function lerCurso() {
+  let texto;
+  try {
+    texto = await readFile(join(CONTEUDO, "curso.md"), "utf8");
+  } catch {
+    return [];
+  }
+  return texto
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*-\s+(.+?)\s*::\s*(.+)$/))
+    .filter(Boolean)
+    .map((m) => ({ rotulo: m[1].trim(), valor: m[2].trim() }));
+}
+
+// "Disciplina :: Dia :: hh:mm-hh:mm"
+async function lerHorarios() {
+  let texto;
+  try {
+    texto = await readFile(join(CONTEUDO, "horarios.md"), "utf8");
+  } catch {
+    return [];
+  }
+  return texto
+    .split(/\r?\n/)
+    .map((l) => l.match(/^\s*-\s+(.+?)\s*::\s*(.+?)\s*::\s*(.+)$/))
+    .filter(Boolean)
+    .map((m) => ({
+      disciplina: m[1].trim(),
+      dia: m[2].trim().toLowerCase(),
+      hora: m[3].trim(),
+    }));
+}
 
 function itensDe(mapa, titulo) {
   const bloco = mapa[titulo.toLowerCase()];
@@ -64,8 +118,15 @@ function itensDe(mapa, titulo) {
 // "Autor, *Obra* (1979) — nota" e as três variações que aparecem de fato:
 // sem autor, sem obra, e a tarefa de leitura que não é obra nenhuma.
 function parseLeitura(linha) {
-  // link legítimo no fim da linha: [rótulo](url) — sai da nota e vira botão
+  // "[básica]" no início marca a bibliografia oficial da disciplina, que a
+  // biblioteca separa do que só foi citado de passagem em aula
   let resto = linha;
+  let basica = false;
+  const mBasica = resto.match(/^\s*\[b[áa]sica\]\s*/i);
+  if (mBasica) {
+    basica = true;
+    resto = resto.slice(mBasica[0].length);
+  }
   let link = null;
   const mLink = resto.match(/\s*\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)\s*$/);
   if (mLink) {
@@ -88,6 +149,7 @@ function parseLeitura(linha) {
     texto,
     nota,
     link,
+    basica,
     obra: mObra ? mObra[1].trim() : "",
     autor: mObra ? autor : "",
     ano: mAno ? mAno[1] : "",
@@ -183,7 +245,31 @@ const disciplinas = [...new Set(aulas.map((a) => a.disciplina))].sort((a, b) =>
   a.localeCompare(b, "pt-BR"),
 );
 
+// A cor sai da posição nesta lista, que fica em conteudo/cores.json e só cresce:
+// disciplina nova é anexada no fim e nenhuma outra muda de lugar.
+//
+// Ordenar por nome recoloria as vizinhas quando entrava uma disciplina no meio
+// do alfabeto. Ordenar pela data da primeira aula tinha o mesmo defeito de outro
+// jeito: cadastrar uma aula antiga de uma disciplina que já existe a faz pular
+// para a frente e recolorir todas as outras. Só a lista persistida é estável.
+const CORES = join(CONTEUDO, "cores.json");
+let ordemCor = [];
+try {
+  const lido = JSON.parse(await readFile(CORES, "utf8"));
+  if (Array.isArray(lido)) ordemCor = lido.filter((d) => typeof d === "string");
+} catch {}
+
+const novas = disciplinas.filter((d) => !ordemCor.includes(d));
+if (novas.length) {
+  ordemCor = [...ordemCor, ...novas];
+  await writeFile(CORES, JSON.stringify(ordemCor, null, 2) + "\n", "utf8");
+  console.log(`cor nova para: ${novas.join(", ")}`);
+}
+
 const lembretes = await lerLembretes();
+const links = await lerLinks();
+const horarios = await lerHorarios();
+const curso = await lerCurso();
 
 // mesma obra citada em duas aulas vira uma entrada com as duas citações
 const porObra = new Map();
@@ -200,12 +286,14 @@ for (const l of todasLeituras) {
       autor: l.autor,
       ano: l.ano,
       link: l.link,
+      basica: false,
       citacoes: [],
     });
   }
   const alvo = porObra.get(chave);
   if (!alvo.ano && l.ano) alvo.ano = l.ano;
   if (!alvo.link && l.link) alvo.link = l.link;
+  if (l.basica) alvo.basica = true;
   alvo.citacoes.push({ nota: l.nota, aula: l.aula });
 }
 
@@ -221,6 +309,7 @@ for (const o of [...porObra.values()].sort((a, b) =>
     obra: o.obra,
     ano: o.ano,
     link: o.link,
+    basica: o.basica,
     citacoes: o.citacoes,
   });
 }
@@ -244,7 +333,11 @@ const indice = {
   totalAulas: aulas.length,
   totalFlashcards: aulas.reduce((s, a) => s + a.flashcards, 0),
   disciplinas,
+  ordemCor,
   lembretes,
+  links,
+  horarios,
+  curso,
   biblioteca: { autores, tarefas },
   aulas,
 };
@@ -256,5 +349,5 @@ await writeFile(
 );
 
 console.log(
-  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s), ${lembretes.length} lembrete(s), ${totalObras} obra(s) de ${autores.length} autor(es) + ${tarefas.length} indicação(ões)`,
+  `indexado: ${aulas.length} aula(s), ${disciplinas.length} disciplina(s), ${indice.totalFlashcards} flashcard(s), ${lembretes.length} lembrete(s), ${links.length} link(s), ${totalObras} obra(s) de ${autores.length} autor(es) + ${tarefas.length} indicação(ões)`,
 );

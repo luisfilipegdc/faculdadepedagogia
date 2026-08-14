@@ -1,5 +1,5 @@
 ---
-disciplina: Filosofia da Educação
+disciplina: Fundamentos Filosóficos e Sociológicos da Educação
 professor:
 data: 2026-08-08
 tema: Olhar o mundo com outra perspectiva — pós-modernidade e o fim das metanarrativas
@@ -90,7 +90,9 @@ Para o pedagogo isso não é filosofia solta: é a descrição do aluno que vai 
 
 ## Pendências
 
-- **Disciplina ainda por confirmar** — "Filosofia da Educação" continua sendo palpite meu. A aula de 10/08, que eu tinha chutado como a mesma disciplina, na verdade é **Fundamentos da Docência, com o Prof. Cláudio Amorim**. Esta aqui é a mesma matéria e o mesmo professor, ou é outra? Enquanto não confirmar, ela aparece separada no caderno.
+- ~~Disciplina por confirmar.~~ **Resolvido pela declaração de matrícula**: o nome oficial é *Fundamentos Filosóficos e Sociológicos da Educação*, 80 horas, quarta-feira das 19h às 22h, sala 5308, turma GPE08N10213. Era a única disciplina de perfil filosófico da grade, então o palpite "Filosofia da Educação" apontava para ela.
+- **A data desta aula não bate com o horário oficial.** Está registrada em 08/08/2026, que é um **sábado**, mas a disciplina é de **quarta**. As quartas próximas são 05/08 e 12/08. A data veio do material original e eu não tenho como decidir — confirme e eu corrijo o arquivo e o nome dele.
+- **Falta o nome do professor** desta disciplina; a declaração não traz o corpo docente.
 - **Leonardo Boff** apareceu com "??" na anotação. Confirmar em que ponto ele entrou: teologia da libertação, ética do cuidado ou crítica à globalização? São três encaixes diferentes na aula.
 - A frase de Toffler sobre "aprender, desaprender e reaprender" é atribuída a ele em *O Choque do Futuro*, mas no livro Toffler está citando o psicólogo **Herbert Gerjuoy**. Se for usar em trabalho escrito, cite assim — é o tipo de detalhe que banca cobra.
 - Confirmar se a professora usou VUCA e BANI como sinônimos ou como etapas (VUCA → BANI). Muda a leitura.

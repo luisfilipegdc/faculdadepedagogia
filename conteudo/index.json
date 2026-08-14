@@ -1,10 +1,11 @@
 {
-  "gerado": "2026-08-12T03:33:35.812Z",
-  "totalAulas": 5,
+  "gerado": "2026-08-14T22:40:47.611Z",
+  "totalAulas": 6,
   "totalFlashcards": 70,
   "disciplinas": [
     "Estágio Supervisionado Obrigatório - Espaços Não Escolares",
     "Fundamentos da Docência",
+    "Fundamentos da Educação Bilíngue",
     "Fundamentos Filosóficos e Sociológicos da Educação",
     "História da Educação"
   ],
@@ -366,6 +367,24 @@
     ]
   },
   "aulas": [
+    {
+      "arquivo": "conteudo/fundamentos-educacao-bilingue/2026-08-14-primeira-aula.md",
+      "disciplina": "Fundamentos da Educação Bilíngue",
+      "professor": "Valícia",
+      "tratamento": "",
+      "data": "2026-08-14",
+      "tema": "Primeira aula — em registro",
+      "tags": [],
+      "fonte": "anotação em aula",
+      "confianca": "media",
+      "flashcards": 0,
+      "questoes": 0,
+      "conceitos": 0,
+      "marcos": 0,
+      "pendencias": 4,
+      "minutosLeitura": 1,
+      "atualizado": "2026-08-14T22:40:33.775Z"
+    },
     {
       "arquivo": "conteudo/historia-da-educacao/2026-08-11-trajetoria-historica-da-educacao.md",
       "disciplina": "História da Educação",
